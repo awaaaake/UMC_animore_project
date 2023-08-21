@@ -2,6 +2,7 @@
 import React from "react";
 import './finalPage.css';
 import ReserveListTotal from './reserveListTotal';
+import { Link } from "react-router-dom";
 
 class FinalPage extends React.Component{
     constructor(props) {
@@ -33,8 +34,13 @@ class FinalPage extends React.Component{
                     <h3>업체에서 확인 후 예약확정할 예정입니다.</h3>
                 </div>
                 <div className="complete_button">
+                  <Link to='/Home'> 
                     <button className="Home_Shifting">홈 화면으로 가기</button>
-                    <button className="Reservation_Shifting"  onClick={this.handleReservationClick}>예약내역 확인하기</button>
+                  </Link>
+                  <Link to='/reservelist'>
+                  <button className="Reservation_Shifting"  onClick={this.handleReservationClick}>예약내역 확인하기</button>
+                  </Link>
+                  
                 </div>
             </div>
         )

@@ -7,6 +7,13 @@ import "@popperjs/core";
 import ShopReservationList from "./shopReservationList"; 
 import axios from "axios";
 
+const waitinglist = {
+    'date':'07.04. 13:00',
+    'shop':'봉봉살롱',
+    'address':'부산광역시',
+    'telephone':'010-0000-0000'
+}
+
 function WaitingList() {
     const [showDetails, setShowDetails] = useState(false);
     const [data, setData] = useState([]);
@@ -14,7 +21,7 @@ function WaitingList() {
   
     useEffect(() => {
       if (!fetchedData) {  // fetchedData 상태가 false일 때만 요청 보냄 (새로고침 할때)
-        const token = ''; // 토큰 추가
+        const token = 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJjb3PthqDtgbAiLCJpZCI6MSwiZXhwIjoxNjkyNzYwOTc3LCJ1c2VybmFtZSI6Imtha2FvXzI4OTgyMDI5NDQifQ.4nPXZqpCskQGhYwhytA4F1pS9U0DK9sTTOMTx7wTVBGDOmiF52RQQODkLWPcgJOyP2pGUEeTnF_04RVXukYb7g'; // 토큰 추가
   
         axios({
           method: 'GET',
@@ -38,6 +45,10 @@ function WaitingList() {
           });
       }
     }, [fetchedData]);
+
+    // const handleDetailsClick = () => {
+    //     setShowDetails(prevShowDetails => !prevShowDetails);
+    // };
 
     return (
         <div className="wationgBox">

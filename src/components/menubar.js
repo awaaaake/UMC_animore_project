@@ -15,19 +15,19 @@ class Menubar extends React.Component{
                             <div className="collapse navbar-collapse" id="navbarNavDropdown">
                                 <ul className="navbar-nav">
                                     <li className="nav-item">
-                                        <a className="nav-link active" aria-current="page" href="#" style={{paddingRight:"1px"}}>홈 |</a>
+                                        <a className="nav-link active" aria-current="page" href="/" style={{paddingRight:"1px"}}>홈 |</a>
                                     </li>
                                     <li className="nav-item">
-                                        <a className="nav-link" href="#" style={{paddingRight:"1px"}}>미용실 |</a>
+                                        <a className="nav-link" href="/shop" style={{paddingRight:"1px"}}>미용실 |</a>
                                     </li>
                                     <li className="nav-item">
-                                        <a className="nav-link" href="#"style={{paddingRight:"1px"}}>마이페이지 |</a>
+                                        <a className="nav-link" href="/reservelist"style={{paddingRight:"1px"}}>예약내역 |</a>
                                     </li>
                                     <li className="nav-item">
-                                        <a className="nav-link" href="#"style={{paddingRight:"1px"}}>미용내역 |</a>
+                                        <a className="nav-link" href="/mypage"style={{paddingRight:"1px"}}>마이페이지 |</a>
                                     </li>
                                     <li className="nav-item">
-                                        <a className="nav-link" href="#"style={{paddingRight:"3px"}}>로그아웃</a>
+                                        <a className="nav-link" href="/"style={{paddingRight:"3px"}}>로그아웃</a>
                                     </li>
                                 </ul>
                             </div>

@@ -9,6 +9,7 @@ import './selectPage.css';
 import TimeSelect from './timeSelect';
 import './timeSelect.css'
 import axios from "axios";
+import { Link } from "react-router-dom";
 
 function SelectPage() {
   const [selectedDate, setSelectedDate] = useState(""); // 선택한 날짜를 상태로 저장
@@ -36,7 +37,7 @@ function SelectPage() {
       const combinedDateTime = `${selectedDate} ${selectedTime}:00`;
     
     setShowFinalPage(true);
-    const token = '';
+    const token = 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJjb3PthqDtgbAiLCJpZCI6NCwiZXhwIjoxNjkyNzYxMDA0LCJ1c2VybmFtZSI6Imdvb2dsZV8xMDg1OTYwMzM2NDczMDk5ODQ3ODUifQ.uBYZMFGYe2wq6w3LzO1TPdmg6evnMtEZGQHmSszo8yaqUtGeraBjeA-YQepR5pQn1Mi_IqkMWPOFGdMTI47EFA';
     axios({
         method: 'POST',
         url: '/booking/time/{reservationId}',  //예약날짜가 정해지면 reservationId가 생성되는거 아닌가?
@@ -86,7 +87,9 @@ function SelectPage() {
             <TimeSelect isSelectedTime={isSelected} onClick={handleTimeClick}/>
           </div>
         </div>
+        <Link to='/final'>
         <button className='request'onClick={handleRequestClick}>예약요청</button>
+        </Link>
       </div>
 
     );
