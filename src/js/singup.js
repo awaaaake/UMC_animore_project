@@ -263,7 +263,7 @@ const SignUp = () => {
 
 
     // const token = useSelector(state => state.token);
-    const token = 'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJjb3PthqDtgbAiLCJpZCI6OCwiZXhwIjoxNjkyODM5NTUyLCJ1c2VybmFtZSI6Imtha2FvXzI5Mzk0ODUxOTQifQ.aX3pGe4BQGAZhzxyp1a8geRQGAHUlLfzM9cTEWX4CL9H8C5sZ8uIqrhzhszih3NLPHqSoRb5kogPTZCFHmXFjw'
+    const token = 'Bearer '
 
     fetch('/signup', {
       method: 'POST',
