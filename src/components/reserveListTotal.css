@@ -1,0 +1,32 @@
+.colPage1{
+    display: flex;
+    font-size: 23px;
+    font-weight: bold;
+    text-align: center;
+    margin-left: 5%;
+
+}
+.main_T{
+    font-family: NanumBarnGothic;
+    margin-top: 4.7%;
+    vertical-align: center;
+}
+.rowlinePage1{
+    margin-left: 10%;
+    border-bottom: 2px solid #808080;
+    width: 77%;
+
+}
+.tile{
+    width: 18%;
+    padding-top: 10px;
+}
+.listTitle{
+    font-size: 32px;
+    margin-left: 10%;
+    color: #000;
+    font-family: NanumBarunGothic;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+}

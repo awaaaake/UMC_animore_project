@@ -1,0 +1,173 @@
+.detail {
+  margin-left: 5%;
+  margin-right: 5%;
+  width: 90%;
+}
+
+.detail h4 {
+  font-weight: bold;
+  padding-bottom: 10px;
+  border-bottom: 2px solid #B33E86;
+}
+
+.detail_1 {
+  display: flex;
+  padding-top: 60px;
+  justify-content: center;
+  /* 가운데 정렬을 위해 추가 */
+}
+
+.profile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.profile-picture {
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  border: none;
+  margin-bottom: 30px;
+  border: 2px solid #B33E86;
+}
+
+.profile-picture img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.button-container {
+  display: flex;
+  height: 50px;
+}
+
+.button-container label {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 16px;
+  background-color: #B33E86;
+  color: #FFFFFF;
+  border: 2px solid #B33E86;
+  font-size: 17px;
+  font-weight: bold;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.profile-edit-button1 {
+  flex: 1;
+  padding: 8px 16px;
+  background-color: #B33E86;
+  color: #FFFFFF;
+  border: 2px solid #B33E86;
+  font-size: 17px;
+  font-weight: bold;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.profile-edit-button2 {
+  flex: 1;
+  padding: 8px 16px;
+  background-color: white;
+  color: #B33E86;
+  border: 2px solid #B33E86;
+  font-size: 17px;
+  font-weight: bold;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.profile_content {
+  width: 100%;
+  margin-left: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.profile_content label {
+  width: 100px;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+#nickname {
+  border: 1px solid black;
+  width: 100%;
+  padding: 5px;
+}
+
+#introduction {
+  border: 1px solid black;
+  width: 100%;
+  padding: 5px;
+  height: 290px;
+}
+
+.nickname,
+.introduction {
+  display: flex;
+  align-items: top;
+  gap: 10px;
+}
+
+.profile_content .p-wrapper {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.edit-button-container{
+  display: flex;
+  justify-content: flex-end;
+}
+
+.edit-profile-button{
+  padding: 10px 30px;
+  margin-top: 2%;
+  margin-bottom: 2%;
+  background-color: #B33E86;
+  color: #FFFFFF;
+  border: 2px solid #B33E86;
+  border-radius: 10px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+
+/* 반응형 웹 스타일 */
+@media screen and (max-width: 768px) {
+  .detail_1 {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .profile {
+    width: 100%;
+    margin-bottom: 30px;
+  }
+
+  .button-container {
+    flex-direction: column;
+    height: auto;
+    margin-top: 20px;
+  }
+
+  .profile-edit-button1,
+  .profile-edit-button2 {
+    flex: none;
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  .profile_content {
+    margin-left: 0;
+  }
+}

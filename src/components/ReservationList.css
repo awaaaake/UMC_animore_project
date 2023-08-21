@@ -1,0 +1,46 @@
+.one{
+    display: flex;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    /* margin-left: 5%; */
+    font-size: 20px;
+}
+.infromation{
+    width: 18%;
+    text-align: center;
+}
+.inform_btn{
+    width: 50%;
+    height: 40px ;
+    border-radius: 7px;
+    border: 2px solid #A0136A;
+    background: #FFF;
+    color: #A0136A;
+    font-weight: bold;
+    text-align: center;
+}
+.rowlinePage1{
+    border-bottom: 2px solid #808080;
+    margin-left: 10%;
+    width: 86%;
+}
+
+    /* 페이지 1에만 적용할 스타일 */
+.my-component.page-one {
+    .one{
+        margin-left: 5%;
+    }
+  }
+  
+  /* 페이지 2에만 적용할 스타일 */
+  .my-component.page-two {
+    .infromation{
+        text-align: left;
+        margin-left: 0px;
+    }
+  }
+  .my-component.page-two {
+    .one{
+        margin-left: 2%;
+    }
+  }

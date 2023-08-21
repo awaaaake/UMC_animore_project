@@ -1,0 +1,42 @@
+.menu {
+    margin-top: 30px;
+    width: 250px;
+    height: 400px;
+  }
+  
+  .menu h4 {
+    white-space: nowrap;
+    font-weight: bold;
+    font-size: 30px;
+    text-align: center;
+  }
+  
+  .menu ul {
+    list-style-type: none;
+  }
+  
+  .menu ul li {
+    font-weight: bold;
+    white-space: nowrap;
+    cursor: pointer;
+    padding: 10px 0;
+    /* 좌우 여백 10px */
+    color: #808080;
+  }
+  
+  .menu li:hover,
+  .menu li:focus {
+    color: black;
+  }
+  
+  .menu ul li.active {
+    color: black;
+  }
+  
+  .menu h4 {
+    padding-bottom: 10px;
+    border-bottom: 2px solid #808080;
+  }
+  .expanded{
+    margin-left: 12px;
+  }

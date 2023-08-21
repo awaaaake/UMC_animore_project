@@ -1,0 +1,102 @@
+.resetinfo {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-left: 5%;
+  margin-right: 5%;
+  width: 90%;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+}
+
+table tr {
+  height: 50px;
+}
+
+table td {
+  padding: 3px;
+  padding-left: 20px;
+  border-top: 1px solid #808080;
+  background-color: #F5F5F5;
+}
+
+table td:last-child {
+  background-color: #ffffff;
+}
+
+table td:first-child {
+  font-weight: bold;
+}
+
+table tbody tr:first-child td {
+  border-top: 2px solid black;
+}
+
+table tbody tr:last-child td {
+  border-bottom: 2px solid black;
+}
+
+input[type="email"],
+input[type="password"],
+input[type="text"],
+input[type="tel"],
+select,
+textarea {
+  width: 100%;
+  padding: 10px;
+  border: none;
+}
+
+input[type="checkbox"],
+input[type="radio"] {
+  margin-left: 12px;
+}
+
+.button-group3 {
+  margin-bottom: 30px;
+  display: flex;
+  justify-content: center;
+}
+
+.selected-button {
+  flex: 1;
+  padding: 8px 16px;
+  background-color: #B33E86;
+  color: #FFFFFF;
+  border: 2px solid #B33E86;
+  font-size: 17px;
+  font-weight: bold;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.unselected-button {
+  flex: 1;
+  padding: 8px 16px;
+  background-color: white;
+  color: #B33E86;
+  border: 2px solid #B33E86;
+  font-size: 17px;
+  font-weight: bold;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.resetinfo-button {
+  display: block;
+  margin: 5% auto;
+  width: 200px;
+  padding: 10px 25px;
+  background-color: #B33E86;
+  color: #FFFFFF;
+  border: 2px solid #B33E86;
+  border-radius: 10px;
+  font-size: 17px;
+  font-weight: bold;
+  cursor: pointer;
+  white-space: nowrap;
+}

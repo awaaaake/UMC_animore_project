@@ -1,0 +1,48 @@
+/* Updated CSS for withdrawalConf */
+.withdrawalConf {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.confmessage-a {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.confmessage {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.message7 {
+  font-weight: bold;
+  font-size: 24px;
+  white-space: nowrap;
+  margin-bottom: 8px; /* Add some space at the bottom of the message */
+}
+
+.message8 {
+  font-size: 20px;
+  white-space: nowrap;
+}
+
+.confirm-button3 {
+  margin-top: 4%; /* Adjust the margin as needed */
+  width: 30%;
+  height: 50px;
+  background-color: #808080;
+  color: #ffffff;
+  border: 2px solid #808080;
+  font-size: 17px;
+  font-weight: bold;
+  cursor: pointer;
+  white-space: nowrap;
+}

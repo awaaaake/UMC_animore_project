@@ -1,0 +1,291 @@
+.detail {
+    margin-left: 5%;
+    margin-right: 5%;
+    width: 90%;
+}
+
+.detail h4 {
+    font-weight: bold;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #B33E86;
+}
+
+.detail_1 {
+    display: flex;
+    padding-top: 60px;
+    justify-content: center;
+    /* 가운데 정렬을 위해 추가 */
+}
+
+.profile2 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.admin-profile-picture {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    border: none;
+    margin-bottom: 10px;
+    border: 2px solid #B33E86;
+}
+
+.admin-profile-picture img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.admin-profile-button-container {
+    width: 100px;
+    padding: 8px 16px;
+    background-color: #B33E86;
+    color: #FFFFFF;
+    border: 2px solid #B33E86;
+    border-radius: 10px;
+    font-size: 17px;
+    font-weight: bold;
+    white-space: nowrap;
+}
+
+.admin-profile-button-container label {
+    cursor: pointer;
+}
+    
+#choose-admin-profile {
+    visibility: hidden;
+}
+
+#modal-btn{
+    width: 150px;
+    border: 2px solid #B33E86;
+    background-color: white;
+    border-radius: 10px;
+    padding: 5px;
+    font-size: 18px;
+}
+
+.form-label {
+    white-space: nowrap;
+    /*margin-right: 30px; */
+}
+#nickname {
+    border: 1px solid black;
+    width: 100%;
+    padding: 5px;
+}
+
+#one-line-intro {
+    border: 1px solid black;
+    width: 100%;
+    padding: 5px;
+}
+
+#storeNumber{
+    border: 1px solid black;
+    width: 100%;
+    padding: 5px;
+}
+
+#storeLocation{
+    border: 1px solid black;
+    width: 70%;
+    padding: 5px;
+}
+
+.address-button{
+    width: 30%;
+    min-width: 110px;
+    border: 0.5px solid #939393;
+    border-left: none;
+    background-color: #939393;
+    color: white;
+    padding: 5px;
+    font-size: 17px;
+}
+
+#introduction {
+    border: 1px solid black;
+    width: 100%;
+    padding: 5px;
+    height: 290px;
+}
+
+#introduction2 {
+    width: 150px;
+    border: 2px solid #B33E86;
+    background-color: white;
+    border-radius: 10px;
+    padding: 5px;
+    font-size: 18px;
+}
+
+.custom-modal-content {
+    width: 800px;
+    height: 400px;
+    padding: 20px;
+    background-color: white;
+    border: 3px solid #B33E86;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+    margin: auto;
+    position: relative; /* 모달 컨텐츠 위치 설정 */
+}
+
+.custom-modal-overlay {
+    background-color: rgba(69, 69, 69, 0.8); /* 어둡게 배경을 설정 */
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.tag-checkbox{
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+    padding-bottom: 10px; /* 라벨 아래쪽 여백 추가 */
+}
+
+/* Tag Table */
+.tag-table {
+    width: 100%;
+    height: 70%;
+    margin-top: 20px;
+    border:none;
+  }
+
+  .tag-table th {
+    padding: 10px;
+    white-space: nowrap;
+    border-bottom: 0.5px solid #000000; /* 각 행의 아래에만 경계선 추가 */
+  }
+
+  .tag-checkbox-cell{
+    background-color: #ffffff;
+  }
+
+  .tag-label {
+    white-space: nowrap;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: normal; 
+    font-size: 18px;
+    gap: 10px; 
+  }
+  
+#openingHours {
+    border: 1px solid black;
+    width: 30%;
+    padding: 5px;
+}
+
+#dayOff {
+    border: 1px solid black;
+    width: 100%;
+    padding: 5px;
+}
+
+#maxReservationCount {
+    border: 1px solid black;
+    width: 100%;
+    height: 40px;
+    padding: 5px;
+}
+
+.select-container {
+    width: 200px;
+    display: inline-block; /* 필요한 만큼의 너비를 가질 수 있도록 인라인 블록으로 설정 */
+    vertical-align: middle; /* 부모 요소의 세로 중앙에 위치 */
+    /* 필요한 만큼의 간격을 조절 */
+}
+
+.content-box {
+    width: 80%;
+}
+
+.nickname,
+.introduction,
+.introduction2,
+.opening-hours,
+.day-off,
+.one-line-intro,
+.max-reservation-count,
+.storeNumber,
+.storeLocation
+{
+    display: flex;
+    align-items: top;
+    gap: 60px;
+}
+
+.opening-hours2{
+    justify-content: space-between;
+    width: 80%;
+}
+
+.profile_content,
+.p-wrapper {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.addressmodal{
+    background : rgba(0,0,0,0.25);
+    position : fixed;
+    left:0;
+    top:0;
+    height:100%;
+    width:100%;
+}
+
+.preview-button{
+    padding: 10px 30px;
+    margin-top: 2%;
+    margin-right: 5px;
+    margin-bottom: 2%;
+    background-color: #ffffff;
+    color: #B33E86;
+    border: 2px solid #B33E86;
+    border-radius: 10px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    white-space: nowrap;
+  }
+
+/* 반응형 웹 스타일 */
+@media screen and (max-width: 768px) {
+    .detail_1 {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .profile2 {
+        width: 100%;
+        margin-bottom: 30px;
+    }
+
+    .admin-profile-button-container {
+        height: auto;
+        margin-top: 20px;
+    }
+
+    .profile_content {
+        margin-left: 0;
+    }
+    /* 반응형 웹에서 모달 너비 조정 */
+    .custom-modal-content,
+    .custom-modal-content2{
+        width: 95%; /* 더 작은 너비로 조정 */
+    }
+}
