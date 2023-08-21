@@ -7,8 +7,10 @@ import Radio from './radio';
 import RadioGroup from './radioGroup';
 import axios from "axios";
 import { Link } from "react-router-dom";
+// import Menubar from './menubar';
 
 function Reservation({ props }) {
+    
     const [data, setData] = useState({});
     const [showDetails, setShowDetails] = useState(false);
     const [showSelectPage, setShowSelectPage] = useState(false);
