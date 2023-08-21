@@ -466,7 +466,7 @@ const HeaderResult = () => {
                 <GoogleLoginPage/>
                 <FacebookLoginPage/>
               </ButtonContainer>
-              {isLoggedIn && <SignupPopupComponent onClose={handlePopupClose} />}
+              {/* {isLoggedIn && <SignupPopupComponent onClose={handlePopupClose} />} */}
             </PopupContainer>
           </div>
         </div>
