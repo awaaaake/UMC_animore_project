@@ -37,7 +37,7 @@ function SelectPage() {
       const combinedDateTime = `${selectedDate} ${selectedTime}:00`;
     
     setShowFinalPage(true);
-    const token = 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJjb3PthqDtgbAiLCJpZCI6NCwiZXhwIjoxNjkyNzYxMDA0LCJ1c2VybmFtZSI6Imdvb2dsZV8xMDg1OTYwMzM2NDczMDk5ODQ3ODUifQ.uBYZMFGYe2wq6w3LzO1TPdmg6evnMtEZGQHmSszo8yaqUtGeraBjeA-YQepR5pQn1Mi_IqkMWPOFGdMTI47EFA';
+    const token = '';
     axios({
         method: 'POST',
         url: '/booking/time/{reservationId}',  //예약날짜가 정해지면 reservationId가 생성되는거 아닌가?
