@@ -1,0 +1,52 @@
+/* CustomSwalStyle.css */
+.custom-container {
+    background-color: white;
+    width: 100%; 
+  }
+  .custom-content{
+    font-size: large;
+  }
+  .custom-popup {
+    border: none;
+    border-radius: 0px;
+    padding: 20px;
+    height: 300px;
+  }
+  
+  .custom-html-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+  }
+  .text{
+    padding-top: 40%;
+    font-weight: bold;
+    text-align: center;
+    font-size: 100px;
+  }
+
+  .custom-confirm-button{
+    background-color: #ffff;
+    border: 0px;
+    color: #808080;
+    font-size: 20px;
+    
+  }
+  .swal2-content {
+    position: relative;
+  }
+  
+  /* 버튼을 절대적으로 설정하고 오른쪽 상단으로 이동 */
+  .custom-confirm-button, .custom-cancel-button {
+    position: absolute;
+    top: 35px;
+    right: 35px;
+  }
+  .swal2-popup .swal2-title,
+  .swal2-popup .swal2-content {
+    font-size: 20px;
+    margin-top: 35px;
+    margin-bottom: 2px;
+    padding-bottom: 0%;
+  }

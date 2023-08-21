@@ -1,0 +1,51 @@
+.react-calendar {
+    width: 666.5px;
+    max-width: 100%;
+    height: 666.5px;
+    margin-bottom: 0%;
+    background: white;
+    border: none;
+    font-family: NanumBarunGothic;
+    line-height: 1.5em;
+    margin-left: auto;
+    margin-right: auto;
+  } 
+  
+.react-calendar__tile {
+    max-width: 100%;
+    padding: 15px 6.6667px;
+    background: none;
+    text-align: center;
+    line-height: 40px;
+  }
+  
+.react-calendar__tile--now {
+    background: #FAE5F2;
+    color: black;
+  }
+
+/* .react-calendar__tile--hasActive {
+    background: #A0136A;
+  }
+   */
+  .react-calendar__tile:enabled:hover,
+  .react-calendar__tile:enabled:focus {
+    background-color: #A0136A;
+    color: white;
+  }
+/* 날짜 선택된 타일 */
+.react-calendar__tile--active {
+  background: #A0136A;
+  color: white;
+}
+
+/*  마우스가 오늘날짜 위에 있거나 클릭한 경우 */
+.react-calendar__tile--now:enabled:hover
+.react-calendar__tile--now:enabled:focus {
+  background: #A0136A;
+}
+
+
+.react-calendar--selectRange .react-calendar__tile--hover {
+  background-color: #A0136A;
+}

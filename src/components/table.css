@@ -1,0 +1,28 @@
+.tablee{
+    width: 100%;
+    height: 331.25px;
+    /* margin-left: 13.5%;
+    margin-right: 13.5%; */
+    margin-bottom: 0%;
+    /* border-top: solid 1px black; */
+    font-family : NanumBarunGothic;
+
+}
+.table-active{
+    background-color: #A0136A;
+}
+
+.table_box{
+    border-top: solid 1px black;
+    border-bottom: solid 1px black;
+    margin-left: 13.5%;
+    margin-right: 20.5%;
+    margin-bottom: 20px;
+}
+
+.my-component.page-two {
+    .table_box{
+        margin-left: 5%;
+        margin-right:25%;
+    }
+  }

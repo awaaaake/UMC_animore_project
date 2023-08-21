@@ -1,0 +1,32 @@
+.agree {
+    border: none;
+    border-radius: 8px;
+    background-color: #A0136A;
+    color: white;
+    width: 10%;
+    height: 38px;
+    margin-right: 8px;
+    margin-left: 30.5%;
+    margin-top: 15px;
+    font-size: larger;
+    font-weight: 500;
+    font-family: NAnumBarunGothic;
+
+  }
+  .reject{
+    border: none;
+    border-radius: 8px;
+    background-color: #A0136A;
+    color: white;
+    width: 10%;
+    height: 38px;
+    margin-left: 8px;
+    /* margin-right: auto; */
+    font-size: larger;
+    font-weight: 500;
+    font-family: NAnumBarunGothic;
+  }
+
+  .btnbox{
+    margin-bottom: 50px;
+  }

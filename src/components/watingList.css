@@ -1,0 +1,38 @@
+.waiting{
+    width: 130px;
+    height: 65px;
+    background-color: #A0136A;
+    color: white;
+    text-align: center;
+    font-family: NanumBarunGothic;
+    font-size: larger;
+    padding-top: 18px;
+    margin-left: 1px;
+    margin-top: 11px;
+}
+
+.wationgBox{
+    width: 86%;
+    height: 100%;
+}
+.colPage2{
+    display: flex;
+    font-size: 23px;
+    font-weight: bold;
+    text-align: center;
+    margin-left: 0%;
+    padding-left: 0%;
+    text-align: left;
+}
+.rowline{
+    border-bottom: 1.5px solid #808080;
+    margin-left: 0%;
+    width: 86%;
+}
+
+.title1{
+    padding-left: 29px;
+}
+.title5{
+    padding-left: 18px;
+}
