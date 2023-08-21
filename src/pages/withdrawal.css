@@ -1,0 +1,66 @@
+.memberinfo {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  margin-left: 5%;
+  margin-right: 5%;
+  width: 90%;
+}
+
+.message1 {
+  margin-top: 12px;
+  font-size: 24px;
+  white-space: nowrap;
+}
+
+.message2 {
+  margin-top: 12px;
+  font-size: 18px;
+  color: #808080;
+  white-space: nowrap;
+}
+
+#password {
+  border: 1px solid #808080;
+  width: 50%;
+}
+
+.confirm-button2 {
+  margin-top: 3%;
+  margin-bottom: 5%;  
+  height: 50px;
+  width: 50%;
+  padding: 8px 16px;
+  background-color: #808080;
+  color: #ffffff;
+  border: 2px solid #808080;
+  font-size: 17px;
+  font-weight: bold;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+
+.memberinfo h2 {
+  font-weight: bold;
+}
+
+.content {
+  font-weight: bold;
+  padding-top: 30px;
+  border-top: 2px solid #000;
+  margin-top: 30px;
+}
+
+.password-options {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 25px;
+}
+
+.password-options p {
+  font-size: 16px;
+  color: #808080;
+  white-space: nowrap;
+}

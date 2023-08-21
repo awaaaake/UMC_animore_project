@@ -1,0 +1,93 @@
+.home {
+  display: flex;
+  flex-direction: column;
+  margin-left: 5%;
+  margin-right: 5%;
+  margin-bottom: 5%;
+  width: 90%;
+}
+
+.pet-profile {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 3.5px solid #B33E86;
+  padding: 2%;
+  min-height: 140px;
+}
+
+.info2 img {
+  width: 100px;
+  height: 100px;
+  border: 2px solid #B33E86;
+  border-radius: 50%;
+}
+
+.info2 {
+  display: flex;
+  align-items: center;
+}
+
+.info {
+  margin-left: 7%;
+  margin-right: 2%;
+}
+
+.info h4 {
+  font-weight: bold;
+  white-space: nowrap;
+}
+
+.info p {
+  margin-top: 12px;
+  font-size: 1rem;
+  white-space: nowrap;
+}
+
+.history p {
+  font-size: 1.25rem;
+  font-weight: bold;
+}
+
+.pet-profile button.edit-profile-button {
+  padding: 1rem 2rem;
+  background-color: #B33E86;
+  color: #FFFFFF;
+  border: 2px solid #B33E86;
+  border-radius: 10px;
+  font-size: 0.85rem;
+  font-weight: bold;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.history {
+  margin-top: 2rem;
+  overflow: hidden;
+}
+
+.image-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  grid-gap: 30px;
+  margin-top: 20px;
+}
+
+.grid-item {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  cursor: pointer;
+  height: 300px; /* 일정한 높이 설정 */
+}
+
+.grid-item img {
+  width: 100%;
+  height: 100%;
+  transition: transform 0.3s ease-in-out;
+}
+
+.grid-item:hover img {
+  transform: scale(1.05);
+}

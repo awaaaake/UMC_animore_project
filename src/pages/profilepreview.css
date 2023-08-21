@@ -1,0 +1,64 @@
+.container {
+    display: flex;
+    align-items: center; /* 세로 중앙 정렬 */
+    justify-content: center; /* 가로 중앙 정렬 */
+    height: 100%; /* 페이지 전체 높이를 사용하여 세로 중앙 정렬 */
+    background-color: white;
+    padding: 20px;
+    gap:30px
+}
+
+.comp_r_image {
+    border: 3px solid #B33E86; /* 테두리 색을 핑크로 설정 */
+    border-radius: 10px;
+    width: 300px;
+    height: 300px;
+}
+
+#comp_img {
+    width: 100%; /* 적당한 사진 크기 설정 */
+    height: 100%; /* 가로 세로 비율 유지 */
+}
+
+.info_text {
+    margin-left: 20px; /* 정보 텍스트와 이미지 간격 조절 */
+}
+
+#title {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+#locat, #ph_num, #rec_book, #tag, #explain {
+    /* white-space: nowrap; */
+    font-size: 18px;
+    font-weight: normal;
+    margin-bottom: 5px;
+}
+
+.rounded-box {
+    margin-top: 20px;
+    display: flex;
+}
+
+.tag-box {
+    margin-right: 10px;
+    width: 120px;
+}
+
+.tag-box img{
+    width:100%;
+}
+
+/* .tag-box {
+    margin-right: 10px;
+    font-size: 15px;
+}
+
+.pink-background {
+    background-color: #FAE5F2;
+    border: 1px solid black;
+    border-radius: 10px;
+    padding: 6px;
+} */

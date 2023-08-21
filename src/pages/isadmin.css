@@ -1,0 +1,40 @@
+.admininfo {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; 
+    text-align: center;
+}
+
+#admin-id,
+#admin-password {
+    border: 1px solid #808080;
+    width: 400px;
+    padding: 16px 16px;
+    display: block;
+}
+
+#admin-password {
+    border-top: 0;
+}
+
+.confirm-button9 {
+    margin-top: 8%;
+    height: 50px;
+    width: 50%;
+    padding: 8px 16px;
+    background-color: #B33E86;
+    color: #ffffff;
+    border: 2px solid #B33E86;
+    font-size: 17px;
+    font-weight: bold;
+    cursor: pointer;
+    white-space: nowrap;
+}
+
+.admin-content {
+    font-weight: bold;
+    padding-top: 30px;
+    margin-top: 30px;
+}
