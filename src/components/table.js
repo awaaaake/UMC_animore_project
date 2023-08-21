@@ -11,7 +11,7 @@ import axios from "axios";
 function Table ({ reservationId }){
     const [data, setData] = useState({});
   useEffect(() => {
-    const token = ''; // 토큰 추가
+    const token = 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJjb3PthqDtgbAiLCJpZCI6NCwiZXhwIjoxNjkyNzYxMDA0LCJ1c2VybmFtZSI6Imdvb2dsZV8xMDg1OTYwMzM2NDczMDk5ODQ3ODUifQ.uBYZMFGYe2wq6w3LzO1TPdmg6evnMtEZGQHmSszo8yaqUtGeraBjeA-YQepR5pQn1Mi_IqkMWPOFGdMTI47EFA'; // 토큰 추가
 
     axios({
       method: 'GET',

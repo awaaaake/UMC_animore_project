@@ -1,4 +1,4 @@
-import React, { useState,useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import "@popperjs/core";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import SelectPage from './selectPage';
@@ -6,6 +6,7 @@ import './Reservation.css';
 import Radio from './radio';
 import RadioGroup from './radioGroup';
 import axios from "axios";
+import { Link } from "react-router-dom";
 
 function Reservation({ props }) {
     const [data, setData] = useState({});
@@ -23,16 +24,16 @@ function Reservation({ props }) {
 
     const handleRadioChange = (name, value) => {
         setSelectedValue((prevValues) => [...prevValues, value]);
-      };
-      
-      useEffect(() => {
+    };
+
+    useEffect(() => {
         console.log('선택', selectedValue); // 선택 값이 변경될 때마다 로그 출력
-      }, [selectedValue]); // selectedValue가 변경될 때만 이펙트 실행
+    }, [selectedValue]); // selectedValue가 변경될 때만 이펙트 실행
 
     const handleNextClick = () => {
         setShowSelectPage(true);
 
-        const token = '';
+        const token = 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJjb3PthqDtgbAiLCJpZCI6MiwiZXhwIjoxNjkyNzg1ODEzLCJ1c2VybmFtZSI6Im5hdmVyX1BPbXlOMlNCSndaUmNXbXNUak05YWR6WnNrQ1Qta1Jxd0lick1STHI2LWsifQ.ndm6Q9GkjJZiwkXZae8VV5QDP7ydWp7YBN-ECVyQDWBe0OTwbecCkA11ebrqrrgEw-zqK1p0JHl16F1yz8Pu-g';
         axios({
             method: 'POST',
             url: '/booking/create',
@@ -97,23 +98,23 @@ function Reservation({ props }) {
                     <thead>
                         <tr>
                             <th scope="col" style={{ background: '#F5F5F5', width: 213 }}>반려동물 이름</th>
-                            <th style={{ width: 277,height:40.4 }}>{showDetails && (<p style={{height:10 }}>{data.result.petName}</p>)}</th>
+                            <th style={{ width: 277, height: 40.4 }}>{showDetails && (<p style={{ height: 10 }}>{data.result.petName}</p>)}</th>
                             <th scope="col" style={{ background: '#F5F5F5', width: 344 }}>이름</th>
-                            <th  style={{ width: 277 ,height:40.4 }}>{showDetails && (<p style={{height:10}}>{data.result.nickname}</p>)}</th>
+                            <th style={{ width: 277, height: 40.4 }}>{showDetails && (<p style={{ height: 10 }}>{data.result.nickname}</p>)}</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
                             <th scope="row" style={{ background: '#F5F5F5' }}>반려동물 종류</th>
-                            <td>{showDetails && (<p style={{height:10}}>{data.result.petType}</p>)}</td>
+                            <td>{showDetails && (<p style={{ height: 10 }}>{data.result.petType}</p>)}</td>
                             <td style={{ background: '#F5F5F5' }}>전화번호</td>
-                            <td>{showDetails && (<p style={{height:10}}>{data.result.telephone}</p>)}</td>
+                            <td>{showDetails && (<p style={{ height: 10 }}>{data.result.telephone}</p>)}</td>
                         </tr>
                         <tr>
                             <th scope="row" style={{ background: '#F5F5F5' }}>반려동물 성별</th>
-                            <td>{showDetails && (<p style={{height:10}}>{data.result.petGender}</p>)}</td>
+                            <td>{showDetails && (<p style={{ height: 10 }}>{data.result.petGender}</p>)}</td>
                             <td style={{ background: '#F5F5F5' }}>주소</td>
-                            <td>{showDetails && (<p style={{height:10}}>{data.result.address}</p>)}</td>
+                            <td>{showDetails && (<p style={{ height: 10 }}>{data.result.address}</p>)}</td>
                         </tr>
                         <tr>
                             <th scope="row" rowSpan="3" style={{ background: '#F5F5F5' }}>메뉴선택</th>
@@ -153,7 +154,9 @@ function Reservation({ props }) {
                 </table>
             </div>
 
-            <button className="next" onClick={handleNextClick} >다음</button>
+            <Link to="/select">
+                <button className="next" onClick={handleNextClick}>다음</button>
+            </Link>
         </div>
 
     );
