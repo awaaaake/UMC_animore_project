@@ -1,0 +1,43 @@
+ .Timebtn{
+    width: 150px;
+    height: 60px;
+    background-color: #FAE5F2;
+    border: solid 1px #B33E86;
+    border-radius: 7px;
+    margin-right: 20px;
+    margin-bottom: 10px;
+    margin-top: 15px;
+    font-size: larger;
+    font-weight: 500;
+
+}
+.TimeButtonContainer {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    /* grid-gap: 10px; */
+  }
+
+.firstRow{
+    margin-top: 20px;
+}
+
+.selected-time{
+    background-color: white;  
+}
+/* 0번 인덱스 버튼 스타일 */
+.Timebtn:first-child {
+    margin-top: 20px;
+    grid-column: 1 / 4; /* 0번 인덱스 버튼은 3개의 열을 차지 */
+  }
+  .graybtn{
+    width: 150px;
+    height: 60px;
+    background-color: gray;
+    border: solid 1px #B33E86;
+    border-radius: 7px;
+    margin-right: 20px;
+    margin-bottom: 10px;
+    margin-top: 15px;
+    font-size: larger;
+    font-weight: 500;
+  }

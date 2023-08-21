@@ -1,0 +1,58 @@
+.alert{
+    display: flex;
+
+}
+
+.complete_button{
+    display: flex;
+    margin-top: 10px;
+}
+
+.Home_Shifting{
+    background-color: #A0136A;
+    color: #ffff;
+    border: 0px;
+    border-radius: 7px;
+    margin-left: auto;
+    margin-right: 0.3px;
+    width: 22.5%;
+    height: 40px;
+}
+
+.Reservation_Shifting{
+    background-color: #ffff;
+    color: #A0136A;
+    width: 22.5%;
+    border-color: #A0136A;
+    /* outline: none;
+    box-shadow:none; */
+    border-radius: 7px;
+    margin-right: auto;
+    margin-left: 0.3px;
+    border-style: solid;
+    /* box-shadow: none; */
+}
+
+.box{
+    display: block;
+    text-align: center;
+    margin-top: 150px;
+    font-family:NanumBarunGothic ;
+}
+
+img {
+   margin-left: auto;
+}
+.alert_text{
+    margin-right: auto;
+}
+.squar{
+    border: 0.5px solid black;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 5%;
+    border-color: black;
+    border-width: 1px ;
+    width: 45%;
+    padding-top: 10px;
+}
