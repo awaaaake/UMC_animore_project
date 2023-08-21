@@ -29,22 +29,30 @@ function Address(props) {
             storeLocation:fullAddress
         }));
     }
-
+    
     useEffect(() => {
-        axios.get(`https://dapi.kakao.com/v2/local/search/address.json?query=${Address}`, {
-            headers: { Authorization: ''},
-        })
+        if (Address) {
+            axios.get(`https://dapi.kakao.com/v2/local/search/address.json?query=${Address}`, {
+                headers: { Authorization: ' ' },
+            })
             .then(res => {
-                const location =res.data.documents[0];
-                console.log(location);
-                props.setInfo(prevInfo => ({
-                    ...prevInfo,
-                    longitude: parseFloat(location.road_address.x),
-                    latitude: parseFloat(location.road_address.y)
-                }));
-                console.log(props.Info);
-        })
+                const location = res.data.documents[0];
+                if (location && location.road_address) {
+                    props.setInfo(prevInfo => ({
+                        ...prevInfo,
+                        longitude: parseFloat(location.road_address.x || 0),
+                        latitude: parseFloat(location.road_address.y || 0)
+                    }));
+                } else {
+                    console.error("Invalid location data:", location); //존재하지 않는 주소에 대해서 else문으로 에러처리를 해야 에러창이 안뜸
+                }
+            })
+            .catch(error => {
+                console.error("Error fetching address:", error);
+            });
+        }
     }, [Address]);
+    
 
     return (
         <div >
