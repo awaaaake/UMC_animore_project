@@ -24,6 +24,8 @@ import Menubar from './components/menubar';
 import Reservation from './components/Reservation';
 import Header from './pages/header_navbar';
 import Admin_Header from './pages/admin_header';
+import FixedList from './components/fixecList';
+import WaitingList from './components/waitingList';
 
 //import NaverLoginPage from './pages/login.js';
 
@@ -106,6 +108,12 @@ function App() {
           <Route path="" element={
             <Adminhome navigate={navigate}></Adminhome>
           }></Route>
+          <Route path="reservation/request" element={
+            <WaitingList navigate={navigate}></WaitingList>
+          }></Route>
+          <Route path="reservation/complete" element={
+            <FixedList navigate={navigate}></FixedList>
+          }></Route>
           <Route path="adminprofile" element={
             <Adminprofile navigate={navigate}></Adminprofile>
           }></Route>
@@ -128,7 +136,7 @@ function App() {
           <WithdrawalConf navigate={navigate}></WithdrawalConf>
         }></Route>
 
-        <Route path="/reservation" element={<Reservation />} />\
+        <Route path="/reservation" element={<Reservation />} />
         <Route path="/select" element={<SelectPage />} />
         <Route path="/final" element={<FinalPage />} />
         <Route path="/reservelist" element={<ReserveListTotal />} />
