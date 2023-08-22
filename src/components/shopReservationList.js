@@ -7,18 +7,39 @@ import Table from './table';
 import swal from 'sweetalert2';
 import './CustomSwalStyle.css';
 import './shopReservationList.css'
+import axios from "axios";
 
 function ShopReservationList(props) {
   const [showDetails, setShowDetails] = useState(false);
   const [rejectionReason, setRejectionReason] = useState("");
   const [selectedDropdownValue, setSelectedDropdownValue] = useState("");
   const [inputReason, setInputReason] = useState("");
+  const [agreedata, setAgreeData] = useState({});
+  const [rejectdata, setRejectData] = useState({});
 
   const handleDetailsClick = () => {
     setShowDetails(prevShowDetails => !prevShowDetails);
   };
-
+  const reservationId = props.reservationId;
   const handleApprovalClick = () => {
+    const token = '';
+    axios({
+        method: 'GET',
+        url: `/manage/bookings/confirm/${reservationId}`,
+        headers: {
+            Authorization: `Bearer ${token}`, // Bearer 토큰을 "Authorization" 헤더에 추가
+            ContentType: 'application/json' 
+        },
+    
+    })
+        .then(response => {
+          setAgreeData(response.agreedata);
+            console.log('성공:', response.agreedata);
+
+        })
+        .catch(error => {
+            console.error('에러 발생:', error.response);
+        });
     swal.fire({
       title: " ",
       text: "예약승인이 완료되었습니다.",
@@ -40,8 +61,8 @@ function ShopReservationList(props) {
       title: "반려사유를 선택해주세요.",
       input: 'select',
       inputOptions: {
-        option1: '임시휴무일로 인해 취소합니다.',
-        option2: '예약 중복으로 인해 취소합니다.',
+        임시휴무일: '임시휴무일로 인해 취소합니다.',
+        중복예약: '예약 중복으로 인해 취소합니다.',
         직접입력: '직접입력',
       },
       inputPlaceholder: '-- 선택하세요 --',
@@ -69,15 +90,16 @@ function ShopReservationList(props) {
             if (inputResult.isConfirmed) {
               const inputText = inputResult.value;
               setInputReason(inputText);
-
               // 반려 처리 및 사유 출력
               console.log('반려 사유:', inputText);
             }
           });
         } else {
-          // 선택된 사유로 반려 처리
+          // 선택된 사유로 반려 처리    
           console.log('반려 사유:', selectedValue);
         }
+      
+
       }
 
     });
@@ -100,8 +122,8 @@ function ShopReservationList(props) {
       </div>
       {showDetails && (
         <div>
-          <Table  page={2}/>
-          <div className="btnbox">
+          <Table  page={2}  reservationId={props.reservationId}/>
+          <div className={`btnbox ${props.page === 3 ? 'fixed_page' : ''}`}>
             <button className="agree" onClick={handleApprovalClick}>
               승인
             </button>
