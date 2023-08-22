@@ -34,7 +34,7 @@ class FinalPage extends React.Component{
                     <h3>업체에서 확인 후 예약확정할 예정입니다.</h3>
                 </div>
                 <div className="complete_button">
-                  <Link to='/Home'> 
+                  <Link to=''> 
                     <button className="Home_Shifting">홈 화면으로 가기</button>
                   </Link>
                   <Link to='/reservelist'>
