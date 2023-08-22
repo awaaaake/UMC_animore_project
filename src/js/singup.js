@@ -50,7 +50,7 @@ const SecondTextContainer = styled.div`
 const SecondText = styled.div`
   font-family: NanumBarunGothic;
   font-size: 18px;
-  line-height: 40px;
+  line-height: 30px;
   display: flex;
   align-items: left;
   padding-left: 15px;
@@ -62,7 +62,7 @@ const SecondText = styled.div`
 const SecondTextOption = styled.div`
   font-family: NanumBarunGothic;
   font-size: 18px;
-  line-height: 40px;
+  line-height: 30px;
   display: flex;
   align-items: left;
   padding-left: 15px;
@@ -100,6 +100,7 @@ const HorizontalDivider = () => {
 const Input = styled.input`
   /* input 요소의 스타일을 지정합니다. */
   width: 60%;
+  height: 30px;
   padding: 10px 15px;
   font-size: 18px;
   border: 0px;
@@ -122,7 +123,7 @@ const Input = styled.input`
 const Select = styled.select`
   position: absolute;
   left: 35%;
-  height: 35px;
+  height: 25px;
   width: 150px;
   font-size: 20px;
   /* font-weight: bold; */
@@ -163,6 +164,7 @@ const CheckBoxInput = styled.input.attrs({ type: 'checkbox' })`
   width: 20px;
   height: 30px;
   margin-left: 30px;
+  margin-bottom: 2px;
   
 
   &:checked {
@@ -185,7 +187,7 @@ const ButtonContainer = styled.div`
   width: 100%;
   position: absolute;
   justify-content: center;
-  bottom: -13%;
+  bottom: 1%;
 `;
 
 const NextButton = styled.button`
@@ -263,7 +265,7 @@ const SignUp = () => {
 
 
     // const token = useSelector(state => state.token);
-    const token = 'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJjb3PthqDtgbAiLCJpZCI6NCwiZXhwIjoxNjkyNzYxMDA0LCJ1c2VybmFtZSI6Imdvb2dsZV8xMDg1OTYwMzM2NDczMDk5ODQ3ODUifQ.uBYZMFGYe2wq6w3LzO1TPdmg6evnMtEZGQHmSszo8yaqUtGeraBjeA-YQepR5pQn1Mi_IqkMWPOFGdMTI47EFA'
+    const token = ''
 
     fetch('/signup', {
       method: 'POST',

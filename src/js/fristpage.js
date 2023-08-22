@@ -1,9 +1,25 @@
 import React, { useState, useEffect } from 'react';
 import PropTypes from "prop-types";
-import styled  from 'styled-components';
+import styled, { createGlobalStyle } from 'styled-components';
 
 import Search from './search';
-import HeaderResult from './header';
+import { useNavigate } from 'react-router-dom';
+
+// 글로벌 폰트 스타일 정의
+const GlobalStyle = createGlobalStyle`
+  @font-face {
+    font-family: 'NanumBarunGothic';
+    src: url('../fonts/NanumBarunGothic.eot');
+    src: url('../fonts/NanumBarunGothic.eot') format('embedded-opentype'),
+      url('../fonts/NanumBarunGothic.woff') format('woff');
+  }
+  
+  body {
+    font-family: 'NanumBarunGothic', sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+`;
 
 
 
@@ -56,26 +72,22 @@ const FirstextImg = styled.img`
 `;
 
 // 중앙 Animore 글자 
-const Maintext = styled.div`
-  font-family: NanumBarunGothic;
-  font-size: 82px;
-  font-weight: 1000;
-  line-height: 80px;
-  letter-spacing: 0em;
+const Maintext = styled.img`
   text-align: center;
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  letter-spacing: 1px; /* 글자 간격을 좁게 설정 */
+  width: 370px;
 `;
-
 
 
 
 const FirstPage = () => {
 
   return (
+    <>
+    <GlobalStyle />
     <Background >
       {/* header 추가 */}
       {/* <HeaderResult/> */}
@@ -86,11 +98,12 @@ const FirstPage = () => {
       </FirstTextContainer>
       
       {/* Animore */}
-      <Maintext>Animore</Maintext>
+      <Maintext src="https://cloud.adofai.gg/apps/files_sharing/publicpreview/cj4GTz3xLmExWjG?file=/10.png&fileId=7306&x=1920&y=1080&a=true"></Maintext>
 
       {/* 검색 바 추가 */}
       <Search/> 
     </Background>
+    </>
   );
 };
 

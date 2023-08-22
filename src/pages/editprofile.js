@@ -85,7 +85,7 @@ function Editprofile(props) {
     
 
     return (
-        <div className='detail'>
+        <div className='detail-profile'>
             <h4>프로필 수정</h4>
             <div className='detail_1'>
                 <div className='profile'>

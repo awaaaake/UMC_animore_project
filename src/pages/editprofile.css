@@ -1,10 +1,10 @@
-.detail {
+.detail-profile {
   margin-left: 5%;
   margin-right: 5%;
   width: 90%;
 }
 
-.detail h4 {
+.detail-profile h4 {
   font-weight: bold;
   padding-bottom: 10px;
   border-bottom: 2px solid #B33E86;

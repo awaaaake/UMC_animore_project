@@ -38,7 +38,7 @@ function Mypagemenu(props) {
       <ul>
         <h4>MY PAGE</h4>
         <li
-          className={props.location.pathname  === '/mypage' ? 'active' : ''}
+          className={props.location.pathname  === '/mypage' || props.location.pathname === '/mypage/profile' ? 'active' : ''}
           onClick={() => props.handleItemClick('/mypage')}
         >
           홈
@@ -56,7 +56,7 @@ function Mypagemenu(props) {
           공지사항
         </li>
         <li
-          className={props.location.pathname === '/mypage/memberInfo' ? 'active' : ''}
+          className={props.location.pathname === '/mypage/memberInfo' || props.location.pathname ==='/mypage/userinfo-reset' ? 'active' : ''}
           onClick={() => props.handleItemClick('/mypage/memberInfo')}
         >
           회원정보 수정

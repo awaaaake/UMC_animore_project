@@ -7,6 +7,20 @@ import HeaderResult from './header';
 import ThirdPage from './thirdpage';
 import Footer from './footer';
 import MainHeader from './main_navbar';
+import { createGlobalStyle } from 'styled-components';
+
+const GlobalStyle = createGlobalStyle`
+  @font-face {
+    font-family: 'NanumBarunGothic';
+    src: url('../fonts/NanumBarunGothic.eot');
+    src: url('../fonts/NanumBarunGothic.eot') format('embedded-opentype'),
+      url('../fonts/NanumBarunGothic.woff') format('woff');
+  }
+
+  * {
+    font-family: 'NanumBarunGothic', san-serif;
+  }
+`;
 
 function MainPage() {
   const navigate = useNavigate();
@@ -21,6 +35,7 @@ function MainPage() {
 
   return (
     <div className="MainPage">
+      <GlobalStyle />
       {/* 홈, 미용실, 예약내역, 마이페이지, 로그아웃 */}
       <MainHeader location={location} navigate={navigate} activeItem={activeItem} handleItemClick={handleItemClick}> </MainHeader>
 

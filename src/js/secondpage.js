@@ -1,4 +1,3 @@
-import React, { useRef } from 'react';
 import { styled } from 'styled-components';
 
 import AdBanner from './adbanner'; 
@@ -54,6 +53,7 @@ import MostGallery from './mostgallery';
 
 
 
+
 const SecondPage = () => {
   return (
     <Background> 
@@ -78,7 +78,6 @@ const SecondPage = () => {
 
       {/* 인기 순위 */}
       <MostGallery/>
-
 
     </Background>
   );

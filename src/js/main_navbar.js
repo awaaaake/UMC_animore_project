@@ -11,7 +11,7 @@ const Headerstyle = styled.header`
   margin: 0px;
   top: 10px;
   right: 15px;
-  width: 95%;
+  width: 100%;
   height: 7.5%;
   // 투명하게 설정
   background-color: transparent;
@@ -115,7 +115,7 @@ const TopImage = styled.img`
 const Message = styled.p`
   text-align: center;
   position: absolute;
-  top: 41%;
+  top: 46%;
   font-family: NanumBarunGothic;
   font-size: 18px;
 
@@ -196,7 +196,7 @@ const PopupContainer = styled.div`
 const Text = styled.p`
   text-align: center;
   position: absolute;
-  top: 43%;
+  top: 48%;
 
   font-family: NanumBarunGothic;
   font-size: 18px;
@@ -215,6 +215,7 @@ const ButtonContainer = styled.div`
   width: 60%;
   position: absolute;
   top: 65%;
+  margin-right:15px;
 `;
 
 const CloseButton = styled.button`
@@ -281,8 +282,8 @@ function MainHeader(props) {
     // URL에서 토큰 값을 추출하여 처리하는 함수
     const handleTokenFromURL = async () => {
       const url = new URL(window.location.href);
-      // const token = url.searchParams.get('token');
-      const token = 'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJjb3PthqDtgbAiLCJpZCI6NCwiZXhwIjoxNjkyNzYxMDA0LCJ1c2VybmFtZSI6Imdvb2dsZV8xMDg1OTYwMzM2NDczMDk5ODQ3ODUifQ.uBYZMFGYe2wq6w3LzO1TPdmg6evnMtEZGQHmSszo8yaqUtGeraBjeA-YQepR5pQn1Mi_IqkMWPOFGdMTI47EFA' // 토큰 값을 설정하세요.
+      const token = url.searchParams.get('token');
+      // const token = '' // 토큰 값을 설정하세요.
 
       if (token) {
         try {
