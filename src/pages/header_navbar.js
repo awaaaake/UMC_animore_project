@@ -4,7 +4,7 @@ function Header(props) {
     return (
       <header>
         <div className='logo'>
-          <img src={Animore_logo} onClick={() => props.navigate('/')} alt="로고"></img>
+          {props.location.pathname === '/' ? null : <img src={Animore_logo} onClick={() => props.navigate('/')} alt="로고"></img>}
         </div>
         <div className="Navbar">
           <ul>
