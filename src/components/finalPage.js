@@ -25,7 +25,7 @@ class FinalPage extends React.Component{
             <div className="box"> 
                 <h2>예약요청이 완료되었습니다!</h2>
                 
-                <div className="alert">
+                <div className="alertMassege">
                     <img src="img/10.png" alt="animore" width="130px" height="32px"/>
                     <h3 className="alert_text">를 이용해주셔서 감사합니다.</h3>  
                 </div>

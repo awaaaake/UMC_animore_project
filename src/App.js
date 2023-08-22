@@ -39,7 +39,6 @@ function App() {
 
   return (
     <div className="App">
-      <Menubar />
       <Routes>
 
         <Route path="/" element={<MainPage />} />

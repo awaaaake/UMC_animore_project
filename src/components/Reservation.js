@@ -1,13 +1,12 @@
 import React, { useState, useEffect } from "react";
-import "@popperjs/core";
-import 'bootstrap/dist/css/bootstrap.min.css';
+// import "@popperjs/core";
+// import 'bootstrap/dist/css/bootstrap.min.css';
 import SelectPage from './selectPage';
 import './Reservation.css';
 import Radio from './radio';
 import RadioGroup from './radioGroup';
 import axios from "axios";
 import { Link } from "react-router-dom";
-// import Menubar from './menubar';
 
 function Reservation({ props }) {
     
@@ -35,7 +34,7 @@ function Reservation({ props }) {
     const handleNextClick = () => {
         setShowSelectPage(true);
 
-        const token = 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJjb3PthqDtgbAiLCJpZCI6MiwiZXhwIjoxNjkyNzg1ODEzLCJ1c2VybmFtZSI6Im5hdmVyX1BPbXlOMlNCSndaUmNXbXNUak05YWR6WnNrQ1Qta1Jxd0lick1STHI2LWsifQ.ndm6Q9GkjJZiwkXZae8VV5QDP7ydWp7YBN-ECVyQDWBe0OTwbecCkA11ebrqrrgEw-zqK1p0JHl16F1yz8Pu-g';
+        const token = '';
         axios({
             method: 'POST',
             url: '/booking/create',
@@ -92,14 +91,14 @@ function Reservation({ props }) {
 
             <div className="ment">
                 <p className="detail">예약상세</p>
-                <a className="save" href="#" onClick={handleShwoDetails}>저장내용불러오기</a>
+                <a className="save" href="" onClick={handleShwoDetails}>저장내용불러오기</a>
             </div>
 
             <div className="table_box">
                 <table className="table tablee"  >
                     <thead>
-                        <tr>
-                            <th scope="col" style={{ background: '#F5F5F5', width: 213 }}>반려동물 이름</th>
+                        <tr >
+                            <th scope="col" style={{ background: '#F5F5F5', width: 213}}>반려동물 이름</th>
                             <th style={{ width: 277, height: 40.4 }}>{showDetails && (<p style={{ height: 10 }}>{data.result.petName}</p>)}</th>
                             <th scope="col" style={{ background: '#F5F5F5', width: 344 }}>이름</th>
                             <th style={{ width: 277, height: 40.4 }}>{showDetails && (<p style={{ height: 10 }}>{data.result.nickname}</p>)}</th>
@@ -144,7 +143,7 @@ function Reservation({ props }) {
                         </tr>
 
                         <tr>
-                            <td colSpan="3">
+                            <td colSpan="3"  style={{ borderBottom: '0.1'}}>
                                 <RadioGroup onChange={handleRadioChange}>
                                     <Radio name="bathStyle" value="BATH" >목욕</Radio>
                                     <Radio name="bathStyle" value="HEALING">힐링스파</Radio>
