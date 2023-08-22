@@ -83,6 +83,7 @@ header {
 }
 
 .menu_aw ul li {
+  font-size: 17px!important;
   font-weight: bold;
   white-space: nowrap;
   cursor: pointer;
