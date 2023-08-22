@@ -6,7 +6,7 @@ import axios from 'axios';
 function Memberinfo(props) {
     let [password, setPassword] = useState('');
 
-    const accessToken = '';
+    const accessToken = 'Bearer ';
     // access token을 인증 헤더에 설정합니다.
     axios.defaults.headers.common["Authorization"] = accessToken;
 

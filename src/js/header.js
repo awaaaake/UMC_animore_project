@@ -414,9 +414,9 @@ const HeaderResult = () => {
 
           <SubMenuLi>
             <SubMenuLink
-              href="/hairshop"
-              isActive={activeLink === "/hairshop"}
-              onClick={(event) => handleLinkClick(event, "/hairshop")}
+              href="/shop"
+              isActive={activeLink === "/shop"}
+              onClick={(event) => handleLinkClick(event, "/shop")}
             >
               미용실
             </SubMenuLink>
@@ -424,8 +424,8 @@ const HeaderResult = () => {
 
           <SubMenuLi>
             <SubMenuLink
-              href="/reservationdetails"
-              isActive={activeLink === "/reservationdetails"}
+              href="/reservelist"
+              isActive={activeLink === "/reservelist"}
               onClick={(event) => handleLinkClick(event, "/reservationdetails")}
             >
               예약내역

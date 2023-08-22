@@ -38,17 +38,19 @@
 }
 
 .rounded-box {
-    margin-top: 20px;
-    display: flex;
+    display: flex; 
+    flex-wrap: wrap; 
+    align-items: center; 
+    gap:10px
 }
 
 .tag-box {
-    margin-right: 10px;
     width: 120px;
 }
 
-.tag-box img{
-    width:100%;
+.tag-box img {
+    max-width: 100%; 
+    height: auto; 
 }
 
 /* .tag-box {

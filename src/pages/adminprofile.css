@@ -78,7 +78,7 @@
     padding: 5px;
 }
 
-#one-line-intro {
+#storeSignificant {
     border: 1px solid black;
     width: 100%;
     padding: 5px;
@@ -218,7 +218,7 @@
 .introduction2,
 .opening-hours,
 .day-off,
-.one-line-intro,
+.storeSignificant,
 .max-reservation-count,
 .storeNumber,
 .storeLocation
