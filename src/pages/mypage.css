@@ -68,21 +68,21 @@ header {
   width: 100%;
 }
 
-.menu {
+.menu_aw {
   width: 300px;
   height: 400px;
 }
 
-.menu h4 {
+.menu_aw h4 {
   white-space: nowrap;
   font-weight: bold;
 }
 
-.menu ul {
+.menu_aw ul {
   list-style-type: none;
 }
 
-.menu ul li {
+.menu_aw ul li {
   font-weight: bold;
   white-space: nowrap;
   cursor: pointer;
@@ -91,16 +91,16 @@ header {
   color: #808080;
 }
 
-.menu li:hover,
-.menu li:focus {
+.menu_aw li:hover,
+.menu_aw li:focus {
   color: black;
 }
 
-.menu ul li.active {
+.menu_aw ul li.active {
   color: black;
 }
 
-.menu h4 {
+.menu_aw h4 {
   padding-bottom: 10px;
   border-bottom: 2px solid #808080;
 }
@@ -163,17 +163,17 @@ header {
     flex-direction: column;
   }
 
-  .menu {
+  .menu_aw {
     width: 95.5%;
     height: auto;
     padding: 10px;
   }
 
-  .menu h4 {
+  .menu_aw h4 {
     text-align: center;
   }
 
-  .menu ul li {
+  .menu_aw ul li {
     font-weight: bold;
     white-space: nowrap;
     cursor: pointer;

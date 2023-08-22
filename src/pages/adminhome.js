@@ -69,7 +69,7 @@ function Adminhome(props) {
                         {reservationsForDate.slice(0, isExpanded ? reservationsForDate.length : 3).map((reservation, index) => (
                             <div key={index}>
                                 {reservation.confirmed === false && (
-                                    <div className="status-box2 request">
+                                    <div className="status-box2 request_aw">
                                         <span>{reservation.time.substring(6)} {reservation.petName}</span> {/* Extract HH:mm from "MM-DD HH:mm" */}
                                     </div>
                                 )}
@@ -151,7 +151,7 @@ function Adminhome(props) {
                     </div>
                     <div className="reservation-status">
                         <div className="status">
-                            <div className="status-box request"></div>
+                            <div className="status-box request_aw"></div>
                             <span>예약요청</span>
                         </div>
                         <div className="status">

@@ -18,10 +18,9 @@ function Mypage() {
 
   return (
     <div className="Mypage">
-      {/*location 객체는 pathname 속성을 포함하고 있으므로, 
-      location.pathname을 사용하여 경로를 비교해야 합니다. */
-        location.pathname === '/mypage/withdrawalConf' ? null : <Header location={location} navigate={navigate} activeItem={activeItem} handleItemClick={handleItemClick}></Header>
-      }
+      {/* location 객체는 pathname 속성을 포함하고 있으므로, 
+      location.pathname을 사용하여 경로를 비교해야 합니다.  */}
+      {/* {location.pathname === '/mypage/withdrawalConf' ? null : <Header location={location} navigate={navigate} activeItem={activeItem} handleItemClick={handleItemClick}></Header>} */}
       <section className='mypage'>
         {
           location.pathname === '/mypage/withdrawalConf' ? null : <Mypagemenu location={location} navigate={navigate} activeItem={activeItem} handleItemClick={handleItemClick}></Mypagemenu>
@@ -35,7 +34,7 @@ function Mypage() {
 
 function Mypagemenu(props) {
   return (
-    <div className='menu'>
+    <div className='menu_aw'>
       <ul>
         <h4>MY PAGE</h4>
         <li
