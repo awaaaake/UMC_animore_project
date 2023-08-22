@@ -39,9 +39,7 @@ function App() {
 
   return (
     <div className="App">
-      <Menubar />
       <Routes>
-
         <Route path="/" element={<MainPage />} />
         <Route path="/main/:oauth" element={<Main />} />
         <Route path="/userToken" element={<UserToken />} />
@@ -53,8 +51,6 @@ function App() {
         {/* <Route path="/hairshop" element={<SingUpNext />} /> */}
         {/* 예약내역 */}
         {/* <Route path="/reservationdetails" element={<SingUpNext />} /> */}
-
-
 
 
         {/* <Route path="/login" element={
