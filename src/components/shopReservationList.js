@@ -123,7 +123,7 @@ function ShopReservationList(props) {
       {showDetails && (
         <div>
           <Table  page={2}  reservationId={props.reservationId}/>
-          <div className={`btnbox ${props.page === '3' ? 'fixed_page' : ''}`}>
+          <div className={`btnbox ${props.page === 3 ? 'fixed_page' : ''}`}>
             <button className="agree" onClick={handleApprovalClick}>
               승인
             </button>

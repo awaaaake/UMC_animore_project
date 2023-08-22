@@ -20,7 +20,6 @@ import ManageSys from './components/manageSys';
 import SelectPage from './components/selectPage';
 import ReserveListTotal from './components/reserveListTotal';
 import FinalPage from './components/finalPage';
-import Menubar from './components/menubar';
 import Reservation from './components/Reservation';
 import Header from './pages/header_navbar';
 import Admin_Header from './pages/admin_header';
