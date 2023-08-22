@@ -5,11 +5,11 @@ const BannerContainer= styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+  position: absolute;
   background-color: #f1f1f1;
   height: 120px;
   width: 70%;
-  margin: 0;
-  padding: 0;
+  top: 143%;
 `;
 
 const BannerImg= styled.img`
@@ -41,9 +41,10 @@ const AdBanner = () => {
   return (
     <BannerContainer>
       {/* ads변수를 이용해 다른 광고(이미지) 표시 */}
-      <BannerImg src={`src/img/ad/${ads[currentAdIndex]}`} alt="Ad" />
+      {/* <BannerImg src={`src/img/ad/${ads[currentAdIndex]}`} alt="Ad" /> */}
     </BannerContainer>
   );
 };
+
 
 export default AdBanner;

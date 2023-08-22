@@ -84,7 +84,8 @@ const MostGallery = () => {
         style={{ display: index >= startIndex && index < endIndex ? 'block' : 'none' }}
         onClick={() => handleDivClick(index)}
       >
-        <div>{`인기 순위:${index + 1}`}</div> {/* 각 div에 특징 추가 */}
+        {/* <div>{`인기 순위:${index + 1}`} </div> 각 div에 특징 추가 */}
+        <div>{}</div> 
       </Div>
     ));
   };

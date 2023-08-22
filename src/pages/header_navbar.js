@@ -269,8 +269,8 @@ function Header(props) {
     // URL에서 토큰 값을 추출하여 처리하는 함수
     const handleTokenFromURL = async () => {
       const url = new URL(window.location.href);
-      // const token = url.searchParams.get('token');
-      const token = 'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJjb3PthqDtgbAiLCJpZCI6NCwiZXhwIjoxNjkyNzYxMDA0LCJ1c2VybmFtZSI6Imdvb2dsZV8xMDg1OTYwMzM2NDczMDk5ODQ3ODUifQ.uBYZMFGYe2wq6w3LzO1TPdmg6evnMtEZGQHmSszo8yaqUtGeraBjeA-YQepR5pQn1Mi_IqkMWPOFGdMTI47EFA' // 토큰 값을 설정하세요.
+      const token = url.searchParams.get('token');
+      // const token = '' // 토큰 값을 설정하세요.
 
       if (token) {
         try {
