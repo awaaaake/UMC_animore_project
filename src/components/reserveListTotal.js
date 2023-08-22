@@ -13,7 +13,7 @@ function ReserveListTotal() {
   useEffect(() => {
     if (!fetchedData) {
       // fetchedData 상태가 false일 때만 요청 보냄 (새로고침 할때)
-      const token = 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJjb3PthqDtgbAiLCJpZCI6NCwiZXhwIjoxNjkyNzYxMDA0LCJ1c2VybmFtZSI6Imdvb2dsZV8xMDg1OTYwMzM2NDczMDk5ODQ3ODUifQ.uBYZMFGYe2wq6w3LzO1TPdmg6evnMtEZGQHmSszo8yaqUtGeraBjeA-YQepR5pQn1Mi_IqkMWPOFGdMTI47EFA'; // 토큰 추가
+      const token = ''; // 토큰 추가
 
       axios({
         method: 'GET',
