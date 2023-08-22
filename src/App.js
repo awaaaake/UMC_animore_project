@@ -21,7 +21,8 @@ import SelectPage from './components/selectPage';
 import ReserveListTotal from './components/reserveListTotal';
 import FinalPage from './components/finalPage';
 import Menubar from './components/menubar';
-import Reservation from './components/Reservation'
+import Reservation from './components/Reservation';
+import Header from './pages/header_navbar';
 
 //import NaverLoginPage from './pages/login.js';
 
@@ -36,9 +37,21 @@ import UserToken from './js/userToken';
 
 function App() {
   const navigate = useNavigate();
+  const location = useLocation();
+
+  const [activeItem, setActiveItem] = useState('/');
+
+  const handleItemClick = (path) => {
+    setActiveItem(path);
+    navigate(path);
+  };
+
 
   return (
     <div className="App">
+      {
+        location.pathname === '/mypage/withdrawalConf' ? null : <Header location={location} navigate={navigate} activeItem={activeItem} handleItemClick={handleItemClick}></Header>
+      }
       <Routes>
         <Route path="/" element={<MainPage />} />
         <Route path="/main/:oauth" element={<Main />} />
@@ -109,7 +122,7 @@ function App() {
         <Route path="withdrawalConf" element={
           <WithdrawalConf navigate={navigate}></WithdrawalConf>
         }></Route>
-        
+
         <Route path="/reservation" element={<Reservation />} />\
         <Route path="/select" element={<SelectPage />} />
         <Route path="/final" element={<FinalPage />} />
@@ -118,7 +131,7 @@ function App() {
 
       </Routes>
 
-      
+
 
     </div>
   );
