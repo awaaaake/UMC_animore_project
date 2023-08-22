@@ -42,7 +42,7 @@ function Withdrawal(props) {
                 <form onSubmit={handlePasswordCheck}>
                     <p className="message1">비밀번호 재확인</p>
                     <p className="message2">안전한 탈퇴 진행을 위해 비밀번호를 한 번 더 입력해주세요.</p>
-                    <input type="password" id="password" name="password" required placeholder="비밀번호 입력"
+                    <input type="password" id="password_aw" name="password" required placeholder=" 비밀번호 입력"
                         onChange={(e) => { setPassword(e.target.value) }}
                     />
                     <div>

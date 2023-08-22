@@ -6,22 +6,6 @@
     width: 90%;
 }
 
-.info {
-    margin-left: 3%;
-    margin-right: 2%;
-}
-
-.info h4 {
-    font-weight: bold;
-    white-space: nowrap;
-}
-
-.info p {
-    margin-top: 12px;
-    font-size: 1rem;
-    white-space: nowrap;
-}
-
 /* 달력 */
 
 .adminhome * {
