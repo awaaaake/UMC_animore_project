@@ -84,6 +84,7 @@ header {
 
 .menu_aw ul li {
   font-weight: bold;
+  font-size: 17px!important;
   white-space: nowrap;
   cursor: pointer;
   padding: 10px 0;
