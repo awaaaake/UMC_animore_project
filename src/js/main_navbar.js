@@ -5,6 +5,18 @@ import styled from 'styled-components';
 
 
 
+const Headerstyle = styled.header`
+  // 스크롤 해도 header는 같이 따라오게 하기 위해 fixed로 설정
+  position: absolute;
+  margin: 0px;
+  top: 10px;
+  right: 15px;
+  width: 95%;
+  height: 7.5%;
+  // 투명하게 설정
+  background-color: transparent;
+  z-index: 9;
+`;
 
 const ImageButton = styled.img`
   width: 50px;
@@ -258,7 +270,7 @@ const SignupPopupComponent = ({ onClose }) => {
 
 
 
-function Header(props) {
+function MainHeader(props) {
 
   const [isPopupOpen, setPopupOpen] = useState(false);
   const [isLoggedIn, setLoggedIn] = useState(false);
@@ -328,7 +340,7 @@ function Header(props) {
 
 
     return (
-      <header>
+      <Headerstyle>
         <div className='logo'>
           {props.location.pathname === '/' ? null : <img src={Animore_logo} onClick={() => props.navigate('/')} alt="로고"></img>}
         </div>
@@ -346,7 +358,7 @@ function Header(props) {
             <li 
             className={props.location.pathname.startsWith('/mypage') ? 'active' : ''}
             onClick={() => props.handleItemClick('/mypage')}>마이페이지</li>
-            <li className={props.location.pathname === '/' ? 'active' : ''}>
+            <li className={props.location.pathname === '/login' ? 'active' : ''}>
             {isLoggedIn ? (
               <text onClick={handleLogoutClick}>로그아웃</text>
             ) : (
@@ -378,8 +390,8 @@ function Header(props) {
 
 
         </div>
-      </header>
+      </Headerstyle>
     )
   }
 
-  export default Header;
+  export default MainHeader;

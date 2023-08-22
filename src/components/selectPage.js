@@ -1,5 +1,5 @@
-// 예약상세3
-import React,{useState} from 'react';
+// // 예약상세3
+import React,{useState,useEffect } from 'react';
 import FinalPage from './finalPage';
 import DateSelct from './dateSelect'
 import { faCalendarDays  } from "@fortawesome/free-solid-svg-icons";
@@ -10,12 +10,17 @@ import TimeSelect from './timeSelect';
 import './timeSelect.css'
 import axios from "axios";
 import { Link } from "react-router-dom";
+import { useLocation } from 'react-router-dom';
 
-function SelectPage() {
+
+function SelectPage(props) {
   const [selectedDate, setSelectedDate] = useState(""); // 선택한 날짜를 상태로 저장
   const [showFinalPage, setShowFinalPage] = useState(false);
   const [data, setData] = useState({});
   const [isSelected, setIsSelected] = useState(Array(10).fill(false)); // 초기값은 선택되지 않음으로 설정
+  const location = useLocation();
+  const reservationId = location.state;
+
 
   const handleDateSelect = (date) => {
     setSelectedDate(date); // 하위 컴포넌트로부터 받은 날짜 값을 상태로 저장
@@ -37,10 +42,11 @@ function SelectPage() {
       const combinedDateTime = `${selectedDate} ${selectedTime}:00`;
     
     setShowFinalPage(true);
+    if (reservationId) {
     const token = '';
     axios({
         method: 'POST',
-        url: '/booking/time/{reservationId}',  //예약날짜가 정해지면 reservationId가 생성되는거 아닌가?
+        url: `/booking/time/${reservationId}`,
         headers: {
             Authorization: `Bearer ${token}`, // Bearer 토큰을 "Authorization" 헤더에 추가
             ContentType: 'application/json' 
@@ -48,7 +54,6 @@ function SelectPage() {
         data: {
           startTime : combinedDateTime
         }
-
     
     })
         .then(response => {
@@ -61,10 +66,9 @@ function SelectPage() {
         });
       }
   };
-
+  }
   if (showFinalPage) {
     return <FinalPage />;
-    
   }
   
 

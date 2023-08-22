@@ -19,7 +19,7 @@ const SearchInput = styled.input`
   border-color: #000000;
   color: #d0caca;
   width: 550px;
-  height: 30px;
+  height: 50px;
   font-size: 20px;
 `;
 

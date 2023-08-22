@@ -34,7 +34,7 @@ const Text =  styled.div`
   white-space: nowrap; /* 텍스트가 한 줄에 표시되도록 설정 */
   display: flex;
   align-items: center;
-  letter-spacing: -2px; /* 글자 간격을 좁게 설정 */
+  letter-spacing: 1cqh; /* 글자 간격을 좁게 설정 */
   color: #B33E86;
 `;
 

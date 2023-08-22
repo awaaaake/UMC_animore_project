@@ -7,14 +7,6 @@ import './watingList.css';
 import "@popperjs/core";
 import ShopReservationList from "./shopReservationList"; 
 
-
-const fixedlist = {
-  'date':'07.04. 13:00',
-  'shop':'봉봉살롱',
-  'address':'부산광역시',
-  'telephone':'010-0000-0000'
-}
-
 function FixedList() {
   const [showDetails, setShowDetails] = useState(false);
   const [data, setData] = useState([]);
@@ -62,11 +54,12 @@ function FixedList() {
           {data.map((item, index) => (
           <ShopReservationList
             key={index}
-            page={2} 
+            page={3} 
             startTime={item.startTime}
             petName={item.petName}
             username={item.username}
             phone={item.phone}
+            reservationId ={item.reservationId}
           />
         ))}
           </div> 
