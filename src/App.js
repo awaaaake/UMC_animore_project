@@ -21,7 +21,8 @@ import SelectPage from './components/selectPage';
 import ReserveListTotal from './components/reserveListTotal';
 import FinalPage from './components/finalPage';
 import Menubar from './components/menubar';
-import Reservation from './components/Reservation'
+import Reservation from './components/Reservation';
+import Header from './pages/header_navbar';
 
 //import NaverLoginPage from './pages/login.js';
 
@@ -36,11 +37,23 @@ import UserToken from './js/userToken';
 
 function App() {
   const navigate = useNavigate();
+  const location = useLocation();
+
+  const [activeItem, setActiveItem] = useState('/');
+
+  const handleItemClick = (path) => {
+    setActiveItem(path);
+    navigate(path);
+  };
+
 
   return (
     <div className="App">
+      {
+        location.pathname === '/withdrawalConf' || location.pathname ==='/isadmin' || location.pathname.startsWith('/adminpage')
+        ? null : <Header location={location} navigate={navigate} activeItem={activeItem} handleItemClick={handleItemClick}></Header>
+      }
       <Routes>
-
         <Route path="/" element={<MainPage />} />
         <Route path="/main/:oauth" element={<Main />} />
         <Route path="/userToken" element={<UserToken />} />
@@ -49,11 +62,9 @@ function App() {
         {/* <SignupNext /> */}
         <Route path="/signupNext" element={<SingUpNext />} />
         {/* 미용실 */}
-        <Route path="/hairshop" element={<SingUpNext />} />
+        {/* <Route path="/hairshop" element={<SingUpNext />} /> */}
         {/* 예약내역 */}
-        <Route path="/reservationdetails" element={<SingUpNext />} />
-
-
+        {/* <Route path="/reservationdetails" element={<SingUpNext />} /> */}
 
 
         {/* <Route path="/login" element={
@@ -112,16 +123,16 @@ function App() {
         <Route path="withdrawalConf" element={
           <WithdrawalConf navigate={navigate}></WithdrawalConf>
         }></Route>
-        
+
         <Route path="/reservation" element={<Reservation />} />\
         <Route path="/select" element={<SelectPage />} />
         <Route path="/final" element={<FinalPage />} />
         <Route path="/reservelist" element={<ReserveListTotal />} />
-        <Route path="/adminpage" element={<ManageSys />} />
+        {/* <Route path="/adminpage" element={<ManageSys />} /> */}
 
       </Routes>
 
-      
+
 
     </div>
   );
