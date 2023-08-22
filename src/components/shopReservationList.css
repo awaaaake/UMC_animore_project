@@ -21,7 +21,6 @@
     width: 10%;
     height: 38px;
     margin-left: 8px;
-    /* margin-right: auto; */
     font-size: larger;
     font-weight: 500;
     font-family: NAnumBarunGothic;
@@ -29,4 +28,7 @@
 
   .btnbox{
     margin-bottom: 50px;
+  }
+  .fixed_page{
+    display: none;
   }

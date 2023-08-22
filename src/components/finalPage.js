@@ -25,7 +25,7 @@ class FinalPage extends React.Component{
             <div className="box"> 
                 <h2>예약요청이 완료되었습니다!</h2>
                 
-                <div className="alert">
+                <div className="alertMassege">
                     <img src="img/10.png" alt="animore" width="130px" height="32px"/>
                     <h3 className="alert_text">를 이용해주셔서 감사합니다.</h3>  
                 </div>
@@ -34,7 +34,7 @@ class FinalPage extends React.Component{
                     <h3>업체에서 확인 후 예약확정할 예정입니다.</h3>
                 </div>
                 <div className="complete_button">
-                  <Link to='/Home'> 
+                  <Link to=''> 
                     <button className="Home_Shifting">홈 화면으로 가기</button>
                   </Link>
                   <Link to='/reservelist'>

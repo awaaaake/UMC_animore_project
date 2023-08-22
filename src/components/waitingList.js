@@ -7,13 +7,6 @@ import "@popperjs/core";
 import ShopReservationList from "./shopReservationList"; 
 import axios from "axios";
 
-const waitinglist = {
-    'date':'07.04. 13:00',
-    'shop':'봉봉살롱',
-    'address':'부산광역시',
-    'telephone':'010-0000-0000'
-}
-
 function WaitingList() {
     const [showDetails, setShowDetails] = useState(false);
     const [data, setData] = useState([]);
@@ -70,6 +63,7 @@ function WaitingList() {
             petName={item.petName}
             username={item.username}
             phone={item.phone}
+            reservationId ={item.reservationId}
           />
         ))}
       </div> 
