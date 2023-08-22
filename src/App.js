@@ -50,7 +50,8 @@ function App() {
   return (
     <div className="App">
       {
-        location.pathname === '/mypage/withdrawalConf' ? null : <Header location={location} navigate={navigate} activeItem={activeItem} handleItemClick={handleItemClick}></Header>
+        location.pathname === '/withdrawalConf' || location.pathname ==='/isadmin' || location.pathname.startsWith('/adminpage')
+        ? null : <Header location={location} navigate={navigate} activeItem={activeItem} handleItemClick={handleItemClick}></Header>
       }
       <Routes>
         <Route path="/" element={<MainPage />} />

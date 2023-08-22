@@ -76,7 +76,7 @@ function Header(props) {
 
 function Adminpagemenu(props) {
   return (
-    <div className='menu'>
+    <div className='menu_aw'>
       <ul>
         <h4>Management</h4>
         <li
