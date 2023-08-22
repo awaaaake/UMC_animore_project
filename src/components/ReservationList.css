@@ -35,7 +35,7 @@
   /* 페이지 2에만 적용할 스타일 */
   .my-component.page-two {
     .infromation{
-        text-align: left;
+        /* text-align: center; */
         margin-left: 0px;
     }
   }

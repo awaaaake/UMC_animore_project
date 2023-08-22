@@ -32,3 +32,18 @@
   .fixed_page{
     display: none;
   }
+  .inform_btn{
+    margin-left: 30%;
+  }
+
+.infromation2{
+  width: 160px;
+}
+.infromation4{
+  padding-left: 0%;
+}
+
+.infromation_R{
+  width: 18%;
+  text-align: left;
+}

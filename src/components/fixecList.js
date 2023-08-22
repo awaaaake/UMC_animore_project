@@ -15,7 +15,7 @@ function FixedList() {
   useEffect(() => {
     if (!fetchedData) {
       // fetchedData 상태가 false일 때만 요청 보냄 (새로고침 할때)
-      const token = ''; // 토큰 추가
+      const token = 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJjb3PthqDtgbAiLCJpZCI6MSwiZXhwIjoxNjkyNzYwOTc3LCJ1c2VybmFtZSI6Imtha2FvXzI4OTgyMDI5NDQifQ.4nPXZqpCskQGhYwhytA4F1pS9U0DK9sTTOMTx7wTVBGDOmiF52RQQODkLWPcgJOyP2pGUEeTnF_04RVXukYb7g'; // 토큰 추가
 
       axios({
         method: 'GET',
@@ -45,9 +45,9 @@ function FixedList() {
           <div className="rowline"></div>  
           <div className="colPage2">
               <p className="tile title1">예약일자</p>
-              <p className="tile">반려동물이름</p>
-              <p className="tile">보호자 이름</p>
-              <p className="tile">보호자 연락처</p>
+              <p className="tile title2">반려동물이름</p>
+              <p className="tile title3">보호자 이름</p>
+              <p className="tile title4">보호자 연락처</p>
               <p className="tile title5">예약상세</p>
           </div>
           <div>
