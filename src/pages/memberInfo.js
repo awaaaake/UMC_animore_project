@@ -46,9 +46,9 @@ function Memberinfo(props) {
 
                     <input
                         type="password"
-                        id="password"
+                        id="password_aw"
                         name="password"
-                        required placeholder="비밀번호 입력"
+                        required placeholder=" 비밀번호 입력"
                         value={password}
                         onChange={(e) => { setPassword(e.target.value) }}
                     />

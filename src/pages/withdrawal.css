@@ -21,9 +21,10 @@
   white-space: nowrap;
 }
 
-#password {
+#password_aw {
   border: 1px solid #808080;
   width: 50%;
+  height: 40px;
 }
 
 .confirm-button2 {
