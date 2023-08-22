@@ -51,11 +51,8 @@ function App() {
   return (
     <div className="App">
       {
-        location.pathname === '/withdrawalConf' || location.pathname === '/isadmin' || location.pathname.startsWith('/adminpage')
+        location.pathname === '/withdrawalConf' || location.pathname === '/isadmin' || location.pathname.startsWith('/adminpage') || location.pathname==='/' || location.pathname==='/signup'
           ? null : <Header location={location} navigate={navigate} activeItem={activeItem} handleItemClick={handleItemClick}></Header>
-      }
-      {
-        location.pathname.startsWith('/adminpage') ? <Admin_Header location={location} navigate={navigate} activeItem={activeItem} handleItemClick={handleItemClick}></Admin_Header> : null 
       }
       <Routes>
         <Route path="/" element={<MainPage />} />

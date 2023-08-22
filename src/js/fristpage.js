@@ -43,7 +43,7 @@ const FirstText = styled.div`
   white-space: nowrap; /* 텍스트가 한 줄에 표시되도록 설정 */
   display: flex;
   align-items: center;
-  letter-spacing: -2px; /* 글자 간격을 좁게 설정 */
+  letter-spacing: 2px; /* 글자 간격을 좁게 설정 */
   color: #B33E86;
 `;
 
@@ -51,21 +51,23 @@ const FirstextImg = styled.img`
   width: 30px;
   height: 30px;
   margin-left: 5px;
+  margin-right: 3px;
+  margin-bottom: 1.5px;
 `;
 
 // 중앙 Animore 글자 
 const Maintext = styled.div`
   font-family: NanumBarunGothic;
   font-size: 82px;
-  font-weight: 600;
-  line-height: 259px;
+  font-weight: 1000;
+  line-height: 80px;
   letter-spacing: 0em;
   text-align: center;
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  letter-spacing: -2px; /* 글자 간격을 좁게 설정 */
+  letter-spacing: 1px; /* 글자 간격을 좁게 설정 */
 `;
 
 
