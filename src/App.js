@@ -36,7 +36,7 @@ function App() {
   return (
     <div className="App">
         <Routes>
-
+        
           <Route path="/" element={<MainPage/>} />
           <Route path="/main/:oauth" element={<Main/>} />
           <Route path="/userToken" element={<UserToken/>} />
