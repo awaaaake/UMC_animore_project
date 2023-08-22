@@ -11,9 +11,9 @@ function Adminprofile(props) {
     let [inputCount, setInputCount] = useState(0);
     const [selectedImage, setSelectedImage] = useState(null);
     const [modalIsOpen, setModalIsOpen] = useState(false);
-    const [tag, setTag] = useState(['픽업가능', '고양이미용', '스파가능', '피부병치료', '호텔링가능', '유치원겸용', '특수동물가능', '공휴일운영'])
+    const [tag, setTag] = useState(['픽업가능', '고양이 미용가능', '스파가능', '피부병치료', '호텔링가능', '유치원겸용', '특수동물가능', '공휴일운영'])
     const [checked, setChecked] = useState([])
-    const [defaultImageurl, setDefaultImageurl] = useState('../img/profile.png');
+    const [defaultImageurl, setDefaultImageurl] = useState("");
     const [popup, setPopup] = useState(false);
     const [previewIsOpen, setPreviewIsOpen] = useState(false);
 
@@ -29,10 +29,21 @@ function Adminprofile(props) {
     const handleTagChange = (selectedTag) => {
         if (checked.includes(selectedTag)) {
             setChecked(checked.filter(tagItem => tagItem !== selectedTag));
+    
+            setInfo(prevInfo => ({
+                ...prevInfo,
+                storeSignificant: prevInfo.storeSignificant.filter(tagItem => tagItem !== selectedTag)
+            }));
         } else {
             setChecked([...checked, selectedTag]);
+    
+            setInfo(prevInfo => ({
+                ...prevInfo,
+                storeSignificant: [...prevInfo.storeSignificant, selectedTag]
+            }));
         }
     };
+    
 
     const countCharacters = (str) => {
         const regex = /[\x00-\x7F]|[\u3131-\uD79D]|./g;
@@ -59,11 +70,18 @@ function Adminprofile(props) {
         }
     };
 
-    let [Info, setInfo] = useState({});
+    let [Info, setInfo] = useState({
+        storeSignificant:[],
+    });
 
     const handleInfoChange = (e) => {
         const { name, value } = e.target;
-        if (name === "dayoff") {
+        if (name === "storeSignificant") { // Check if the field being updated is storeSignificant
+            setInfo((prevInfo) => ({
+                ...prevInfo,
+                tags: value // Update Info.tags
+            }));
+        } else if (name === "dayoff") {
             const [dayoff1, dayoff2] = value.split(',').map(day => day.trim()); // ,로 분리 후 공백 제거
             setInfo(prevInfo => ({
                 ...prevInfo,
@@ -71,7 +89,7 @@ function Adminprofile(props) {
                 dayoff2: dayoff2 // Info 객체의 dayoff2 속성에 값 할당
             }));
         } else {
-            setInfo(prevInfo => ({
+            setInfo((prevInfo) => ({
                 ...prevInfo,
                 [name]: value,
             }));
@@ -107,6 +125,7 @@ function Adminprofile(props) {
         const formData = new FormData();
         formData.append('storeName', Info.storeName);
         formData.append('storeExplain', Info.storeExplain);
+        formData.append('storeImageUrl',Info.defaultImageurl);
         formData.append('open', Info.open);
         formData.append('close', Info.close);
         formData.append('dayoff1', Info.dayoff1);
@@ -114,12 +133,15 @@ function Adminprofile(props) {
         formData.append('tags', Info.tags);
         formData.append('amount', Info.amount);
         formData.append('storeSignificant', Info.storeSignificant);
+        formData.append('storeLocation',Info.storeLocation);
+        formData.append('storeNumber',Info.storeNumber);
+        formData.append('latitude',Info.latitude);
+        formData.append('longitude',Info.longitude);
 
-
-        // Create a Blob from the selected image file
-        const imageBlob = new Blob([selectedImage], { type: selectedImage.type });
-        // Append the Blob to the FormData with the desired field name ('multipartFile')
-        formData.append('storeImageUrl', imageBlob);//selectedImage.name
+        if (selectedImage) {
+            const imageBlob = new Blob([selectedImage], { type: selectedImage.type });
+            formData.append('images', imageBlob);
+        }
 
 
         let entries = formData.entries();
@@ -127,8 +149,13 @@ function Adminprofile(props) {
             console.log(pair[0], pair[1]);
         }
 
+        console.log(formData);
         try {
-            const response = await axios.post('/manage/store', formData);
+            const response = await axios.post('/manage/store', formData, {
+                headers: {
+                    'Content-Type': 'multipart/form-data'
+                }
+            });
             console.log('Profile updated successfully:', response.data.result);
             props.navigate('/adminpage/adminprofile');
         } catch (error) {
@@ -143,7 +170,6 @@ function Adminprofile(props) {
                 <div className='profile2'>
                     <div className="admin-profile-picture">
                         <img src={selectedImage ? URL.createObjectURL(selectedImage) : defaultImageurl} alt="프로필 사진" />
-                        {/* <img src={selectedImage ? URL.createObjectURL(selectedImage) : defaultImageurl} alt="프로필 사진" /> */}
                     </div>
                     <form method="post" encType="multipart/form-data">
                         <div className="admin-profile-button-container">
@@ -256,6 +282,7 @@ function Adminprofile(props) {
                             </tbody>
                         </table>
                     </Modal> : null}
+                    {console.log(checked)}
 
                     <div className='opening-hours'>
                         <label htmlFor="openingHours" className="form-label">오픈 시간</label>
@@ -313,15 +340,15 @@ function Adminprofile(props) {
                             </select>
                         </div>
                     </div>
-                    <div className='one-line-intro'>
+                    <div className='storeSignificant'>
                         <label
-                            htmlFor="one-line-intro"
+                            htmlFor="storeSignificant"
                             className="form-label"
                         >한줄소개</label>
                         <div className="content-box">
                             <input
                                 type="text"
-                                id="one-line-intro"
+                                id="storeSignificant"
                                 name="storeSignificant"
                                 value={Info.tags}
                                 placeholder=""
@@ -379,7 +406,9 @@ function Adminprofile(props) {
                         className="custom-modal-content"
                         overlayClassName="custom-modal-overlay"
                     >
-                        <Preview Info={Info} checked={checked}></Preview>
+                        {console.log(Info)}
+                        {console.log(checked)}
+                        <Preview Info={Info} checked={checked} selectedImage={selectedImage} defaultImageurl={defaultImageurl}></Preview>
                     </Modal> : null}
                     {console.log(Info)}
                 </div>

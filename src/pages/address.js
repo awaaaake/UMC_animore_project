@@ -4,10 +4,10 @@ import axios from "axios";
 import './address.css';
 
 function Address(props) {
-    const [Address, setAddress]=useState(props.Info.storeLocation);
+    const [addressValue, setAddressValue] = useState(props.Info.storeLocation);
     const complete = (data) => {
         let fullAddress = data.address;
-        setAddress(data.address);
+        setAddressValue(data.address);
         let extraAddress='';
         console.log(fullAddress);
         if(data.addressType==='R'){
@@ -26,14 +26,14 @@ function Address(props) {
 
         props.setInfo(prevInfo => ({
             ...prevInfo,
-            storeLocation:fullAddress
+            storeLocation: fullAddress
         }));
     }
     
     useEffect(() => {
-        if (Address) {
+        if (addressValue) {
             axios.get(`https://dapi.kakao.com/v2/local/search/address.json?query=${Address}`, {
-                headers: { Authorization: ' ' },
+                headers: { Authorization: 'KakaoAK ' },
             })
             .then(res => {
                 const location = res.data.documents[0];
@@ -44,14 +44,14 @@ function Address(props) {
                         latitude: parseFloat(location.road_address.y || 0)
                     }));
                 } else {
-                    console.error("Invalid location data:", location); //ì¡´ìž¬í•˜ì§€ ì•ŠëŠ” ì£¼ì†Œì— ëŒ€í•´ì„œ elseë¬¸ìœ¼ë¡œ ì—ëŸ¬ì²˜ë¦¬ë¥¼ í•´ì•¼ ì—ëŸ¬ì°½ì´ ì•ˆëœ¸
+                    console.error("Invalid location data:", location); //Á¸ÀçÇÏÁö ¾Ê´Â ÁÖ¼Ò¿¡ ´ëÇØ¼­ else¹®À¸·Î ¿¡·¯Ã³¸®¸¦ ÇØ¾ß ¿¡·¯Ã¢ÀÌ ¾È¶ä
                 }
             })
             .catch(error => {
                 console.error("Error fetching address:", error);
             });
         }
-    }, [Address]);
+    }, [addressValue]);
     
 
     return (

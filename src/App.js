@@ -50,9 +50,9 @@ function App() {
         {/* <SignupNext /> */}
         <Route path="/signupNext" element={<SingUpNext />} />
         {/* 미용실 */}
-        <Route path="/hairshop" element={<SingUpNext />} />
+        {/* <Route path="/hairshop" element={<SingUpNext />} /> */}
         {/* 예약내역 */}
-        <Route path="/reservationdetails" element={<SingUpNext />} />
+        {/* <Route path="/reservationdetails" element={<SingUpNext />} /> */}
 
 
 
@@ -118,7 +118,7 @@ function App() {
         <Route path="/select" element={<SelectPage />} />
         <Route path="/final" element={<FinalPage />} />
         <Route path="/reservelist" element={<ReserveListTotal />} />
-        <Route path="/adminpage" element={<ManageSys />} />
+        {/* <Route path="/adminpage" element={<ManageSys />} /> */}
 
       </Routes>
 

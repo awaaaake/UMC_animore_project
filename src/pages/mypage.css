@@ -1,5 +1,5 @@
 @font-face {
-    /* CSSì—ì„œëŠ” ê²½ë¡œë¥¼ ì§€ì •í•  ë•Œ ìŠ¬ë˜ì‹œ(/)ë¥¼ ì‚¬ìš©*/
+    /* CSS¿¡¼­´Â °æ·Î¸¦ ÁöÁ¤ÇÒ ¶§ ½½·¡½Ã(/)¸¦ »ç¿ë*/
     font-family: 'NanumBarunGothic';
     src: url('../fonts/NanumBarunGothic.eot');
     src: url('../fonts/NanumBarunGothic.eot') format('embedded-opentype'),
@@ -46,7 +46,7 @@
     display: inline;
     border-left: 2px solid #808080;
     padding: 0 10px;
-    /* ì¢Œìš° ì—¬ë°± 10px */
+    /* ÁÂ¿ì ¿©¹é 10px */
     color: #808080;
   }
   
@@ -87,7 +87,7 @@
     white-space: nowrap;
     cursor: pointer;
     padding: 10px 0;
-    /* ì¢Œìš° ì—¬ë°± 10px */
+    /* ÁÂ¿ì ¿©¹é 10px */
     color: #808080;
   }
   
@@ -178,7 +178,7 @@
       white-space: nowrap;
       cursor: pointer;
       padding: 10px 0;
-      /* ì¢Œìš° ì—¬ë°± 10px */
+      /* ÁÂ¿ì ¿©¹é 10px */
       color: #808080;
       text-align: center; /* Add this line to center-align the menu items */
     }
