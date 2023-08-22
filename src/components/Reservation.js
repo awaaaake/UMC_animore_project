@@ -124,16 +124,24 @@ function Reservation({ props }) {
 
             <div className="table_box">
                 <table className="table tablee"  >
-                    <thead>
+                    {/* <thead>
                         <tr>
                             <th scope="col" style={{ background: '#F5F5F5', width: 213 }}>반려동물 이름</th>
                             <th style={{ width: 277, height: 40.4 }}>{showDetails && (<p style={{ height: 10 }}>{data.result.petName}</p>)}</th>
                             <th scope="col" style={{ background: '#F5F5F5', width: 344 }}>이름</th>
                             <th style={{ width: 277, height: 40.4 }}>{showDetails && (<p style={{ height: 10 }}>{data.result.nickname}</p>)}</th>
                         </tr>
-                    </thead>
+                        
+                    </thead> */}
                     <tbody>
+                    <tr>
+                            <th scope="col" style={{ background: '#F5F5F5', width: 213 }}>반려동물 이름</th>
+                            <th style={{ width: 277, height: 40.4 }}>{showDetails && (<p style={{ height: 10 }}>{data.result.petName}</p>)}</th>
+                            <th scope="col" style={{ background: '#F5F5F5', width: 344 }}>이름</th>
+                            <th style={{ width: 277, height: 40.4 }}>{showDetails && (<p style={{ height: 10 }}>{data.result.nickname}</p>)}</th>
+                        </tr>
                         <tr>
+                            
                             <th scope="row" style={{ background: '#F5F5F5' }}>반려동물 종류</th>
                             <td>{showDetails && (<p style={{ height: 10 }}>{data.result.petType}</p>)}</td>
                             <td style={{ background: '#F5F5F5' }}>전화번호</td>

@@ -23,6 +23,8 @@ import FinalPage from './components/finalPage';
 import Reservation from './components/Reservation';
 import Header from './pages/header_navbar';
 import Admin_Header from './pages/admin_header';
+import FixedList from './components/fixecList';
+import WaitingList from './components/waitingList';
 
 //import NaverLoginPage from './pages/login.js';
 
@@ -52,6 +54,9 @@ function App() {
       {
         location.pathname === '/withdrawalConf' || location.pathname === '/isadmin' || location.pathname.startsWith('/adminpage') || location.pathname==='/' || location.pathname==='/signup'
           ? null : <Header location={location} navigate={navigate} activeItem={activeItem} handleItemClick={handleItemClick}></Header>
+      }
+      {
+        location.pathname.startsWith('/adminpage') ? <Admin_Header location={location} navigate={navigate} activeItem={activeItem} handleItemClick={handleItemClick}></Admin_Header> : null 
       }
       <Routes>
         <Route path="/" element={<MainPage />} />
@@ -102,6 +107,12 @@ function App() {
           <Route path="" element={
             <Adminhome navigate={navigate}></Adminhome>
           }></Route>
+          <Route path="reservation/request" element={
+            <WaitingList navigate={navigate}></WaitingList>
+          }></Route>
+          <Route path="reservation/complete" element={
+            <FixedList navigate={navigate}></FixedList>
+          }></Route>
           <Route path="adminprofile" element={
             <Adminprofile navigate={navigate}></Adminprofile>
           }></Route>
@@ -124,7 +135,7 @@ function App() {
           <WithdrawalConf navigate={navigate}></WithdrawalConf>
         }></Route>
 
-        <Route path="/reservation" element={<Reservation />} />\
+        <Route path="/reservation" element={<Reservation />} />
         <Route path="/select" element={<SelectPage />} />
         <Route path="/final" element={<FinalPage />} />
         <Route path="/reservelist" element={<ReserveListTotal />} />

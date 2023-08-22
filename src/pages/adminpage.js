@@ -34,6 +34,14 @@ function Adminpage() {
 }
 
 function Adminpagemenu(props) {
+  // useState를 통해 예약요청과 예약완료 메뉴의 펼침 상태를 관리
+  const [reservationMenuExpanded, setReservationMenuExpanded] = useState(false);
+
+  // 메뉴 항목 클릭 시 펼침 상태 변경 함수
+  const handleReservationMenuClick = () => {
+    setReservationMenuExpanded(!reservationMenuExpanded);
+  };
+
   return (
     <div className='menu_aw'>
       <ul>
@@ -45,17 +53,33 @@ function Adminpagemenu(props) {
           홈
         </li>
         <li
-          className={props.location.pathname === '/adminpage/adminprofile' ? 'active' : ''}
+          className={props.location.pathname.startsWith('/adminpage/adminprofile') ? 'active' : ''}
           onClick={() => props.handleItemClick('/adminpage/adminprofile')}
         >
           업체정보관리
         </li>
         <li
-          className={props.location.pathname === '/adminpage/reservation' ? 'active' : ''}
-          onClick={() => props.handleItemClick('/adminpage/reservation')}
+          className={props.location.pathname.startsWith('/adminpage/reservation') ? 'active' : ''}
+          onClick={handleReservationMenuClick} // 예약관리 메뉴 클릭 시 펼침 상태 변경
         >
           예약관리
         </li>
+        {reservationMenuExpanded && (
+          <>
+            <li
+              className={props.location.pathname === '/adminpage/reservation/request' ? 'active' : 'expanded' }
+              onClick={() => props.handleItemClick('/adminpage/reservation/request')}
+            >
+              예약요청
+            </li>
+            <li
+              className={props.location.pathname === '/adminpage/reservation/complete' ? 'active' : 'expanded'}
+              onClick={() => props.handleItemClick('/adminpage/reservation/complete')}
+            >
+              예약완료
+            </li>
+          </>
+        )}
         <li
           className={props.location.pathname === '/adminpage/notice' ? 'active' : ''}
           onClick={() => props.handleItemClick('/adminpage/notice')}

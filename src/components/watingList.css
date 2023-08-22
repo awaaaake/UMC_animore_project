@@ -12,9 +12,12 @@
 }
 
 .wationgBox{
-    width: 86%;
     height: 100%;
+    margin-left: 5%;
+    margin-right: 5%;
+    width: 90%;
 }
+
 .colPage2{
     display: flex;
     font-size: 23px;
@@ -27,7 +30,6 @@
 .rowline{
     border-bottom: 1.5px solid #808080;
     margin-left: 0%;
-    width: 86%;
 }
 
 .title1{
