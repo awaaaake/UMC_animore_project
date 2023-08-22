@@ -12,11 +12,11 @@ function Header(props) {
             className={props.location.pathname  === '/' ? 'active' : ''}
             onClick={() => props.handleItemClick('/')}>홈</li>
             <li 
-            className={props.location.pathname  === '/beautysalon' ? 'active' : ''}
-            onClick={() => props.handleItemClick('/beautysalon')}>미용실</li>
+            className={props.location.pathname  === '/shop' ? 'active' : ''}
+            onClick={() => props.handleItemClick('/shop')}>미용실</li>
             <li 
-            className={props.location.pathname  === '/reservation' ? 'active' : ''}
-            onClick={() => props.handleItemClick('/reservation')}>예약내역</li>
+            className={props.location.pathname  === '/reservelist' ? 'active' : ''}
+            onClick={() => props.handleItemClick('/reservelist')}>예약내역</li>
             <li 
             className={props.location.pathname.startsWith('/mypage') ? 'active' : ''}
             onClick={() => props.handleItemClick('/mypage')}>마이페이지</li>
