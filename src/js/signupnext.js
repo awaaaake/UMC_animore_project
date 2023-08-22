@@ -134,7 +134,7 @@ const SignUpNext = () => {
     navigate('/');
   };
   const handleProfileClick = () => {
-    navigate('/mypage');
+    navigate('/mypage/profile');
   };
 
   return (

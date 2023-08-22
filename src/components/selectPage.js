@@ -9,6 +9,7 @@ import './selectPage.css';
 import TimeSelect from './timeSelect';
 import './timeSelect.css'
 import axios from "axios";
+import { Link } from "react-router-dom";
 
 function SelectPage() {
   const [selectedDate, setSelectedDate] = useState(""); // 선택한 날짜를 상태로 저장
@@ -86,7 +87,9 @@ function SelectPage() {
             <TimeSelect isSelectedTime={isSelected} onClick={handleTimeClick}/>
           </div>
         </div>
+        <Link to='/final'>
         <button className='request'onClick={handleRequestClick}>예약요청</button>
+        </Link>
       </div>
 
     );

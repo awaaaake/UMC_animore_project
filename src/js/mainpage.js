@@ -6,12 +6,14 @@ import SecondPage from '../js/secondpage';
 import HeaderResult from './header';
 import ThirdPage from './thirdpage';
 import Footer from './footer';
+import Header from '../pages/header_navbar';
+
 
 function MainPage() {
   return (
     <div className="MainPage">
       {/* 홈, 미용실, 예약내역, 마이페이지, 로그아웃 */}
-      <HeaderResult/>
+      {/* <HeaderResult/> */}
 
       {/* 1번째 페이지 */}
       <Firstpage/>

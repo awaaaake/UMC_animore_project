@@ -6,7 +6,7 @@ import axios from "axios";
 function AdminWithdrawal(props) {
     let [password, setPassword] = useState('');
 
-    const accessToken = 'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJjb3PthqDtgbAiLCJpZCI6MSwiZXhwIjoxNjkyNzg1NzE4LCJ1c2VybmFtZSI6Imtha2FvXzI4OTgyMDI5NDQifQ.yFK4TqoT7I2ckMp-pQAytO5vg_IjPr1A3co2iAZMU1OJFkt1H0J2ZxGFSP4Tm-2hnwmvo1OljdxXJCyrHq25Tw';
+    const accessToken = 'Bearer ';
     // access token을 인증 헤더에 설정합니다.
     axios.defaults.headers.common["Authorization"] = accessToken;
 
@@ -42,7 +42,7 @@ function AdminWithdrawal(props) {
                 <form onSubmit={handlePasswordCheck}>
                     <p className="message1">비밀번호 재확인</p>
                     <p className="message2">안전한 탈퇴 진행을 위해 비밀번호를 한 번 더 입력해주세요.</p>
-                    <input type="password" id="password" name="password" required placeholder="비밀번호 입력"
+                    <input type="password" id="password_aw" name="password" required placeholder=" 비밀번호 입력"
                         onChange={(e) => { setPassword(e.target.value) }}
                     />
                     <div>

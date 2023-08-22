@@ -7,28 +7,28 @@
   width: 90%;
 }
 
-table {
+.resetinfo table {
   width: 100%;
   border-collapse: collapse;
   margin-bottom: 20px;
 }
 
-table tr {
+.resetinfo table tr {
   height: 50px;
 }
 
-table td {
+.resetinfo table td {
   padding: 3px;
   padding-left: 20px;
   border-top: 1px solid #808080;
   background-color: #F5F5F5;
 }
 
-table td:last-child {
+.resetinfo table td:last-child {
   background-color: #ffffff;
 }
 
-table td:first-child {
+.resetinfo table td:first-child {
   font-weight: bold;
 }
 
@@ -36,33 +36,33 @@ table tbody tr:first-child td {
   border-top: 2px solid black;
 }
 
-table tbody tr:last-child td {
+.resetinfo table tbody tr:last-child td {
   border-bottom: 2px solid black;
 }
 
-input[type="email"],
-input[type="password"],
-input[type="text"],
-input[type="tel"],
-select,
-textarea {
+.resetinfo input[type="email"],
+.resetinfo input[type="password"],
+.resetinfo input[type="text"],
+.resetinfo input[type="tel"],
+.resetinfo select,
+.resetinfo textarea {
   width: 100%;
   padding: 10px;
   border: none;
 }
 
-input[type="checkbox"],
-input[type="radio"] {
+.resetinfo input[type="checkbox"],
+.resetinfo input[type="radio"] {
   margin-left: 12px;
 }
 
-.button-group3 {
+.resetinfo .button-group3 {
   margin-bottom: 30px;
   display: flex;
   justify-content: center;
 }
 
-.selected-button {
+.resetinfo .selected-button {
   flex: 1;
   padding: 8px 16px;
   background-color: #B33E86;
@@ -74,7 +74,7 @@ input[type="radio"] {
   white-space: nowrap;
 }
 
-.unselected-button {
+.resetinfo .unselected-button {
   flex: 1;
   padding: 8px 16px;
   background-color: white;
@@ -86,7 +86,7 @@ input[type="radio"] {
   white-space: nowrap;
 }
 
-.resetinfo-button {
+.resetinfo .resetinfo-button {
   display: block;
   margin: 5% auto;
   width: 200px;

@@ -1,169 +1,15 @@
+import Animore_logo from '../img/13.png';
 import React, { useState, useEffect } from 'react';
-import styled from 'styled-components';
 import axios from 'axios';
+import styled from 'styled-components';
 
 
-
-
-const PopupContainer = styled.div`
-  // 크기
-  width: 480px;
-  height: 310px;
-  position: fixed;
-
-  // 가운데 위치
-  top: 50%;
-  left: 50%;
-  align-items: center;
-  transform: translate(-50%, -50%);
-
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  background-color: white;
-  background-image: url(background-image.jpg);
-  background-size: cover;
-
-  // 테두리
-  border: 2px solid #C0C0C0;
-  border-radius: 30px;
-  margin: 0;
-  padding: 0;
-`;
-
-const TopImage = styled.img`
-  width: 60%;
-  height: 70px;
-  position: absolute;
-  top: 20%;
-`;
-
-const Text = styled.p`
-  text-align: center;
-  position: absolute;
-  top: 43%;
-
-  font-family: NanumBarunGothic;
-  font-size: 18px;
-
-  letter-spacing: -2px; /* 글자 간격을 좁게 설정 */
-  color: #B33E86;
-  display: flex;
-  align-items: center;
-  color: #000000;
-`;
-
-const ButtonContainer = styled.div`
-  display: flex;
-  justify-content: space-between;
-  width: 60%;
-  position: absolute;
-  top: 65%;
-`;
 
 const ImageButton = styled.img`
   width: 50px;
   height: 50px;
   cursor: pointer;
 `;
-
-const CloseButton = styled.button`
-  position: absolute;
-  top: 5px;
-  right: 10px;
-  border: none;
-  background-color: transparent;
-  cursor: pointer;
-  z-index: 10;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-family: NanumBarunGothic;
-  font-size: 40px;
-  color: #C0C0C0;
-  transform: scaleY(0.8);
-`;
-
-const Header = styled.header`
-  // 스크롤 해도 header는 같이 따라오게 하기 위해 fixed로 설정
-  position: fixed;
-  top: 10px;
-  right: 40px;
-  width: 100%;
-  height: 20%;
-  background-color: transparent;
-  z-index: 9;
-`;
-
-
-
-const SubMenu = styled.div`
-  position: absolute;
-  height: 100%;
-  right: 50px;
-  top: 0;
-  bottom: 0;
-`;
-
-const SubMenuUl = styled.ul`
-  font-family: NanumBarunGothic;
-  display: flex;
-`;
-
-const SubMenuLi = styled.li`
-  position: relative;
-  list-style: none;
-
-  &:before {
-    content: "";
-    width: 1.7px;
-    height: 20px;
-    background-color: #808080;
-    position: absolute;
-    top: 9px;
-    bottom: 0;
-    margin-top: 0;
-  }
-
-  &:first-child:before {
-    display: none;
-  }
-`;
-
-const SubMenuLink = styled.a`
-  font-size: 20px;
-  padding-left: 10px;
-  padding-right: 10px;
-  padding-top: 5px;
-  display: block;
-  color: ${props => props.isActive ? "#000000" : "#808080"};
-  font-weight: ${props => props.isActive ? "bold" : "normal"};
-  text-decoration: none;
-
-  &:hover {
-    color: #000000;
-  }
-`;
-
-const SubMenuText = styled.span`
-  font-size: 20px;
-  padding-left: 10px;
-  padding-right: 10px;
-  padding-top: 5px;
-  display: block;
-  color: ${props => props.isActive ? "#000000" : "#808080"};
-  font-weight: ${props => props.isActive ? "bold" : "normal"};
-  text-decoration: none;
-
-  &:hover {
-    color: #000000;
-  }
-`;
-
-
-
-
-
 
 
 const NaverLoginPage = () => {
@@ -225,11 +71,6 @@ const KakaoLoginPage = () => {
 };
 
 
-
-
-
-
-
 const SignupPopup = styled.div`
   // 팝업창 스타일
   width: 480px;
@@ -249,6 +90,13 @@ const SignupPopup = styled.div`
   border-radius: 30px;
   margin: 0;
   padding: 0;
+`;
+
+const TopImage = styled.img`
+  width: 60%;
+  height: 70px;
+  position: absolute;
+  top: 20%;
 `;
 
 const Message = styled.p`
@@ -305,6 +153,79 @@ const CancelButton = styled.button`
 `;
 
 
+const PopupContainer = styled.div`
+  // 크기
+  width: 480px;
+  height: 310px;
+  position: fixed;
+
+  // 가운데 위치
+  top: 50%;
+  left: 50%;
+  align-items: center;
+  transform: translate(-50%, -50%);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: white;
+  background-image: url(background-image.jpg);
+  background-size: cover;
+
+  // 테두리
+  border: 2px solid #C0C0C0;
+  border-radius: 30px;
+  margin: 0;
+  padding: 0;
+`;
+
+
+const Text = styled.p`
+  text-align: center;
+  position: absolute;
+  top: 43%;
+
+  font-family: NanumBarunGothic;
+  font-size: 18px;
+
+  letter-spacing: -2px; /* 글자 간격을 좁게 설정 */
+  color: #B33E86;
+  display: flex;
+  align-items: center;
+  color: #000000;
+`;
+
+
+const ButtonContainer = styled.div`
+  display: flex;
+  justify-content: space-between;
+  width: 60%;
+  position: absolute;
+  top: 65%;
+`;
+
+const CloseButton = styled.button`
+  position: absolute;
+  top: 5px;
+  right: 10px;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: NanumBarunGothic;
+  font-size: 40px;
+  color: #C0C0C0;
+  transform: scaleY(0.8);
+`;
+
+
+
+
+
+
 // 회원가입 이동 팝업창
 const SignupPopupComponent = ({ onClose }) => {
   const handleSignupClick = () => {
@@ -336,22 +257,24 @@ const SignupPopupComponent = ({ onClose }) => {
 
 
 
+function Header(props) {
 
-const HeaderResult = () => {
-  const [activeLink, setActiveLink] = useState("/signup");
   const [isPopupOpen, setPopupOpen] = useState(false);
   const [isLoggedIn, setLoggedIn] = useState(false);
+  // 처음 로그인을 구별하기 위한 변수
+  const [isFirstLogin, setFirstLogin] = useState(false);
 
   useEffect(() => {
     // URL에서 토큰 값을 추출하여 처리하는 함수
     const handleTokenFromURL = async () => {
       const url = new URL(window.location.href);
-      const token = url.searchParams.get('token');
+      // const token = url.searchParams.get('token');
+      const token = 'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJjb3PthqDtgbAiLCJpZCI6NCwiZXhwIjoxNjkyNzYxMDA0LCJ1c2VybmFtZSI6Imdvb2dsZV8xMDg1OTYwMzM2NDczMDk5ODQ3ODUifQ.uBYZMFGYe2wq6w3LzO1TPdmg6evnMtEZGQHmSszo8yaqUtGeraBjeA-YQepR5pQn1Mi_IqkMWPOFGdMTI47EFA' // 토큰 값을 설정하세요.
 
       if (token) {
         try {
           // API 호출하여 유저 정보 가져오기
-          const response = await axios.get('kauth.kakao.com/oauth/authorize?client_id=35e4e8d3c346459a6a90b37624e8de77&redirect_uri=http://localhost:3000/main/oauth&response_type=code', {
+          const response = await axios.get('https://kauth.kakao.com/oauth/authorize?client_id=35e4e8d3c346459a6a90b37624e8de77&redirect_uri=http://localhost:3000/main/oauth&response_type=code', {
             headers: {
               Authorization: `Bearer ${token}`,
             },
@@ -359,6 +282,9 @@ const HeaderResult = () => {
 
           // 유저 정보를 이용한 작업 수행
           console.log(response.data);
+          
+          setLoggedIn(true);
+          setFirstLogin(true); // 추가
 
         } catch (error) {
           console.error('API 호출 에러:', error);
@@ -368,20 +294,16 @@ const HeaderResult = () => {
 
     // 컴포넌트 마운트 시 실행
     handleTokenFromURL();
-  }, []); // 빈 배열로 두 번째 인자를 넘겨 컴포넌트가 처음 마운트될 때 실행
+  }, []);
 
 
-
-
-  const handleLinkClick = (event, link) => {
-    setActiveLink(link);
-  };
 
   const handleLoginClick = () => {
     setLoggedIn(true);
     setPopupOpen(true);
     document.body.style.backgroundColor = "rgba(0, 0, 0, 0.2)";
   };
+
 
   const handlePopupClose = () => {
     setPopupOpen(false);
@@ -395,84 +317,68 @@ const HeaderResult = () => {
   };
 
   const handleLogoutClick = () => {
-    logout();
+    if (window.confirm("정말 로그아웃하시겠습니까?")) {
+      logout();
+      // JWT 토큰을 제거
+      localStorage.removeItem('jwtToken');
+    }
   };
 
-  return (
-    <Header>
-      <SubMenu>
-        <SubMenuUl>
-          <SubMenuLi>
-            <SubMenuLink
-              href="/"
-              isActive={activeLink === "/"}
-              onClick={(event) => handleLinkClick(event, "/")}
-            >
-              홈
-            </SubMenuLink>
-          </SubMenuLi>
 
-          <SubMenuLi>
-            <SubMenuLink
-              href="/shop"
-              isActive={activeLink === "/shop"}
-              onClick={(event) => handleLinkClick(event, "/shop")}
-            >
-              미용실
-            </SubMenuLink>
-          </SubMenuLi>
 
-          <SubMenuLi>
-            <SubMenuLink
-              href="/reservelist"
-              isActive={activeLink === "/reservelist"}
-              onClick={(event) => handleLinkClick(event, "/reservationdetails")}
-            >
-              예약내역
-            </SubMenuLink>
-          </SubMenuLi>
-
-          <SubMenuLi>
-            <SubMenuLink
-              href="/mypage"
-              isActive={activeLink === "/mypage"}
-              onClick={(event) => handleLinkClick(event, "/mypage")}
-            >
-              마이페이지
-            </SubMenuLink>
-          </SubMenuLi>
-
-          <SubMenuLi>
-            {/* localStorage에 로그인 정보가 있는지에 따라, header 마지막이 로그인, 로그아웃으로 바뀜 */}
-            {isLoggedIn ? (
-              <SubMenuText onClick={handleLogoutClick}>로그아웃</SubMenuText>
-            ) : (
-              <SubMenuText onClick={handleLoginClick}>로그인</SubMenuText>
-            )}
-          </SubMenuLi>
-        </SubMenuUl>
-      </SubMenu>
-
-      {isPopupOpen && (
-        <div className="login-popup" style={{ display: "flex", justifyContent: "center", alignItems: "center", height: "100vh" }}>
-          <div>
-            <PopupContainer>
-              <CloseButton onClick={handlePopupClose}>X</CloseButton>
-              <TopImage src="https://cloud.adofai.gg/apps/files_sharing/publicpreview/cj4GTz3xLmExWjG?file=/10.png&fileId=7306&x=1920&y=1080&a=true" alt="animore" />
-              <Text>SNS 계정으로 로그인</Text>
-              <ButtonContainer>
-                <KakaoLoginPage/>
-                <NaverLoginPage/>
-                <GoogleLoginPage/>
-                <FacebookLoginPage/>
-              </ButtonContainer>
-              {/* {isLoggedIn && <SignupPopupComponent onClose={handlePopupClose} />} */}
-            </PopupContainer>
-          </div>
+    return (
+      <header>
+        <div className='logo'>
+          {props.location.pathname === '/' ? null : <img src={Animore_logo} onClick={() => props.navigate('/')} alt="로고"></img>}
         </div>
-      )}
-    </Header>
-  );
-};
+        <div className="Navbar">
+          <ul>
+            <li 
+            className={props.location.pathname  === '/' ? 'active' : ''}
+            onClick={() => props.handleItemClick('/')}>홈</li>
+            <li 
+            className={props.location.pathname  === '/shop' ? 'active' : ''}
+            onClick={() => props.handleItemClick('/shop')}>미용실</li>
+            <li 
+            className={props.location.pathname  === '/reservelist' ? 'active' : ''}
+            onClick={() => props.handleItemClick('/reservelist')}>예약내역</li>
+            <li 
+            className={props.location.pathname.startsWith('/mypage') ? 'active' : ''}
+            onClick={() => props.handleItemClick('/mypage')}>마이페이지</li>
+            <li className={props.location.pathname === '/' ? 'active' : ''}>
+            {isLoggedIn ? (
+              <text onClick={handleLogoutClick}>로그아웃</text>
+            ) : (
+              <text onClick={handleLoginClick}>로그인</text>
+            )}
+          </li>
+        </ul>
 
-export default HeaderResult;
+          {/* sns 로그인 팝업창 */}
+          {isPopupOpen && (
+          <div className="login-popup" style={{ display: "flex", justifyContent: "center", alignItems: "center", height: "100vh" }}>
+            <div>
+              <PopupContainer>
+                <CloseButton onClick={handlePopupClose}>X</CloseButton>
+                <TopImage src="https://cloud.adofai.gg/apps/files_sharing/publicpreview/cj4GTz3xLmExWjG?file=/10.png&fileId=7306&x=1920&y=1080&a=true" alt="animore" />
+                <Text>SNS 계정으로 로그인</Text>
+                <ButtonContainer>
+                  <KakaoLoginPage/>
+                  <NaverLoginPage/>
+                  <GoogleLoginPage/>
+                  <FacebookLoginPage/>
+                </ButtonContainer>
+                {/* jwt token을 받아왔고, 처음 로그인 했을 때 -> 추가회원가입 창이 오픈 */}
+                {isLoggedIn && isFirstLogin && <SignupPopupComponent onClose={handlePopupClose} />}
+              </PopupContainer>
+            </div>
+          </div>
+        )}
+
+
+        </div>
+      </header>
+    )
+  }
+
+  export default Header;
