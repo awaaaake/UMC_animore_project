@@ -29,31 +29,3 @@ const TimeSelect = ({ isSelectedTime, onClick }) => {
 
 export default TimeSelect;
 
-
-
-
-
-//값 전달하는거 구현완료된거
-// import React from 'react';
-// import './timeSelect.css';
-
-// const TimeSelect = ({ isSelectedTime, onClick }) => {
-//   return (
-//     <div className="TimeButtonContainer">
-//       {isSelectedTime.map((selected, index) => (
-//         <button
-//           key={index}
-//           className={`Timebtn ${selected ? 'selected-time' : 'Timebtn'}`}
-//           onClick={() => {
-//             onClick(index);
-           
-//           }}
-//         >
-//           {index + 11}:00
-//         </button>
-//       ))}
-//     </div>
-//   );
-// };
-
-// export default TimeSelect;
