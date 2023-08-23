@@ -288,32 +288,19 @@ function Header(props) {
     const handleTokenFromURL = async () => {
 
       console.log(token);
-      
-      if (token) {
-        try {
-          // API 호출하여 유저 정보 가져오기
-          const response = await axios.get('/mypage', {
-            headers: {
-              Authorization: `Bearer ${token}`,
-            },
-          });
+      console.log(isLoggedIn);
 
-          // 유저 정보를 이용한 작업 수행
-          console.log(response.data);
-          
-          setLoggedIn(true);
-          setFirstLogin(true); // 추가
+      if (token != null) {
+        // 유저 정보를 이용한 작업 수행
+        console.log(isLoggedIn);
 
-        } catch (error) {
-          console.error('API 호출 에러:', error);
-        }
+        setLoggedIn(true);
+        setFirstLogin(true); // 추가
       }
     };
-
     // 컴포넌트 마운트 시 실행
     handleTokenFromURL();
-  }, setToken);
-
+  }, []);
 
 
   const handleLoginClick = () => {
@@ -321,6 +308,7 @@ function Header(props) {
       setPopupOpen(true);
       document.body.style.backgroundColor = "rgba(0, 0, 0, 0.2)";
     }
+    console.log(isLoggedIn);
   };
 
 
