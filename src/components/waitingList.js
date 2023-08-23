@@ -12,10 +12,11 @@ function WaitingList() {
     const [showDetails, setShowDetails] = useState(false);
     const [data, setData] = useState([]);
     const [fetchedData, setFetchedData] = useState(false); // 상태 추가
-  
+    const token = useSelector(state => state.token);
+    
     useEffect(() => {
       if (!fetchedData) {  // fetchedData 상태가 false일 때만 요청 보냄 (새로고침 할때)
-        const token = useSelector(state => state.token);
+        
   
         axios({
           method: 'GET',

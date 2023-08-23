@@ -62,7 +62,7 @@ function Book() {
                     console.error('위치 전송 실패:', error);
                 });
             }else{
-                console.log('에러')
+                console.log('위치 제공 불러오기 실패')
             }
     };
 
@@ -80,7 +80,7 @@ function Book() {
             })
             .catch(error => {
                 // API 호출 실패 시 에러 처리
-                console.error('API 호출 에러:', error);
+                console.error('API 호출 에러(최근 방문샵):', error);
             });
         getLocation(); 
         sendLocationToServer();

@@ -22,8 +22,10 @@ function ShopReservationList(props) {
     setShowDetails(prevShowDetails => !prevShowDetails);
   };
   const reservationId = props.reservationId;
+  const token = useSelector(state => state.token);
+  
   const handleApprovalClick = () => {
-    const token = useSelector(state => state.token);
+
     axios({
         method: 'GET',
         url: `/api/manage/bookings/confirm/${reservationId}`,

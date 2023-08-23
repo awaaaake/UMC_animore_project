@@ -21,7 +21,7 @@ function SelectPage(props) {
   const [isSelected, setIsSelected] = useState(Array(10).fill(false)); // 초기값은 선택되지 않음으로 설정
   const location = useLocation();
   const reservationId = location.state;
-
+  const token = useSelector(state => state.token);
 
   const handleDateSelect = (date) => {
     setSelectedDate(date); // 하위 컴포넌트로부터 받은 날짜 값을 상태로 저장
@@ -44,7 +44,7 @@ function SelectPage(props) {
     
     setShowFinalPage(true);
     if (reservationId) {
-    const token = useSelector(state => state.token);
+
     axios({
         method: 'POST',
         url: `/api/booking/time/${reservationId}`,
