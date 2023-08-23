@@ -45,7 +45,7 @@ const ThirdBody = () => {
 
       <TextContainer>
         <Text>
-          6월의 애니모어 이용후기
+          8월의 애니모어 이용후기
         </Text>
       </TextContainer>
 

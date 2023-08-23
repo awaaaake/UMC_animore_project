@@ -112,7 +112,7 @@ function ShopReservationList(props) {
       <div className="one">
         <p className="infromation_R ">{props.startTime}</p>
         <p className="infromation_R infromation2">{props.petName}</p>
-        <p className="infromation_R infromation3">{props.username}</p>
+        <p className="infromation_R infromation3">{props.nickname}</p>
         <p className="infromation_R infromation4">{props.phone}</p>
         <p className="infromation_R">
           <button className="inform_btn" onClick={handleDetailsClick}>
