@@ -2,6 +2,8 @@ import Animore_logo from '../img/13.png';
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import styled from 'styled-components';
+import { useDispatch } from 'react-redux';
+import { setToken } from '../actions';
 import './header_navbar.css'
 
 const Headerstyle = styled.header`
@@ -26,7 +28,7 @@ const ImageButton = styled.img`
 
 const NaverLoginPage = () => {
   const handleNaverLoginClick = () => {
-    window.location.href = "https://animore.co.kr/api/loginoauth?firm=naver";
+    window.location.href = "https://animore.co.kr/oauth2/authorization/naver";
   };
 
   return (
@@ -275,13 +277,15 @@ function Header(props) {
   const [isLoggedIn, setLoggedIn] = useState(false);
   // 처음 로그인을 구별하기 위한 변수
   const [isFirstLogin, setFirstLogin] = useState(false);
+  const dispatch = useDispatch();
+  const token = new URL(window.location.href).searchParams.get("token");
+  dispatch(setToken(token));
 
   useEffect(() => {
     // URL에서 토큰 값을 추출하여 처리하는 함수
     const handleTokenFromURL = async () => {
-      const url = new URL(window.location.href);
-      const token = url.searchParams.get('token');
-      // const token = '' // 토큰 값을 설정하세요.
+
+      console.log(token);
 
       if (token) {
         try {

@@ -1,12 +1,8 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import "@popperjs/core";
 import 'bootstrap/dist/css/bootstrap.min.css';
-import SelectPage from './selectPage';
 import './Reservation.css';
-import Radio from './radio';
-import RadioGroup from './radioGroup';
 import axios from "axios";
-import { Link } from "react-router-dom";
 import { useNavigate } from 'react-router-dom';
 
 function Reservation({ props }) {
