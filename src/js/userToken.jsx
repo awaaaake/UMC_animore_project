@@ -1,14 +1,7 @@
-import React from "react";
-import { useSelector } from 'react-redux';
 
+// import { useSelector } from 'react-redux';
 
-function UserToken(){
+// const token = useSelector(state => state.token);
+// const accessToken = `Bearer ${token}`;
 
-    const token = useSelector(state => state.token);
-
-    return(
-        <div>{token && <p>Logged in with token: {token}</p>}</div>
-    );
-}
-
-export default UserToken;
+//useEffect 안에 넣지 말고 페이지 함수 ex) home() 바로 밑에 적어야 ReactHook 안나는 것 같아요 

@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react';
 import axios from 'axios';
 import Company from '../CompPage/Company';
 
+
 function Review({ setModalOpen, shopInfoList, storeId, token }) {
 
     // 모달 끄기 

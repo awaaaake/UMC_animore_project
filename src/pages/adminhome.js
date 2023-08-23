@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import './adminhome.css';
 import axios from "axios";
+import { useSelector } from 'react-redux';
 
 function Adminhome(props) {
     let [admin_name, setAdmin_name] = useState(['봉봉살롱', '도그뷰티', '까끌래보끌래']);
@@ -14,9 +15,12 @@ function Adminhome(props) {
             [date]: !prevState[date]
         }));
     };
+
+    const token = useSelector(state => state.token);
+    const accessToken = "Bearer "+ {token};
+    axios.defaults.headers.common["Authorization"] = accessToken;
+    
     useEffect(() => {
-        const accessToken = 'Bearer ';
-        axios.defaults.headers.common["Authorization"] = accessToken;
         axios.get('/api/manage/bookings', {
             params: { year: currentDate.getFullYear(), month: currentDate.getMonth() + 1 }
         })

@@ -4,6 +4,8 @@ import { Button, Container, Nav, Navbar, Row, Col } from 'react-bootstrap';
 import { Routes, Route, Link, useNavigate, Outlet, useLocation } from 'react-router-dom';
 import Animore_logo from '../img/13.png';
 import Header from './header_navbar';
+import { useSelector } from 'react-redux';
+
 
 function Mypage() {
   const navigate = useNavigate();

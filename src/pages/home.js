@@ -3,24 +3,23 @@ import './home.css';
 import profile from '../img/dog.png';
 import grey from '../img/grey.png';
 import axios from 'axios';
+import { useSelector } from 'react-redux';
 
 function Home(props) {
     let [Info, setInfo] = useState(null);
-
+    const token = useSelector(state => state.token);
+    const accessToken = "Bearer "+ {token};
+    axios.defaults.headers.common['Authorization'] = accessToken;
     useEffect(() => {
-        //localStorage에서 access token을 가져옵니다.
-        const accessToken = '';
-        // access token을 인증 헤더에 설정합니다.
-        axios.defaults.headers.common["Authorization"] = accessToken;
-
         axios.get('/api/mypage')
             .then((response) => {
                 // result 객체를 petInfo 상태로 설정합니다.
                 console.log(response.data);
+                console.log(response.data);
                 setInfo(response.data.result);
             }).catch((error) => {
                 // 에러가 발생하면, 해당 에러 객체가 catch() 메서드의 매개변수인 error에 자동으로 전달됩니다.
-                console.error('Error fetching pet information:', error);
+                console.error('Error fetching information:', error);
             });
     }, []);
 

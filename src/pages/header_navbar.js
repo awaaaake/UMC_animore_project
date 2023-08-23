@@ -4,7 +4,8 @@ import axios from 'axios';
 import styled from 'styled-components';
 import { useDispatch } from 'react-redux';
 import { setToken } from '../actions';
-import './header_navbar.css'
+import './header_navbar.css';
+import { useSelector } from 'react-redux';
 
 const Headerstyle = styled.header`
   // 스크롤 해도 header는 같이 따라오게 하기 위해 fixed로 설정
@@ -43,7 +44,7 @@ const NaverLoginPage = () => {
 // 구글 로그인 버튼 컴포넌트
 const GoogleLoginPage = () => {
   const handleGoogleLoginClick = () => {
-    window.location.href = "https://animore.co.kr/api/loginoauth?firm=google";
+    window.location.href = "https://animore.co.kr/oauth2/authorization/google";
   };
   return (
     <ImageButton
@@ -57,7 +58,7 @@ const GoogleLoginPage = () => {
 // 페이스북 로그인 버튼 컴포넌트
 const FacebookLoginPage = () => {
   const handleFacebookLoginClick = () => {
-    window.location.href = "https://animore.co.kr/api/loginoauth?firm=facebook";
+    window.location.href = "https://animore.co.kr/oauth2/authorization/facebook";
   };
 
   return (
@@ -72,7 +73,7 @@ const FacebookLoginPage = () => {
 // 카카오톡 로그인 버튼 컴포넌트
 const KakaoLoginPage = () => {
   const handleKakaoLoginClick = () => {
-    window.location.href = "https://animore.co.kr/api/loginoauth?firm=kakao";
+    window.location.href = "https://animore.co.kr/oauth2/authorization/kakao";
   };
 
   return (
@@ -277,12 +278,13 @@ function Header(props) {
   const [isLoggedIn, setLoggedIn] = useState(false);
   // 처음 로그인을 구별하기 위한 변수
   const [isFirstLogin, setFirstLogin] = useState(false);
+
   const dispatch = useDispatch();
   const token = new URL(window.location.href).searchParams.get("token");
   dispatch(setToken(token));
 
   useEffect(() => {
-    // URL에서 토큰 값을 추출하여 처리하는 함수
+    // URL에서 토큰 값을 추출하여 처리하는 함수 
     const handleTokenFromURL = async () => {
 
       console.log(token);
@@ -315,7 +317,6 @@ function Header(props) {
 
 
   const handleLoginClick = () => {
-    setLoggedIn(true);
     setPopupOpen(true);
     document.body.style.backgroundColor = "rgba(0, 0, 0, 0.2)";
   };

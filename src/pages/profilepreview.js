@@ -12,6 +12,7 @@ import 유치원 from '../img/tags/Frame 66.png';
 import 특수동물 from '../img/tags/Frame 67.png';
 import 공휴일 from '../img/tags/Frame 68.png';
 import { useState } from 'react';
+import { useSelector } from 'react-redux';
 
 function Preview(props) {
     const tagsimg = {
@@ -24,12 +25,14 @@ function Preview(props) {
         '특수동물가능': 특수동물,
         '공휴일운영': 공휴일
     };
-    const [storeRecent, setStoreRecent]=useState(0);
+    const [storeRecent, setStoreRecent] = useState(0);
     const storeId = 1;
-    useEffect(() => {
-        const accessToken = 'Bearer ';
-        axios.defaults.headers.common["Authorization"] = accessToken;
 
+    const token = useSelector(state => state.token);
+    const accessToken = "Bearer " + { token };
+    axios.defaults.headers.common['Authorization'] = accessToken;
+    
+    useEffect(() => {
         axios.get(`/api/reviews/researvationinfo/${storeId}`)
             .then((response) => {
                 console.log(response.data);
