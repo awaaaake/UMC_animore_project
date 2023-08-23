@@ -35,7 +35,13 @@ const Div = styled.div`
   font-size: 30px;    
 `;
 
-
+const Image = styled.img`
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  top: 0;
+  left: 0;
+`;
 
 const ReviewGallery = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -82,8 +88,18 @@ const ReviewGallery = () => {
         style={{ display: index >= startIndex && index < endIndex ? 'block' : 'none' }}
         onClick={() => handleDivClick(index)}
       >
-        {/* <div>{`이용후기${index + 1}`}</div> 각 div에 특징 추가 */}
-        <div>{}</div>
+        {/* 임시 이미지 */}
+        {index === 0 && <Image src={require('../img/reviewgallery/reviewgallery1.jpg')} alt={`리뷰${index + 1}`} />}
+        {index === 1 && <Image src={require('../img/reviewgallery/reviewgallery2.jpg')} alt={`리뷰${index + 1}`} />}
+        {index === 2 && <Image src={require('../img/reviewgallery/reviewgallery3.jpg')} alt={`리뷰${index + 1}`} />}
+        {index === 3 && <Image src={require('../img/reviewgallery/reviewgallery2.jpg')} alt={`리뷰${index + 1}`} />}
+        {index === 4 && <Image src={require('../img/reviewgallery/reviewgallery3.jpg')} alt={`리뷰${index + 1}`} />}
+        {index === 5 && <Image src={require('../img/reviewgallery/reviewgallery1.jpg')} alt={`리뷰${index + 1}`} />}
+        {index === 6 && <Image src={require('../img/reviewgallery/reviewgallery3.jpg')} alt={`리뷰${index + 1}`} />}
+        {index === 7 && <Image src={require('../img/reviewgallery/reviewgallery1.jpg')} alt={`리뷰${index + 1}`} />}
+        {index === 8 && <Image src={require('../img/reviewgallery/reviewgallery2.jpg')} alt={`리뷰${index + 1}`} />}
+        {/* <div>{`광고${index + 1}`}</div> 각 div에 특징 추가 */}
+        {/* <div>{}</div> */}
       </Div>
     ));
   };

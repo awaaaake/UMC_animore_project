@@ -40,8 +40,7 @@ const AdBanner = () => {
   return (
     <BannerContainer>
       {/* ads변수를 이용해 다른 광고(이미지) 표시 */}
-      {/* <BannerImg src={`/public/img/ad/${ads[currentAdIndex]}`} alt="Ad" /> */}
-      <BannerImg src="https://postfiles.pstatic.net/MjAyMzA4MjNfMiAg/MDAxNjkyNzgwMDgxNTA3.3q4fr_xbFTPyKX-jXRRx3TMR9ITFTBIqtSvX-VhJ9QYg.TG1mj7ma5YoWsDbkSsIfYnPuFOYHTilyzZSKuRcvOzYg.PNG.ty4ove/%EC%A0%9C%EB%AA%A9%EC%9D%84-%EC%9E%85%EB%A0%A5%ED%95%B4%EC%A3%BC%EC%84%B8%EC%9A%94_-001_(6)_1.png?type=w966"/>
+      <BannerImg src={require(`../img/ad/${ads[currentAdIndex]}`)} alt="Ad" />
     </BannerContainer>
   );
 };
