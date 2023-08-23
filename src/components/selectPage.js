@@ -46,7 +46,7 @@ function SelectPage(props) {
     const token = '';
     axios({
         method: 'POST',
-        url: `/booking/time/${reservationId}`,
+        url: `/api/booking/time/${reservationId}`,
         headers: {
             Authorization: `Bearer ${token}`, // Bearer 토큰을 "Authorization" 헤더에 추가
             ContentType: 'application/json' 

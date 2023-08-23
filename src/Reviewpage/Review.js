@@ -138,7 +138,7 @@ function Review({ setModalOpen, shopInfoList, storeId, token }) {
         //formData.append('reviewContent', encodeinputValue);
         console.log(inputValue)
 
-        axios.post(`/reviews/create?storeId=${storeId}&reviewLike=${selectedStar}&reviewContent=${inputValue}`,
+        axios.post(`/api/reviews/create?storeId=${storeId}&reviewLike=${selectedStar}&reviewContent=${inputValue}`,
             formData, //전송할 자료
             {
                 headers: {

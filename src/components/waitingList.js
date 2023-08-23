@@ -18,7 +18,7 @@ function WaitingList() {
   
         axios({
           method: 'GET',
-          url: '/manage/bookings/requests',
+          url: '/api/manage/bookings/requests',
           headers: {
             Authorization: `Bearer ${token}`
           }
