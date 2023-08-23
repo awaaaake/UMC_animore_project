@@ -17,7 +17,7 @@ function Withdrawal(props) {
          * 이렇게 함으로써 Enter 키를 눌렀을 때도 폼이 제출되지 않고, 
          * handlePasswordCheck 함수가 실행되어 비밀번호 확인이 가능
          */
-        axios.get('/mypage/member/user/password', {
+        axios.get('/api/mypage/member/user/password', {
             params: { password: password },
         })
             .then((response) => {

@@ -17,7 +17,7 @@ function Adminhome(props) {
     useEffect(() => {
         const accessToken = 'Bearer ';
         axios.defaults.headers.common["Authorization"] = accessToken;
-        axios.get('/manage/bookings', {
+        axios.get('/api/manage/bookings', {
             params: { year: currentDate.getFullYear(), month: currentDate.getMonth() + 1 }
         })
             .then((response) => {

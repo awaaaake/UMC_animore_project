@@ -36,7 +36,7 @@ function Inforeset(props) {
     };
 
     const updateUserInfo = () => {
-        axios.put('/mypage/member/user', userInfo)
+        axios.put('/api/mypage/member/user', userInfo)
             .then((response) => {
                 console.log('사용자 정보 업데이트 성공:', response.data.result);
             }).catch((error) => {
@@ -45,7 +45,7 @@ function Inforeset(props) {
     }
 
     const updatePetInfo = () => {
-        axios.put('/mypage/member/pet', petInfo)
+        axios.put('/api/mypage/member/pet', petInfo)
             .then((response) => {
                 console.log('수정정보',petInfo);
                 console.log('반려동물 정보 업데이트 성공:', response.data.result[0]);
@@ -61,7 +61,7 @@ function Inforeset(props) {
         // access token을 인증 헤더에 설정합니다.
         axios.defaults.headers.common["Authorization"] = accessToken;
 
-        axios.get('/mypage/member/user')
+        axios.get('/api/mypage/member/user')
             .then((response) => {
                 // result 객체를 petInfo 상태로 설정
                 //"result" 필드에 해당하는 값이며, 이 값의 자료형은 객체(Object)
@@ -71,7 +71,7 @@ function Inforeset(props) {
             .catch((error) => {//에러가 발생하면, 해당 에러 객체가 catch() 메서드의 매개변수인 error에 자동으로 전달
                 console.error('Error fetching pet information:', error);
             });
-        axios.get('/mypage/member/pet')
+        axios.get('/api/mypage/member/pet')
             .then((response) => {
                 // result 객체를 petInfo 상태로 설정
                 console.log(response.data);

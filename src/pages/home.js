@@ -13,7 +13,7 @@ function Home(props) {
         // access token을 인증 헤더에 설정합니다.
         axios.defaults.headers.common["Authorization"] = accessToken;
 
-        axios.get('/mypage')
+        axios.get('/api/mypage')
             .then((response) => {
                 // result 객체를 petInfo 상태로 설정합니다.
                 console.log(response.data);
