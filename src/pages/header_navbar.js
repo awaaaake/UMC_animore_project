@@ -26,7 +26,7 @@ const ImageButton = styled.img`
 
 const NaverLoginPage = () => {
   const handleNaverLoginClick = () => {
-    window.location.href = "http://animore.co.kr/oauth2/authorization/naver";
+    window.location.href = "https://animore.co.kr/api/loginoauth?firm=naver";
   };
 
   return (
@@ -41,7 +41,7 @@ const NaverLoginPage = () => {
 // 구글 로그인 버튼 컴포넌트
 const GoogleLoginPage = () => {
   const handleGoogleLoginClick = () => {
-    window.location.href = "https://animore.co.kr/oauth2/authorization/google";
+    window.location.href = "https://animore.co.kr/api/loginoauth?firm=google";
   };
   return (
     <ImageButton
@@ -55,7 +55,7 @@ const GoogleLoginPage = () => {
 // 페이스북 로그인 버튼 컴포넌트
 const FacebookLoginPage = () => {
   const handleFacebookLoginClick = () => {
-    window.location.href = "https://animore.co.kr/oauth2/authorization/Facebook";
+    window.location.href = "https://animore.co.kr/api/loginoauth?firm=facebook";
   };
 
   return (
@@ -70,7 +70,7 @@ const FacebookLoginPage = () => {
 // 카카오톡 로그인 버튼 컴포넌트
 const KakaoLoginPage = () => {
   const handleKakaoLoginClick = () => {
-    window.location.href = "https://animore.co.kr/oauth2/authorization/kakao";
+    window.location.href = "https://animore.co.kr/api/loginoauth?firm=kakao";
   };
 
   return (
