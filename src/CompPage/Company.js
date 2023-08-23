@@ -10,6 +10,8 @@ import axios from 'axios';
 function Company() {
     const token = '';
 
+    const navigate = useNavigate()
+
     //예약창 열고 닫기
     const [modalOpen, setModalOpen] = useState(false);
     // 모달창 노출
@@ -119,7 +121,7 @@ function Company() {
                             <img id='catbut' src='/img/cat.png' />
                             <div className='button3'>
                                 <button id='heart_but' onClick={HeartClick}><span id="h_icon">{isLiked ? '♥' : '♡'}</span>{heartCount}</button>
-                                <button id='book_but'>예약하기</button>
+                                <button id='book_but'onClick={() => navigate('/reservation')}>예약하기</button>
                                 <button id='review_but' onClick={showModal}>후기 작성</button>
                                 {modalOpen && 
                                 <Review setModalOpen={setModalOpen} 
