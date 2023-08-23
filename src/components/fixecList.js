@@ -19,7 +19,7 @@ function FixedList() {
 
       axios({
         method: 'GET',
-        url: '/manage/bookings/confirmed',
+        url: '/api/manage/bookings/confirmed',
         headers: {
           Authorization: `Bearer ${token}`
         }

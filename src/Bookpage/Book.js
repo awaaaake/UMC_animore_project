@@ -47,7 +47,7 @@ function Book() {
             formData.append('latitude', latitude);
             formData.append('longitude', longitude);
 
-            axios.patch(`/locations/1?latitude=${latitude}&longitude=${longitude}`
+            axios.patch(`/api/locations/1?latitude=${latitude}&longitude=${longitude}`
             , formData,{
                 headers: {
                   Authorization: `Bearer ${token}`,
@@ -66,7 +66,7 @@ function Book() {
     };
 
     useEffect(() => {
-        axios.get('/search/recordstore', {
+        axios.get('/api/search/recordstore', {
             headers: {
                 Authorization: `Bearer ${token}`
             }

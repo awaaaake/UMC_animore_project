@@ -50,7 +50,7 @@ function Company() {
     const [reviewState, setReviewState] = useState([])
 
     useEffect(() => {
-        axios.get(`/search/${storeId}`, {
+        axios.get(`/api/search/${storeId}`, {
             headers: {
                 Authorization: `Bearer ${token}`
             }

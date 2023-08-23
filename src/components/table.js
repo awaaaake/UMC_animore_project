@@ -15,7 +15,7 @@ function Table ({ reservationId }){
 
     axios({
       method: 'GET',
-      url: `/booking/details/${reservationId}`,
+      url: `/api/booking/details/${reservationId}`,
       headers: {
         Authorization: `Bearer ${token}`
       }
