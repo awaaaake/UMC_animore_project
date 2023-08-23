@@ -15,10 +15,11 @@ function Home(props) {
             .then((response) => {
                 // result 객체를 petInfo 상태로 설정합니다.
                 console.log(response.data);
+                console.log(response.data);
                 setInfo(response.data.result);
             }).catch((error) => {
                 // 에러가 발생하면, 해당 에러 객체가 catch() 메서드의 매개변수인 error에 자동으로 전달됩니다.
-                console.error('Error fetching pet information:', error);
+                console.error('Error fetching information:', error);
             });
     }, []);
 
