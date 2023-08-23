@@ -30,7 +30,7 @@ function Preview(props) {
         const accessToken = 'Bearer ';
         axios.defaults.headers.common["Authorization"] = accessToken;
 
-        axios.get(`/reviews/researvationinfo/${storeId}`)
+        axios.get(`/api/reviews/researvationinfo/${storeId}`)
             .then((response) => {
                 console.log(response.data);
                 setStoreRecent(response.data.result.storeDTO.storeRecent);

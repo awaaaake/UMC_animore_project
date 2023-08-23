@@ -42,7 +42,7 @@ function Editprofile(props) {
         // access token을 인증 헤더에 설정합니다.
         axios.defaults.headers.common["Authorization"] = accessToken;
 
-        axios.get('/mypage/profile')
+        axios.get('/api/mypage/profile')
             .then((response) => {
                 // result 객체를 petInfo 상태로 설정합니다.
                 console.log(response.data.result);
@@ -75,7 +75,7 @@ function Editprofile(props) {
         }
     
         try {
-            const response = await axios.put('/mypage/profile', formData);
+            const response = await axios.put('/api/mypage/profile', formData);
             console.log('Profile updated successfully:', response.data.result);
             props.navigate('/mypage/profile');
         } catch (error) {

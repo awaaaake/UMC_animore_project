@@ -101,7 +101,7 @@ function Adminprofile(props) {
         const accessToken = 'Bearer ';
         axios.defaults.headers.common['Authorization'] = accessToken;
 
-        axios.get('/manage/store')
+        axios.get('/api/manage/store')
             .then((response) => {
                 console.log(response.data);
                 setInfo(response.data.result);
@@ -151,7 +151,7 @@ function Adminprofile(props) {
 
         console.log(formData);
         try {
-            const response = await axios.post('/manage/store', formData, {
+            const response = await axios.post('/api/manage/store', formData, {
                 headers: {
                     'Content-Type': 'multipart/form-data'
                 }

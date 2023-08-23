@@ -16,7 +16,7 @@ function IsWithdrawn(props) {
     axios.defaults.headers.common["Authorization"] = accessToken;
 
     const withdrawal = () => {
-        axios.delete('/mypage/member/remove')
+        axios.delete('/api/mypage/member/remove')
             .then((response) => {
                 console.log(response.data);
                 // 회원 탈퇴 성공 후 페이지 이동
