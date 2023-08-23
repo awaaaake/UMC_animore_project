@@ -37,7 +37,7 @@ function MainPage() {
     <div className="MainPage">
       <GlobalStyle />
       {/* 홈, 미용실, 예약내역, 마이페이지, 로그아웃 */}
-      <MainHeader location={location} navigate={navigate} activeItem={activeItem} handleItemClick={handleItemClick}> </MainHeader>
+      {/* <MainHeader location={location} navigate={navigate} activeItem={activeItem} handleItemClick={handleItemClick}> </MainHeader> */}
 
       {/* 1번째 페이지 */}
       <Firstpage/>

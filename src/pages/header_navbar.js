@@ -2,9 +2,20 @@ import Animore_logo from '../img/13.png';
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import styled from 'styled-components';
+import './header_navbar.css'
 
-
-
+const Headerstyle = styled.header`
+  // 스크롤 해도 header는 같이 따라오게 하기 위해 fixed로 설정
+  position: absolute;
+  margin: 0px;
+  top: 10px;
+  right: 15px;
+  width: 100%;
+  height: 7.5%;
+  // 투명하게 설정
+  background-color: transparent;
+  z-index: 9;
+`;
 
 const ImageButton = styled.img`
   width: 50px;
@@ -234,7 +245,7 @@ const SignupPopupComponent = ({ onClose }) => {
     // 예시: window.location.href = '/signup';
     // alert('회원 가입 창으로 이동합니다.');
     onClose(); // 팝업창 닫기
-    window.location.href = '/signup';
+    window.location.href = '/api/signup';
   };
 
   const handleCancleClick = () => {
@@ -328,56 +339,60 @@ function Header(props) {
 
 
     return (
-      <header>
-        <div className='logo'>
-          {props.location.pathname === '/' ? null : <img src={Animore_logo} onClick={() => props.navigate('/')} alt="로고"></img>}
-        </div>
-        <div className="Navbar">
-          <ul>
-            <li 
-            className={props.location.pathname  === '/' ? 'active' : ''}
-            onClick={() => props.handleItemClick('/')}>홈</li>
-            <li 
-            className={props.location.pathname  === '/shop' ? 'active' : ''}
-            onClick={() => props.handleItemClick('/shop')}>미용실</li>
-            <li 
-            className={props.location.pathname  === '/reservelist' ? 'active' : ''}
-            onClick={() => props.handleItemClick('/reservelist')}>예약내역</li>
-            <li 
-            className={props.location.pathname.startsWith('/mypage') ? 'active' : ''}
-            onClick={() => props.handleItemClick('/mypage')}>마이페이지</li>
-            <li className={props.location.pathname === '/' ? 'active' : ''}>
-            {isLoggedIn ? (
-              <text onClick={handleLogoutClick}>로그아웃</text>
-            ) : (
-              <text onClick={handleLoginClick}>로그인</text>
-            )}
-          </li>
-        </ul>
-
-          {/* sns 로그인 팝업창 */}
-          {isPopupOpen && (
-          <div className="login-popup" style={{ display: "flex", justifyContent: "center", alignItems: "center", height: "100vh" }}>
-            <div>
-              <PopupContainer>
-                <CloseButton onClick={handlePopupClose}>X</CloseButton>
-                <TopImage src="https://cloud.adofai.gg/apps/files_sharing/publicpreview/cj4GTz3xLmExWjG?file=/10.png&fileId=7306&x=1920&y=1080&a=true" alt="animore" />
-                <Text>SNS 계정으로 로그인</Text>
-                <ButtonContainer>
-                  <KakaoLoginPage/>
-                  <NaverLoginPage/>
-                  <GoogleLoginPage/>
-                  <FacebookLoginPage/>
-                </ButtonContainer>
-                {/* jwt token을 받아왔고, 처음 로그인 했을 때 -> 추가회원가입 창이 오픈 */}
-                {isLoggedIn && isFirstLogin && <SignupPopupComponent onClose={handlePopupClose} />}
-              </PopupContainer>
-            </div>
+      <header className={props.location.pathname === '/' ? 'home-header' : ''}>
+          <div className='logo'>
+            {props.location.pathname === '/' ? null : <img src={Animore_logo} onClick={() => props.navigate('/')} alt="로고"></img>}
           </div>
-        )}
+          <div className={isPopupOpen ? 'hidden-header' : 'Navbar'}>
+            <ul>
+              <li
+                className={props.location.pathname === '/' ? 'active' : ''}
+                onClick={() => props.handleItemClick('/')}>홈</li>
+              {isLoggedIn ? <li
+                className={props.location.pathname.startsWith('/shop') ? 'active' : ''}
+                onClick={() => props.handleItemClick('/shop')}>미용실</li>
+                : <li
+                  onClick={handleLoginClick}>미용실</li>}
+              {isLoggedIn ? <li
+                className={props.location.pathname.startsWith('/reservelist') ? 'active' : ''}
+                onClick={() => props.handleItemClick('/reservelist')}>예약내역</li>
+                : <li
+                  onClick={handleLoginClick}>예약내역</li>}
+              {isLoggedIn ? <li
+                className={props.location.pathname.startsWith('/mypage') ? 'active' : ''}
+                onClick={() => props.handleItemClick('/mypage')}>마이페이지</li>
+                : <li
+                  onClick={handleLoginClick}>마이페이지</li>}
+              <li className={props.location.pathname === '/login' ? 'active' : ''}>
+                {isLoggedIn ? (
+                  <text onClick={handleLogoutClick}>로그아웃</text>
+                ) : (
+                  <text onClick={handleLoginClick}>로그인</text>
+                )}
+              </li>
+            </ul>
+          </div>
 
-
+      {/* sns 로그인 팝업창 */}
+      {isPopupOpen && (
+        <div className="login-popup" style={{ display: "flex", justifyContent: "center", alignItems: "center", height: "100vh" }}>
+          <div>
+            <PopupContainer>
+              <CloseButton onClick={handlePopupClose}>X</CloseButton>
+              <TopImage src="https://cloud.adofai.gg/apps/files_sharing/publicpreview/cj4GTz3xLmExWjG?file=/10.png&fileId=7306&x=1920&y=1080&a=true" alt="animore" />
+              <Text>SNS 계정으로 로그인</Text>
+              <ButtonContainer>
+                <KakaoLoginPage />
+                <NaverLoginPage />
+                <GoogleLoginPage />
+                <FacebookLoginPage />
+              </ButtonContainer>
+              {/* jwt token을 받아왔고, 처음 로그인 했을 때 -> 추가회원가입 창이 오픈 */}
+              {isLoggedIn && isFirstLogin && <SignupPopupComponent onClose={handlePopupClose} />}
+            </PopupContainer>
+          </div>
         </div>
+      )}
       </header>
     )
   }
