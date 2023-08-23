@@ -131,10 +131,10 @@ const SignUpNext = () => {
   const navigate = useNavigate();
 
   const handleHomeClick = () => {
-    navigate('/');
+    navigate('/api/');
   };
   const handleProfileClick = () => {
-    navigate('/mypage/profile');
+    navigate('/api/mypage/profile');
   };
 
   return (

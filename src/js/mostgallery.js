@@ -32,13 +32,16 @@ const Div = styled.div`
   background-color: #FAE5F2;
   border: 2px solid;
   border-color: #B33E86;
-  font-size: 30px;    
+  font-size: 30px;
 `;
 
 
 const Image = styled.img`
-  max-width: 100%;
-  max-height: 100%;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  top: 0;
+  left: 0;
 `;
 
 
@@ -87,15 +90,16 @@ const MostGallery = () => {
         style={{ display: index >= startIndex && index < endIndex ? 'block' : 'none' }}
         onClick={() => handleDivClick(index)}
       >
-        {index === 0 && <Image src="https://postfiles.pstatic.net/MjAyMzA4MjNfMTU2/MDAxNjkyNzgxNTA1NTA3.1b8Sq3y_PjiFy65_XDXvolqs1kBDXm69awaPJ6amlskg.79dUbCpdfetihxshS-LMHqDSVWhXsCi54bso3ReOa7Mg.JPEG.ty4ove/KakaoTalk_20230823_174034120_02.jpg?type=w466" alt={`할인${index + 1}`} />}
-        {index === 1 && <Image src="https://postfiles.pstatic.net/MjAyMzA4MjNfNyAg/MDAxNjkyNzgxNTA1NTMx.SwcaxjzC47qfgUWq8vzSibY7vHWPSN_cKCas0cWMl78g.jo2_MhbOCc5GZ_04DjLuOq3GIC-l4VhGxxbpI4JOoUYg.JPEG.ty4ove/KakaoTalk_20230823_174034120_01.jpg?type=w466" alt={`할인${index + 1}`} />}
-        {index === 2 && <Image src="https://postfiles.pstatic.net/MjAyMzA4MjNfNTkg/MDAxNjkyNzgxNTA1NTIx.M0dWPtw0S8FoiuV_sNnm38e4b4zjcAO3e1mOWtO2Hm0g.PxvOFh8DCo5jZGsegcfk-Q40ecHQVXabpMDO7TuTkUwg.JPEG.ty4ove/KakaoTalk_20230823_174034120.jpg?type=w466" alt={`할인${index + 1}`} />}
-        {index === 3 && <Image src="https://postfiles.pstatic.net/MjAyMzA4MjNfNyAg/MDAxNjkyNzgxNTA1NTMx.SwcaxjzC47qfgUWq8vzSibY7vHWPSN_cKCas0cWMl78g.jo2_MhbOCc5GZ_04DjLuOq3GIC-l4VhGxxbpI4JOoUYg.JPEG.ty4ove/KakaoTalk_20230823_174034120_01.jpg?type=w466" alt={`할인${index + 1}`} />}
-        {index === 4 && <Image src="https://postfiles.pstatic.net/MjAyMzA4MjNfMTU2/MDAxNjkyNzgxNTA1NTA3.1b8Sq3y_PjiFy65_XDXvolqs1kBDXm69awaPJ6amlskg.79dUbCpdfetihxshS-LMHqDSVWhXsCi54bso3ReOa7Mg.JPEG.ty4ove/KakaoTalk_20230823_174034120_02.jpg?type=w466" alt={`할인${index + 1}`} />}
-        {index === 5 && <Image src="https://postfiles.pstatic.net/MjAyMzA4MjNfNTkg/MDAxNjkyNzgxNTA1NTIx.M0dWPtw0S8FoiuV_sNnm38e4b4zjcAO3e1mOWtO2Hm0g.PxvOFh8DCo5jZGsegcfk-Q40ecHQVXabpMDO7TuTkUwg.JPEG.ty4ove/KakaoTalk_20230823_174034120.jpg?type=w466" alt={`할인${index + 1}`} />}
-        {index === 6 && <Image src="https://postfiles.pstatic.net/MjAyMzA4MjNfMTU2/MDAxNjkyNzgxNTA1NTA3.1b8Sq3y_PjiFy65_XDXvolqs1kBDXm69awaPJ6amlskg.79dUbCpdfetihxshS-LMHqDSVWhXsCi54bso3ReOa7Mg.JPEG.ty4ove/KakaoTalk_20230823_174034120_02.jpg?type=w466" alt={`할인${index + 1}`} />}
-        {index === 7 && <Image src="https://postfiles.pstatic.net/MjAyMzA4MjNfNTkg/MDAxNjkyNzgxNTA1NTIx.M0dWPtw0S8FoiuV_sNnm38e4b4zjcAO3e1mOWtO2Hm0g.PxvOFh8DCo5jZGsegcfk-Q40ecHQVXabpMDO7TuTkUwg.JPEG.ty4ove/KakaoTalk_20230823_174034120.jpg?type=w466" alt={`할인${index + 1}`} />}
-        {index === 8 && <Image src="https://postfiles.pstatic.net/MjAyMzA4MjNfNyAg/MDAxNjkyNzgxNTA1NTMx.SwcaxjzC47qfgUWq8vzSibY7vHWPSN_cKCas0cWMl78g.jo2_MhbOCc5GZ_04DjLuOq3GIC-l4VhGxxbpI4JOoUYg.JPEG.ty4ove/KakaoTalk_20230823_174034120_01.jpg?type=w466" alt={`할인${index + 1}`} />}
+        {/* 임시 이미지 */}
+        {index === 0 && <Image src={require('../img/mostgallery/mostgallery1.jpg')} alt={`인기${index + 1}`} />}
+        {index === 1 && <Image src={require('../img/mostgallery/mostgallery2.jpg')} alt={`인기${index + 1}`} />}
+        {index === 2 && <Image src={require('../img/mostgallery/mostgallery3.jpg')} alt={`인기${index + 1}`} />}
+        {index === 3 && <Image src={require('../img/mostgallery/mostgallery2.jpg')} alt={`인기${index + 1}`} />}
+        {index === 4 && <Image src={require('../img/mostgallery/mostgallery3.jpg')} alt={`인기${index + 1}`} />}
+        {index === 5 && <Image src={require('../img/mostgallery/mostgallery1.jpg')} alt={`인기${index + 1}`} />}
+        {index === 6 && <Image src={require('../img/mostgallery/mostgallery3.jpg')} alt={`인기${index + 1}`} />}
+        {index === 7 && <Image src={require('../img/mostgallery/mostgallery1.jpg')} alt={`인기${index + 1}`} />}
+        {index === 8 && <Image src={require('../img/mostgallery/mostgallery2.jpg')} alt={`인기${index + 1}`} />}
         {/* <div>{`인기 순위:${index + 1}`} </div> 각 div에 특징 추가 */}
         {/* <div>{}</div>  */}
       </Div>

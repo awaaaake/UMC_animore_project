@@ -40,8 +40,7 @@ const AdBanner = () => {
   return (
     <BannerContainer>
       {/* ads변수를 이용해 다른 광고(이미지) 표시 */}
-      {/* <BannerImg src={`/public/img/ad/${ads[currentAdIndex]}`} alt="Ad" /> */}
-      <BannerImg src="/img/ad/ad1.jpeg" alt="Ad" />
+      <BannerImg src={require(`../img/ad/${ads[currentAdIndex]}`)} alt="Ad" />
     </BannerContainer>
   );
 };
