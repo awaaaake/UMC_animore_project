@@ -156,7 +156,7 @@ function Review({ setModalOpen, shopInfoList, storeId, token }) {
     //----------------------------------------------------------------
 
     return (
-        <div className={styles.container}>
+        <div className={styles.container3}>
             <button className={styles.close} onClick={closeModal}>
                 X
             </button>
