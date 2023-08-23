@@ -17,7 +17,7 @@ function Isadmin(props) {
     //Login 컴포넌트에서 로그인을 하면 토큰을 받아 쿠키에 저장
     const login = (e) => {
         e.preventDefault();
-        axios.post('/login', {// 로그인 요청
+        axios.post('/api/login', {// 로그인 요청
             username:formRef.current.id.value,
             password:formRef.current.password.value
         }).then((res) => {
