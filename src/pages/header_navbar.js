@@ -4,8 +4,7 @@ import axios from 'axios';
 import styled from 'styled-components';
 import { useDispatch } from 'react-redux';
 import { setToken } from '../actions';
-import './header_navbar.css';
-import { useSelector } from 'react-redux';
+import './header_navbar.css'
 
 const Headerstyle = styled.header`
   // 스크롤 해도 header는 같이 따라오게 하기 위해 fixed로 설정
@@ -278,13 +277,12 @@ function Header(props) {
   const [isLoggedIn, setLoggedIn] = useState(false);
   // 처음 로그인을 구별하기 위한 변수
   const [isFirstLogin, setFirstLogin] = useState(false);
-
   const dispatch = useDispatch();
   const token = new URL(window.location.href).searchParams.get("token");
   dispatch(setToken(token));
 
   useEffect(() => {
-    // URL에서 토큰 값을 추출하여 처리하는 함수 
+    // URL에서 토큰 값을 추출하여 처리하는 함수
     const handleTokenFromURL = async () => {
 
       console.log(token);
@@ -317,6 +315,7 @@ function Header(props) {
 
 
   const handleLoginClick = () => {
+    setLoggedIn(true);
     setPopupOpen(true);
     document.body.style.backgroundColor = "rgba(0, 0, 0, 0.2)";
   };
@@ -370,9 +369,9 @@ function Header(props) {
                   onClick={handleLoginClick}>마이페이지</li>}
               <li className={props.location.pathname === '/login' ? 'active' : ''}>
                 {isLoggedIn ? (
-                  <Text onClick={handleLogoutClick}>로그아웃</Text>
+                  <text onClick={handleLogoutClick}>로그아웃</text>
                 ) : (
-                  <Text onClick={handleLoginClick}>로그인</Text>
+                  <text onClick={handleLoginClick}>로그인</text>
                 )}
               </li>
             </ul>
