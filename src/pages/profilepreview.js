@@ -27,7 +27,8 @@ function Preview(props) {
     const [storeRecent, setStoreRecent]=useState(0);
     const storeId = 1;
     useEffect(() => {
-        const accessToken = 'Bearer ';
+        const token = useSelector(state => state.token);
+        const accessToken = "Bearer "+ {token};
         axios.defaults.headers.common["Authorization"] = accessToken;
 
         axios.get(`/api/reviews/researvationinfo/${storeId}`)
