@@ -150,7 +150,7 @@ function App() {
         {/*0823미용실 추가*/}
         <Route path="/shop" element={ <Book /> } />
         <Route path="/shop/:storeId" element={ <Company/> } />
-        <Route path="/search/:searchText" element={ <Search/> } />
+        <Route path="/api/search/:searchText" element={ <Search/> } />
       </Routes>
 
 
