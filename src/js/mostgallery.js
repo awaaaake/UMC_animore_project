@@ -62,16 +62,16 @@ const MostGallery = () => {
   const handleDivClick = (index) => {
     switch (index) {
       case 0:
-        window.location.href = 'https://www.example1.com'; // 첫 번째 div를 클릭했을 때 이동할 사이트 주소
+        window.location.href = '/shop'; // 첫 번째 div를 클릭했을 때 이동할 사이트 주소
         break;
       case 1:
-        window.location.href = 'https://www.example2.com'; // 두 번째 div를 클릭했을 때 이동할 사이트 주소
+        window.location.href = '/shop'; // 두 번째 div를 클릭했을 때 이동할 사이트 주소
         break;
       case 2:
-        window.location.href = 'https://www.example3.com'; // 세 번째 div를 클릭했을 때 이동할 사이트 주소
+        window.location.href = '/shop'; // 세 번째 div를 클릭했을 때 이동할 사이트 주소
         break;
       case 3:
-        window.location.href = 'https://www.example4.com'; // 세 번째 div를 클릭했을 때 이동할 사이트 주소
+        window.location.href = '/shop'; // 세 번째 div를 클릭했을 때 이동할 사이트 주소
         break;
 
       // 추가적인 div 클릭 시 이동할 사이트 주소 추가.....

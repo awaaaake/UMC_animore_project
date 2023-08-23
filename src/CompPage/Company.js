@@ -69,7 +69,7 @@ function Company() {
             });
 
         //(0823)2. 리뷰 api 호출---------------
-        axios.get(`/reviews/store/${storeId}`, {
+        axios.get(`/api/reviews/store/${storeId}`, {
             headers: {
                 Authorization: `Bearer ${token}`
             }
