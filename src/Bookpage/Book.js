@@ -4,9 +4,10 @@ import { Container } from 'react-bootstrap';
 import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
+import { useSelector } from 'react-redux';
 
 function Book() {
-    const token = '';
+    const token = useSelector(state => state.token);;
 
     const [searchText, setSearchText] = useState('');
     const navigate = useNavigate();
