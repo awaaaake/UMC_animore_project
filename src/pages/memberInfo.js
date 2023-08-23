@@ -17,7 +17,7 @@ function Memberinfo(props) {
          * 이렇게 함으로써 Enter 키를 눌렀을 때도 폼이 제출되지 않고, 
          * handlePasswordCheck 함수가 실행되어 비밀번호 확인이 가능
          */
-        axios.get('/mypage/member/user/password', {/*파라미터의 키(key) 이름은 원하는 대로 정의할 수 O 하지만 주의할 점은, 사용하는 API의 문서나 요구사항에 따라 정해진 키 이름을 사용해야 할 수도 O API가 특정 키 이름을 요구하지 않는 경우에는 자유롭게 원하는 키 이름을 사용할 수 O*/
+        axios.get('/api/mypage/member/user/password', {/*파라미터의 키(key) 이름은 원하는 대로 정의할 수 O 하지만 주의할 점은, 사용하는 API의 문서나 요구사항에 따라 정해진 키 이름을 사용해야 할 수도 O API가 특정 키 이름을 요구하지 않는 경우에는 자유롭게 원하는 키 이름을 사용할 수 O*/
             params: { password: password },
         })
             .then((response) => {
