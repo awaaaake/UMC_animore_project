@@ -45,9 +45,9 @@ function FixedList() {
           <div className="rowline"></div>  
           <div className="colPage2">
               <p className="tile title1">예약일자</p>
-              <p className="tile">반려동물이름</p>
-              <p className="tile">보호자 이름</p>
-              <p className="tile">보호자 연락처</p>
+              <p className="tile title2">반려동물이름</p>
+              <p className="tile title3">보호자 이름</p>
+              <p className="tile title4">보호자 연락처</p>
               <p className="tile title5">예약상세</p>
           </div>
           <div>
