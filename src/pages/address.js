@@ -5,6 +5,7 @@ import './address.css';
 
 function Address(props) {
     const [addressValue, setAddressValue] = useState(props.Info.storeLocation);
+    const KAKAOMAP_API = process.env.REACT_APP_KAKAOMAP_API;
     const complete = (data) => {
         let fullAddress = data.address;
         setAddressValue(data.address);
@@ -32,8 +33,8 @@ function Address(props) {
     
     useEffect(() => {
         if (addressValue) {
-            axios.get(`https://dapi.kakao.com/v2/local/search/address.json?query=${Address}`, {
-                headers: { Authorization: 'KakaoAK ' },
+            axios.get(`https://dapi.kakao.com/v2/local/search/address.json?query=${addressValue}`, {
+                headers: { Authorization: `KakaoAK ${KAKAOMAP_API}`},
             })
             .then(res => {
                 const location = res.data.documents[0];
