@@ -11,6 +11,7 @@ function Home(props) {
     useEffect(() => {
         //localStorage에서 access token을 가져옵니다.
         const token = useSelector(state => state.token);
+        const accessToken = "Bearer "+ {token};
         // access token을 인증 헤더에 설정합니다.
         axios.defaults.headers.common["Authorization"] = accessToken;
 
