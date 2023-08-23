@@ -46,7 +46,7 @@ const SearchBox = ({ keywords }) => {
     if (event.key === 'Enter') {
       const keyword = search.trim();
       if (keyword) {
-        window.location.href = `api/search/${keyword}`;
+        window.location.href = `/api/search/${keyword}`;
       }
     }
   };
