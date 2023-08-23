@@ -288,7 +288,7 @@ function Header(props) {
     const handleTokenFromURL = async () => {
 
       console.log(token);
-
+      
       if (token) {
         try {
           // API 호출하여 유저 정보 가져오기
@@ -370,9 +370,9 @@ function Header(props) {
                   onClick={handleLoginClick}>마이페이지</li>}
               <li className={props.location.pathname === '/login' ? 'active' : ''}>
                 {isLoggedIn ? (
-                  <Text onClick={handleLogoutClick}>로그아웃</Text>
+                  <text onClick={handleLogoutClick}>로그아웃</text>
                 ) : (
-                  <Text onClick={handleLoginClick}>로그인</Text>
+                  <text onClick={handleLoginClick}>로그인</text>
                 )}
               </li>
             </ul>

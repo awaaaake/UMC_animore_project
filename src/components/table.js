@@ -11,8 +11,9 @@ import { useSelector } from 'react-redux';
 
 function Table ({ reservationId }){
     const [data, setData] = useState({});
-  useEffect(() => {
     const token = useSelector(state => state.token);
+
+  useEffect(() => {
 
     axios({
       method: 'GET',
