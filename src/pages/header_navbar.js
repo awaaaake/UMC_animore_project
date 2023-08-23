@@ -370,9 +370,9 @@ function Header(props) {
                   onClick={handleLoginClick}>마이페이지</li>}
               <li className={props.location.pathname === '/login' ? 'active' : ''}>
                 {isLoggedIn ? (
-                  <text onClick={handleLogoutClick}>로그아웃</text>
+                  <Text onClick={handleLogoutClick}>로그아웃</Text>
                 ) : (
-                  <text onClick={handleLoginClick}>로그인</text>
+                  <Text onClick={handleLoginClick}>로그인</Text>
                 )}
               </li>
             </ul>
