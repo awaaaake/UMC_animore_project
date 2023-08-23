@@ -6,9 +6,10 @@ import { useState, useEffect } from 'react';
 import Review from '../Reviewpage/Review.js';
 import ReadPage from '../ReviewReadpage/Readpage';
 import axios from 'axios';
+import { useSelector } from 'react-redux';
 
 function Company() {
-    const token = '';
+    const token = useSelector(state => state.token);
 
     const navigate = useNavigate()
 

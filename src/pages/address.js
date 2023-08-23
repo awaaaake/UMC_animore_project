@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import DaumPostcode from "react-daum-postcode";
 import axios from "axios";
 import './address.css';
+import { useSelector } from 'react-redux';
 
 function Address(props) {
     const [addressValue, setAddressValue] = useState(props.Info.storeLocation);

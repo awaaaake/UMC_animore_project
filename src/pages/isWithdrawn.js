@@ -3,6 +3,8 @@ import './isWithdrawn.css';
 import mark from '../img/mark.png';
 import alertImg from '../img/alert.png';
 import axios from "axios";
+import { useSelector } from 'react-redux';
+
 
 function IsWithdrawn(props) {
     let [입력값, 입력값변경] = useState('');

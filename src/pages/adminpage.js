@@ -6,6 +6,7 @@ import Animore_logo from '../img/13.png';
 import { useCookies } from "react-cookie";
 import Isadmin from './isadmin';
 import Admin_Header from './admin_header';
+import { useSelector } from 'react-redux';
 
 function Adminpage() {
   const navigate = useNavigate();
