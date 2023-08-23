@@ -3,9 +3,10 @@ import { useState, useEffect } from 'react';
 import Pagination from '../Pagination/pagination.js';
 import { useParams, useNavigate } from 'react-router-dom';
 import axios from 'axios';
+import { useSelector } from 'react-redux';
 
 function Search() {
-  const token = '';
+  const token = useSelector(state => state.token);
 
   //정렬 상태관리
   const [popularColor, setPopularColor] = useState(true);
