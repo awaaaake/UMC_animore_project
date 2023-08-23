@@ -37,7 +37,7 @@ function Book() {
                 }
             );
         } else {
-            console.error('위치제공불가1');
+            console.error('위치 제공 비동의');
         }
     };
 
@@ -47,7 +47,7 @@ function Book() {
             formData.append('latitude', latitude);
             formData.append('longitude', longitude);
 
-            axios.post(`/locations/1?latitude=${latitude}&longitude=${longitude}`
+            axios.patch(`/locations/1?latitude=${latitude}&longitude=${longitude}`
             , formData,{
                 headers: {
                   Authorization: `Bearer ${token}`,
@@ -58,8 +58,10 @@ function Book() {
                     console.log('위치전송완료:', response.data);
                 })
                 .catch(error => {
-                    console.error('실패:', error);
+                    console.error('위치 전송 실패:', error);
                 });
+            }else{
+                console.log('에러')
             }
     };
 
