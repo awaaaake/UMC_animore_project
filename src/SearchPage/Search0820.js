@@ -46,7 +46,7 @@ function Search() {
   const query1 = encodeURIComponent('해시태그:' + searchText);
   const query2 = encodeURIComponent(searchText);
   //서버 요청 주소
-  const shopApiUrl = `/search/distance?query1=${query1}&query2=${query2}`;
+  const shopApiUrl = `/api/search/distance?query1=${query1}&query2=${query2}`;
   useEffect(() => {
     axios.get(shopApiUrl, {
       headers: {
