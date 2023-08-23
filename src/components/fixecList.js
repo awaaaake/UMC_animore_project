@@ -57,7 +57,7 @@ function FixedList() {
             page={3} 
             startTime={item.startTime}
             petName={item.petName}
-            username={item.username}
+            nickname={item.nickname}
             phone={item.phone}
             reservationId ={item.reservationId}
           />
