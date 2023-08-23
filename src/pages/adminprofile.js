@@ -6,6 +6,7 @@ import storeimg from '../img/storeimg.jpg'
 import axios from "axios";
 import Address from "./address";
 import DaumPostcode from 'react-daum-postcode';
+import { useSelector } from 'react-redux';
 
 function Adminprofile(props) {
     let [inputCount, setInputCount] = useState(0);
@@ -97,11 +98,11 @@ function Adminprofile(props) {
     };
     /**입력 필드마다 name 속성에 해당하는 상태를 업데이트합니다. 예를 들어, <input name="nickname" ... />이라는 입력 필드가 있다면 nickname이라는 상태가 업데이트됩니다. */
 
-    useEffect(() => {
-        const token = useSelector(state => state.token);
-        const accessToken = "Bearer "+ {token};
-        axios.defaults.headers.common['Authorization'] = accessToken;
+    const token = useSelector(state => state.token);
+    const accessToken = "Bearer "+ {token};
+    axios.defaults.headers.common['Authorization'] = accessToken;
 
+    useEffect(() => {
         axios.get('/api/manage/store')
             .then((response) => {
                 console.log(response.data);

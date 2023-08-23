@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import './memberInfo.css';
 import key from '../img/key.png';
 import axios from 'axios';
+import { useSelector } from 'react-redux';
 
 function Memberinfo(props) {
     let [password, setPassword] = useState('');

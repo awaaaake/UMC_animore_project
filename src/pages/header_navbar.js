@@ -4,7 +4,8 @@ import axios from 'axios';
 import styled from 'styled-components';
 import { useDispatch } from 'react-redux';
 import { setToken } from '../actions';
-import './header_navbar.css'
+import './header_navbar.css';
+import { useSelector } from 'react-redux';
 
 const Headerstyle = styled.header`
   // 스크롤 해도 header는 같이 따라오게 하기 위해 fixed로 설정
