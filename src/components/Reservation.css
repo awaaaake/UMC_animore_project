@@ -49,3 +49,13 @@
     margin-right: 13.5%;
     margin-bottom: 10px;
 }
+.inactive{
+    background-color: #bcbcbc7e;
+    color:white;
+    border: none;
+    border-radius: 7px;
+    width: 12%;
+    height: 40px;
+    margin-left: 44%;
+    margin-top: 40px;
+}
