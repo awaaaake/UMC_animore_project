@@ -1,27 +1,14 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import "@popperjs/core";
 import 'bootstrap/dist/css/bootstrap.min.css';
-import SelectPage from './selectPage';
 import './Reservation.css';
-import Radio from './radio';
-import RadioGroup from './radioGroup';
 import axios from "axios";
-import { Link } from "react-router-dom";
 import { useNavigate } from 'react-router-dom';
 
 function Reservation({ props }) {
+    const navigate = useNavigate();
     const [data, setData] = useState({});
     const [showDetails, setShowDetails] = useState(false);
-    const [showSelectPage, setShowSelectPage] = useState(false);
-    const [selectedSpecies, setSelectedSpecies] = useState('');
-    const [selectedCut, setSelectedCut] = useState('');
-    const [selectedBath, setSelectedBath] = useState('');
-    const [selectedValue, setSelectedValue] = useState('');
-    const [selectedOptions, setSelectedOptions] = useState({
-        dogSize: '',
-        cutStyle: '',
-        bathStyle: ''
-    });
     const options = [
         { label: '중,소형견', value: 'MEDIUM', type: 'dogSize' },
         { label: '대형견', value: 'LARGE', type: 'dogSize' },
@@ -41,27 +28,22 @@ function Reservation({ props }) {
         bathStyle: ''
     });
 
+    const isDataSelected = () => {
+        // 라디오버튼 값 선택안되면 다음버튼 안눌러지게
+        return selectedValues.dogSize && selectedValues.cutStyle && selectedValues.bathStyle;
+    };
+    
+    
+    //라디오 버튼으로 선택한 값
     const handleOptionChange = (type, value) => {
-        console.log(`선택한 값 : ${type} ${value}`);
         setSelectedValues((prevValues) => ({
             ...prevValues,
             [type]: value
         }));
     };
 
-    const navigate = useNavigate();
-
-    const handleRadioChange = (name, value) => {
-        setSelectedValue((prevValues) => [...prevValues, value]);
-        console.log(value)
-    };
-
-    useEffect(() => {
-        console.log('선택', selectedValue); // 선택 값이 변경될 때마다 로그 출력
-    }, [selectedValue]); // selectedValue가 변경될 때만 이펙트 실행
-
+    //다음 버튼 누르면 post요청 -> reservationId 받아옴
     const handleNextClick = () => {
-
         const token = '';
         axios({
             method: 'POST',
@@ -83,16 +65,21 @@ function Reservation({ props }) {
                 setData(response.data);
                 setShowDetails(true);
                 console.log('성공:', response.data);
+                const reservationId = response.data.reservationId;
+                navigate('/select', {               //요청 응답 오면 다음페이지로 넘어감
+                    state: {
+                        reservationId: reservationId
+                    }
+                });
             })
             .catch(error => {
                 console.error('에러 발생:', error.response);
-            }); 
-            
+            });
+
     };
-
+    
+    //저장내용 불러오기 누르면 get요청
     const handleShwoDetails = () => {
-
-        // 데이터 요청
         const token = '';
         axios({
             method: 'GET',
@@ -113,35 +100,26 @@ function Reservation({ props }) {
 
     };
 
-
     return (
         <div className="main_R">
 
             <div className="ment">
                 <p className="detail">예약상세</p>
-                <a className="save" href="#" onClick={handleShwoDetails}>저장내용불러오기</a>
+                <a className="save" href="" onClick={handleShwoDetails}>저장내용불러오기</a>
             </div>
 
             <div className="table_box">
                 <table className="table tablee"  >
-                    {/* <thead>
-                        <tr>
-                            <th scope="col" style={{ background: '#F5F5F5', width: 213 }}>반려동물 이름</th>
-                            <th style={{ width: 277, height: 40.4 }}>{showDetails && (<p style={{ height: 10 }}>{data.result.petName}</p>)}</th>
-                            <th scope="col" style={{ background: '#F5F5F5', width: 344 }}>이름</th>
-                            <th style={{ width: 277, height: 40.4 }}>{showDetails && (<p style={{ height: 10 }}>{data.result.nickname}</p>)}</th>
-                        </tr>
-                        
-                    </thead> */}
+
                     <tbody>
-                    <tr>
+                        <tr>
                             <th scope="col" style={{ background: '#F5F5F5', width: 213 }}>반려동물 이름</th>
                             <th style={{ width: 277, height: 40.4 }}>{showDetails && (<p style={{ height: 10 }}>{data.result.petName}</p>)}</th>
                             <th scope="col" style={{ background: '#F5F5F5', width: 344 }}>이름</th>
                             <th style={{ width: 277, height: 40.4 }}>{showDetails && (<p style={{ height: 10 }}>{data.result.nickname}</p>)}</th>
                         </tr>
                         <tr>
-                            
+
                             <th scope="row" style={{ background: '#F5F5F5' }}>반려동물 종류</th>
                             <td>{showDetails && (<p style={{ height: 10 }}>{data.result.petType}</p>)}</td>
                             <td style={{ background: '#F5F5F5' }}>전화번호</td>
@@ -161,15 +139,15 @@ function Reservation({ props }) {
                                     .filter((option) => option.type === 'dogSize')
                                     .map((option, i) => (
                                         <React.Fragment key={i}>
-                                            <label htmlFor={option.value} className="radio-label" style={{width:94.84}}>
-                                                <input 
+                                            <label htmlFor={option.value} className="radio-label" style={{ width: 94.84 }}>
+                                                <input
                                                     id={option.value}
                                                     value={option.value}
                                                     name="dogSize"
                                                     type="radio"
                                                     checked={selectedValues.dogSize === option.value}
                                                     onChange={() => handleOptionChange('dogSize', option.value)}
-                                                    style={{width:20}}
+                                                    style={{ width: 20 }}
                                                 />
                                                 {option.label}
                                             </label>
@@ -185,17 +163,17 @@ function Reservation({ props }) {
                                     .filter((option) => option.type === 'cutStyle')
                                     .map((option, i) => (
                                         <React.Fragment key={i}>
-                                            <label htmlFor={option.value} className="radio-label" style={{width:94.84}}>
-                                            <input
-                                                id={option.value}
-                                                value={option.value}
-                                                name="cutStyle"
-                                                type="radio"
-                                                checked={selectedValues.cutStyle === option.value}
-                                                onChange={() => handleOptionChange('cutStyle', option.value)}
-                                                style={{width:20}}
-                                            />
-                                            {option.label}
+                                            <label htmlFor={option.value} className="radio-label" style={{ width: 94.84 }}>
+                                                <input
+                                                    id={option.value}
+                                                    value={option.value}
+                                                    name="cutStyle"
+                                                    type="radio"
+                                                    checked={selectedValues.cutStyle === option.value}
+                                                    onChange={() => handleOptionChange('cutStyle', option.value)}
+                                                    style={{ width: 20 }}
+                                                />
+                                                {option.label}
                                             </label>
                                         </React.Fragment>
 
@@ -212,17 +190,17 @@ function Reservation({ props }) {
                                     .filter((option) => option.type === 'bathStyle')
                                     .map((option, i) => (
                                         <React.Fragment key={i}>
-                                            <label htmlFor={option.value} className="radio-label" style={{width:94.84}}>
-                                            <input
-                                                id={option.value}
-                                                value={option.value}
-                                                name="bathStyle"
-                                                type="radio"
-                                                checked={selectedValues.bathStyle === option.value}
-                                                onChange={() => handleOptionChange('bathStyle', option.value)}
-                                                style={{width:20}}
-                                            />
-                                            {option.label}
+                                            <label htmlFor={option.value} className="radio-label" style={{ width: 94.84 }}>
+                                                <input
+                                                    id={option.value}
+                                                    value={option.value}
+                                                    name="bathStyle"
+                                                    type="radio"
+                                                    checked={selectedValues.bathStyle === option.value}
+                                                    onChange={() => handleOptionChange('bathStyle', option.value)}
+                                                    style={{ width: 20 }}
+                                                />
+                                                {option.label}
                                             </label>
                                         </React.Fragment>
                                     ))}
@@ -233,13 +211,8 @@ function Reservation({ props }) {
                 </table>
             </div>
 
-            <Link to={{
-        pathname: '/select', // 이동할 경로
-        state: {
-          reservationId: data.reservationId || null// 전달할 데이터
-        }}}>
-                <button className="next" onClick={handleNextClick}>다음</button>
-            </Link>
+            {/* selectpage로 reservationId값 전달 */}
+                <button className={isDataSelected() ? 'next' : 'inactive'} onClick={handleNextClick}  disabled={!isDataSelected()} >다음</button>
         </div>
 
     );
