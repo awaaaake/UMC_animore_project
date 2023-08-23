@@ -8,6 +8,7 @@ import swal from 'sweetalert2';
 import './CustomSwalStyle.css';
 import './shopReservationList.css'
 import axios from "axios";
+import { useSelector } from 'react-redux';
 
 function ShopReservationList(props) {
   const [showDetails, setShowDetails] = useState(false);
@@ -22,7 +23,7 @@ function ShopReservationList(props) {
   };
   const reservationId = props.reservationId;
   const handleApprovalClick = () => {
-    const token = '';
+    const token = useSelector(state => state.token);
     axios({
         method: 'GET',
         url: `/api/manage/bookings/confirm/${reservationId}`,

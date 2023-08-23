@@ -11,6 +11,7 @@ import './timeSelect.css'
 import axios from "axios";
 import { Link } from "react-router-dom";
 import { useLocation } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 
 
 function SelectPage(props) {
@@ -43,7 +44,7 @@ function SelectPage(props) {
     
     setShowFinalPage(true);
     if (reservationId) {
-    const token = '';
+    const token = useSelector(state => state.token);
     axios({
         method: 'POST',
         url: `/api/booking/time/${reservationId}`,
