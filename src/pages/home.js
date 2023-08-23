@@ -8,7 +8,8 @@ import { useSelector } from 'react-redux';
 function Home(props) {
     let [Info, setInfo] = useState(null);
     const token = useSelector(state => state.token);
-    const accessToken = "Bearer "+ {token};
+    const accessToken = `Bearer ${token}`;
+
     axios.defaults.headers.common['Authorization'] = accessToken;
     useEffect(() => {
         axios.get('/api/mypage')
