@@ -44,8 +44,11 @@ function Search() {
   const [ShopInfoList, setShopInfoList] = useState([]);
 
   //--------------------------API연결--------------------------------
-  const query1 = encodeURIComponent('해시태그:' + searchText);
-  const query2 = encodeURIComponent(searchText);
+  //const query1 = encodeURIComponent('해시태그:' + searchText);
+  //const query2 = encodeURIComponent(searchText);
+
+  const query1 = ('해시태그:' + searchText);
+  const query2 = (searchText);
   //서버 요청 주소
   const shopApiUrl = `/api/search/distance?query1=${query1}&query2=${query2}`;
   useEffect(() => {
