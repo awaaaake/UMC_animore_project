@@ -286,7 +286,7 @@ function Header(props) {
       if (token) {
         try {
           // API 호출하여 유저 정보 가져오기
-          const response = await axios.get('https://kauth.kakao.com/oauth/authorize?client_id=35e4e8d3c346459a6a90b37624e8de77&redirect_uri=http://localhost:3000/main/oauth&response_type=code', {
+          const response = await axios.get('https://animore.co.kr/mypage', {
             headers: {
               Authorization: `Bearer ${token}`,
             },
