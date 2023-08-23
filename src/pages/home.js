@@ -3,13 +3,14 @@ import './home.css';
 import profile from '../img/dog.png';
 import grey from '../img/grey.png';
 import axios from 'axios';
+import { useSelector } from 'react-redux';
 
 function Home(props) {
     let [Info, setInfo] = useState(null);
 
     useEffect(() => {
         //localStorage에서 access token을 가져옵니다.
-        const accessToken = '';
+        const token = useSelector(state => state.token);
         // access token을 인증 헤더에 설정합니다.
         axios.defaults.headers.common["Authorization"] = accessToken;
 
