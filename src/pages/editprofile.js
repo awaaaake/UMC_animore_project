@@ -2,7 +2,6 @@ import { useEffect, useState } from "react";
 import './editprofile.css';
 // import defaultProfileImage from "../img/profile.png";
 import axios from "axios";
-import { useSelector } from 'react-redux';
 
 function Editprofile(props) {
     let [inputCount, setInputCount] = useState(0);
@@ -14,10 +13,7 @@ function Editprofile(props) {
         const matches = str.match(regex);
         return matches ? matches.length : 0;
     };
-    
-    const token = useSelector(state => state.token);
-    const accessToken = `Bearer ${token}`;
-    
+
     const onTextareaHandler = (e) => {
         setInfo((prevInfo) => ({
             ...prevInfo,
@@ -42,6 +38,7 @@ function Editprofile(props) {
 
     useEffect(() => {
         //localStorage에서 access token을 가져옵니다.
+        const accessToken = 'Bearer ';
         // access token을 인증 헤더에 설정합니다.
         axios.defaults.headers.common["Authorization"] = accessToken;
 

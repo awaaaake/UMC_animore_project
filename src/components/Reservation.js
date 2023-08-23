@@ -44,10 +44,10 @@ function Reservation({ props }) {
             [type]: value
         }));
     };
+    const token = useSelector(state => state.token);
 
     //다음 버튼 누르면 post요청 -> reservationId 받아옴
     const handleNextClick = () => {
-        
         axios({
             method: 'POST',
             url: '/api/booking/create',
@@ -83,7 +83,7 @@ function Reservation({ props }) {
     
     //저장내용 불러오기 누르면 get요청
     const handleShwoDetails = () => {
-
+        const token = useSelector(state => state.token);
         axios({
             method: 'GET',
             url: '/api/userInfo',
