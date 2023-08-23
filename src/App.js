@@ -25,6 +25,7 @@ import Header from './pages/header_navbar';
 import Admin_Header from './pages/admin_header';
 import FixedList from './components/fixecList';
 import WaitingList from './components/waitingList';
+import MainHeader from './js/main_navbar';
 
 //미용실 페이지들
 import Book from './Bookpage/Book.js'
@@ -57,7 +58,7 @@ function App() {
   return (
     <div className="App">
       {
-        location.pathname === '/withdrawalConf' || location.pathname === '/isadmin' || location.pathname.startsWith('/adminpage') || location.pathname==='/' || location.pathname==='/signup'
+        location.pathname === '/withdrawalConf' || location.pathname === '/isadmin' || location.pathname.startsWith('/adminpage') ||  location.pathname==='/signup' ||  location.pathname==='/login' 
           ? null : <Header location={location} navigate={navigate} activeItem={activeItem} handleItemClick={handleItemClick}></Header>
       }
       {
