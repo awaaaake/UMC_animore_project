@@ -32,11 +32,17 @@ const Div = styled.div`
   background-color: #FAE5F2;
   border: 2px solid;
   border-color: #B33E86;
-  font-size: 30px;    
+  font-size: 30px;
 `;
 
 
-
+const Image = styled.img`
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  top: 0;
+  left: 0;
+`;
 
 
 const MostGallery = () => {
@@ -84,8 +90,18 @@ const MostGallery = () => {
         style={{ display: index >= startIndex && index < endIndex ? 'block' : 'none' }}
         onClick={() => handleDivClick(index)}
       >
+        {/* 임시 이미지 */}
+        {index === 0 && <Image src={require('../img/mostgallery/mostgallery1.jpg')} alt={`인기${index + 1}`} />}
+        {index === 1 && <Image src={require('../img/mostgallery/mostgallery2.jpg')} alt={`인기${index + 1}`} />}
+        {index === 2 && <Image src={require('../img/mostgallery/mostgallery3.jpg')} alt={`인기${index + 1}`} />}
+        {index === 3 && <Image src={require('../img/mostgallery/mostgallery2.jpg')} alt={`인기${index + 1}`} />}
+        {index === 4 && <Image src={require('../img/mostgallery/mostgallery3.jpg')} alt={`인기${index + 1}`} />}
+        {index === 5 && <Image src={require('../img/mostgallery/mostgallery1.jpg')} alt={`인기${index + 1}`} />}
+        {index === 6 && <Image src={require('../img/mostgallery/mostgallery3.jpg')} alt={`인기${index + 1}`} />}
+        {index === 7 && <Image src={require('../img/mostgallery/mostgallery1.jpg')} alt={`인기${index + 1}`} />}
+        {index === 8 && <Image src={require('../img/mostgallery/mostgallery2.jpg')} alt={`인기${index + 1}`} />}
         {/* <div>{`인기 순위:${index + 1}`} </div> 각 div에 특징 추가 */}
-        <div>{}</div> 
+        {/* <div>{}</div>  */}
       </Div>
     ));
   };

@@ -25,10 +25,7 @@
 // `;
 
 
-// const NaverLoginPage = () => {
-//   const handleNaverLoginClick = () => {
-//     window.location.href = "http://animore.co.kr/oauth2/authorization/naver";
-//   };
+
 
 //   return (
 //     <ImageButton
@@ -39,25 +36,9 @@
 //   );
 // };
 
-// // 구글 로그인 버튼 컴포넌트
-// const GoogleLoginPage = () => {
-//   const handleGoogleLoginClick = () => {
-//     window.location.href = "https://animore.co.kr/oauth2/authorization/google";
-//   };
-//   return (
-//     <ImageButton
-//       src="https://cloud.adofai.gg/apps/files_sharing/publicpreview/cj4GTz3xLmExWjG?file=/image%2041.png&fileId=7626&x=1920&y=1080&a=true"
-//       alt="Google Login"
-//       onClick={handleGoogleLoginClick} // 구글 로그인 처리 함수 연결
-//     />
-//   );
-// };
 
-// // 페이스북 로그인 버튼 컴포넌트
-// const FacebookLoginPage = () => {
-//   const handleFacebookLoginClick = () => {
-//     window.location.href = "https://animore.co.kr/oauth2/authorization/Facebook";
-//   };
+
+
 
 //   return (
 //     <ImageButton
@@ -68,11 +49,7 @@
 //   );
 // };
 
-// // 카카오톡 로그인 버튼 컴포넌트
-// const KakaoLoginPage = () => {
-//   const handleKakaoLoginClick = () => {
-//     window.location.href = "https://animore.co.kr/oauth2/authorization/kakao";
-//   };
+
 
 //   return (
 //     <ImageButton

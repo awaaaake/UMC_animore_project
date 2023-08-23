@@ -19,7 +19,6 @@ const BannerImg= styled.img`
 `;
 
 
-
 // AdBanner 컴포넌트 선언
 const AdBanner = () => {
   const [currentAdIndex, setCurrentAdIndex] = useState(0); // 현재 광고 인덱스 상태 변수
@@ -41,10 +40,9 @@ const AdBanner = () => {
   return (
     <BannerContainer>
       {/* ads변수를 이용해 다른 광고(이미지) 표시 */}
-      {/* <BannerImg src={`src/img/ad/${ads[currentAdIndex]}`} alt="Ad" /> */}
+      <BannerImg src={require(`../img/ad/${ads[currentAdIndex]}`)} alt="Ad" />
     </BannerContainer>
   );
 };
-
 
 export default AdBanner;
