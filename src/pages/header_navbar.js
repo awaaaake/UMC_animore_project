@@ -292,7 +292,7 @@ function Header(props) {
       if (token) {
         try {
           // API 호출하여 유저 정보 가져오기
-          const response = await axios.get('https://animore.co.kr/mypage', {
+          const response = await axios.get('/mypage', {
             headers: {
               Authorization: `Bearer ${token}`,
             },
@@ -312,13 +312,15 @@ function Header(props) {
 
     // 컴포넌트 마운트 시 실행
     handleTokenFromURL();
-  }, []);
+  }, setToken);
 
 
 
   const handleLoginClick = () => {
-    setPopupOpen(true);
-    document.body.style.backgroundColor = "rgba(0, 0, 0, 0.2)";
+    if(!token){
+      setPopupOpen(true);
+      document.body.style.backgroundColor = "rgba(0, 0, 0, 0.2)";
+    }
   };
 
 
