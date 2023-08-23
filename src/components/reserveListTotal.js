@@ -17,7 +17,7 @@ function ReserveListTotal() {
 
       axios({
         method: 'GET',
-        url: '/my/booking/visit',
+        url: '/api/my/booking/visit',
         headers: {
           Authorization: `Bearer ${token}`
         }

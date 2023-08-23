@@ -65,7 +65,7 @@ function Reservation({ props }) {
         const token = '';
         axios({
             method: 'POST',
-            url: '/booking/create',
+            url: '/api/booking/create',
             headers: {
                 Authorization: `Bearer ${token}`, // Bearer 토큰을 "Authorization" 헤더에 추가
                 ContentType: 'application/json'
@@ -96,7 +96,7 @@ function Reservation({ props }) {
         const token = '';
         axios({
             method: 'GET',
-            url: '/userInfo',
+            url: '/api/userInfo',
             headers: {
                 Authorization: `Bearer ${token}` // Bearer 토큰을 "Authorization" 헤더에 추가
             }
