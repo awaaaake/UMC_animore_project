@@ -51,22 +51,17 @@ function Inforeset(props) {
     const updatePetInfo = () => {
         axios.put('/api/mypage/member/pet', petInfo)
             .then((response) => {
-                console.log('수정정보', petInfo);
+                console.log('수정정보',petInfo);
                 console.log('반려동물 정보 업데이트 성공:', response.data.result[0]);
             }).catch((error) => {
-                console.log('수정정보', petInfo);
+                console.log('수정정보',petInfo);
                 console.error('반려동물 정보 업데이트 실패:', error);
             });
     }
 
-    const token = useSelector(state => state.token);
-    const accessToken = "Bearer " + { token };
-    axios.defaults.headers.common['Authorization'] = accessToken;
-
     useEffect(() => {
         //localStorage에서 access token을 가져옵니다.
-        const token = useSelector(state => state.token);
-        const accessToken = "Bearer "+ {token};
+        
         // access token을 인증 헤더에 설정합니다.
         axios.defaults.headers.common["Authorization"] = accessToken;
 

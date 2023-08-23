@@ -14,10 +14,10 @@ function Editprofile(props) {
         const matches = str.match(regex);
         return matches ? matches.length : 0;
     };
-
+    
     const token = useSelector(state => state.token);
     const accessToken = `Bearer ${token}`;
-
+    
     const onTextareaHandler = (e) => {
         setInfo((prevInfo) => ({
             ...prevInfo,
@@ -30,21 +30,20 @@ function Editprofile(props) {
 
     const onImageSelectHandler = (e) => {
         e.preventDefault();
-        if (e.target.files) {
+        if(e.target.files){
             const uploadFile = e.target.files[0]
             console.log(uploadFile)
             setSelectedImage(uploadFile);
             setUseDefaultImage(false);
         }
     };
-
+    
     let [Info, setInfo] = useState({});
 
-    const token = useSelector(state => state.token);
-    const accessToken = "Bearer " + { token };
-    axios.defaults.headers.common['Authorization'] = accessToken;
-
     useEffect(() => {
+        //localStorage에서 access token을 가져옵니다.
+        // access token을 인증 헤더에 설정합니다.
+        axios.defaults.headers.common["Authorization"] = accessToken;
 
         axios.get('/api/mypage/profile')
             .then((response) => {
@@ -58,14 +57,14 @@ function Editprofile(props) {
                 console.error('Error fetching pet information:', error);
             });
     }, []); //useEffect에서 setInfo를 통해 defaultImageurl을 갱신하는 로직은 비동기적으로 처리되므로, 컴포넌트가 처음 렌더링될 때 defaultImageurl이 기본 값인 상태로 나타날 수 있다.
-
+    
     const updateProfile = async () => {
         console.log('Before updating profile:', Info);
-
+    
         const formData = new FormData();
         formData.append('nickname', Info.nickname);
         formData.append('aboutMe', Info.aboutMe);
-
+    
         if (!useDefaultImage) {
             // Create a Blob from the selected image file
             const imageBlob = new Blob([selectedImage], { type: selectedImage.type });
@@ -75,9 +74,9 @@ function Editprofile(props) {
 
         let entries = formData.entries();
         for (const pair of entries) {
-            console.log(pair[0], pair[1]);
+            console.log(pair[0],pair[1]);
         }
-
+    
         try {
             const response = await axios.put('/api/mypage/profile', formData);
             console.log('Profile updated successfully:', response.data.result);
@@ -86,7 +85,7 @@ function Editprofile(props) {
             console.error('Error updating profile:', error);
         }
     };
-
+    
 
     return (
         <div className='detail-profile'>
@@ -94,7 +93,7 @@ function Editprofile(props) {
             <div className='detail_1'>
                 <div className='profile'>
                     <div className="profile-picture">
-                        <img src={useDefaultImage || !selectedImage ? defaultImageurl : URL.createObjectURL(selectedImage)} alt="프로필 사진" />
+                    <img src={useDefaultImage || !selectedImage ? defaultImageurl : URL.createObjectURL(selectedImage)} alt="프로필 사진" />
                     </div>
                     <div className="button-container">
                         <label htmlFor="choose-profile">사진 수정</label>
