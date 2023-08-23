@@ -35,7 +35,10 @@ const Div = styled.div`
   font-size: 30px;    
 `;
 
-
+const Image = styled.img`
+  max-width: 100%;
+  max-height: 100%;
+`;
 
 const ReviewGallery = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -82,8 +85,17 @@ const ReviewGallery = () => {
         style={{ display: index >= startIndex && index < endIndex ? 'block' : 'none' }}
         onClick={() => handleDivClick(index)}
       >
-        {/* <div>{`이용후기${index + 1}`}</div> 각 div에 특징 추가 */}
-        <div>{}</div>
+        {index === 0 && <Image src="https://postfiles.pstatic.net/MjAyMzA4MjNfMTYw/MDAxNjkyNzgyMjk5ODY1.XGn2GjYhBdYWq8XnGKu0ph9aQewG4VNB-qfp56w8uoog.ZXqfYaza0Be6IPrpuulwFRbjWchhbXCU-gMJeUr1R3kg.JPEG.ty4ove/KakaoTalk_20230823_180618143.jpg?type=w466" alt={`할인${index + 1}`} />}
+        {index === 1 && <Image src="https://postfiles.pstatic.net/MjAyMzA4MjNfMTk0/MDAxNjkyNzgyMjk5ODcx.3M0zUJOW1oFSitKF36gelrlqVyHSLTLRn9wwpF3P_9Ug.KECvu_4kTAZENHCpCaRcb5PDB4ATQCq1yoLZ1FrvpVsg.JPEG.ty4ove/KakaoTalk_20230823_180618143_01.jpg?type=w466" alt={`할인${index + 1}`} />}
+        {index === 2 && <Image src="https://postfiles.pstatic.net/MjAyMzA4MjNfMTcg/MDAxNjkyNzgyMjk5ODU1.TRTnm4J10RlEAoyMMQinFMoOJY6ntDVP3Dv5Tad_vMsg.QmTEB9OSbfA0gv5SPm4RheOTkTNa2pO3hdeBZAOAVaog.JPEG.ty4ove/KakaoTalk_20230823_180618143_02.jpg?type=w966" alt={`할인${index + 1}`} />}
+        {index === 3 && <Image src="https://postfiles.pstatic.net/MjAyMzA4MjNfMTk0/MDAxNjkyNzgyMjk5ODcx.3M0zUJOW1oFSitKF36gelrlqVyHSLTLRn9wwpF3P_9Ug.KECvu_4kTAZENHCpCaRcb5PDB4ATQCq1yoLZ1FrvpVsg.JPEG.ty4ove/KakaoTalk_20230823_180618143_01.jpg?type=w466" alt={`할인${index + 1}`} />}
+        {index === 4 && <Image src="https://postfiles.pstatic.net/MjAyMzA4MjNfMTYw/MDAxNjkyNzgyMjk5ODY1.XGn2GjYhBdYWq8XnGKu0ph9aQewG4VNB-qfp56w8uoog.ZXqfYaza0Be6IPrpuulwFRbjWchhbXCU-gMJeUr1R3kg.JPEG.ty4ove/KakaoTalk_20230823_180618143.jpg?type=w466" alt={`할인${index + 1}`} />}
+        {index === 5 && <Image src="https://postfiles.pstatic.net/MjAyMzA4MjNfMTcg/MDAxNjkyNzgyMjk5ODU1.TRTnm4J10RlEAoyMMQinFMoOJY6ntDVP3Dv5Tad_vMsg.QmTEB9OSbfA0gv5SPm4RheOTkTNa2pO3hdeBZAOAVaog.JPEG.ty4ove/KakaoTalk_20230823_180618143_02.jpg?type=w966" alt={`할인${index + 1}`} />}
+        {index === 6 && <Image src="https://postfiles.pstatic.net/MjAyMzA4MjNfMTYw/MDAxNjkyNzgyMjk5ODY1.XGn2GjYhBdYWq8XnGKu0ph9aQewG4VNB-qfp56w8uoog.ZXqfYaza0Be6IPrpuulwFRbjWchhbXCU-gMJeUr1R3kg.JPEG.ty4ove/KakaoTalk_20230823_180618143.jpg?type=w466" alt={`할인${index + 1}`} />}
+        {index === 7 && <Image src="https://postfiles.pstatic.net/MjAyMzA4MjNfMTcg/MDAxNjkyNzgyMjk5ODU1.TRTnm4J10RlEAoyMMQinFMoOJY6ntDVP3Dv5Tad_vMsg.QmTEB9OSbfA0gv5SPm4RheOTkTNa2pO3hdeBZAOAVaog.JPEG.ty4ove/KakaoTalk_20230823_180618143_02.jpg?type=w966" alt={`할인${index + 1}`} />}
+        {index === 8 && <Image src="https://postfiles.pstatic.net/MjAyMzA4MjNfMTk0/MDAxNjkyNzgyMjk5ODcx.3M0zUJOW1oFSitKF36gelrlqVyHSLTLRn9wwpF3P_9Ug.KECvu_4kTAZENHCpCaRcb5PDB4ATQCq1yoLZ1FrvpVsg.JPEG.ty4ove/KakaoTalk_20230823_180618143_01.jpg?type=w466" alt={`할인${index + 1}`} />}
+        {/* <div>{`인기 순위:${index + 1}`} </div> 각 div에 특징 추가 */}
+        {/* <div>{}</div>  */}
       </Div>
     ));
   };

@@ -36,6 +36,11 @@ const Div =  styled.div`
   font-size: 30px;    
 `;
 
+const Image = styled.img`
+  max-width: 100%;
+  max-height: 100%;
+`;
+
 
 
 const SaleGallery = () => {
@@ -83,8 +88,20 @@ const SaleGallery = () => {
         style={{ display: index >= startIndex && index < endIndex ? 'block' : 'none' }}
         onClick={() => handleDivClick(index)}
       >
+        {/* 임시 이미지 */}
+        {index === 0 && <Image src="https://postfiles.pstatic.net/MjAyMzA4MjNfMjUx/MDAxNjkyNzgxNTA1NTU5.MGSdm4KSssLSVhhL2ytvs8Dzplsifn_Hv4hAg-zadsYg.OsQwZCr9UEBjs-gH3i8flO_wPfEzTZ2tcm5qjrGy2hUg.JPEG.ty4ove/KakaoTalk_20230823_174034120_05.jpg?type=w466" alt={`할인${index + 1}`} />}
+        {index === 1 && <Image src="https://postfiles.pstatic.net/MjAyMzA4MjNfNjUg/MDAxNjkyNzgxNTA1NTE0.BPB9De3_sOT28Qzoh1zJyA9OFs9GZQMtXL-I3S4rO-Ig.EjMuNyamSwD-ff42ZK0mY1Ngpgua6cz4EvgOXPNfzi8g.JPEG.ty4ove/KakaoTalk_20230823_174034120_04.jpg?type=w466" alt={`할인${index + 1}`} />}
+        {index === 2 && <Image src="https://postfiles.pstatic.net/MjAyMzA4MjNfNTkg/MDAxNjkyNzgxNTA1NTAy.-s1-hER0nh-Vuk6AtzrHGioZFXGrBSKucTo-UjyqNIIg.ffKwLOxufvHnHEx4eUmgkmYmMMnIUd5QjDYxTnDa5dwg.JPEG.ty4ove/KakaoTalk_20230823_174034120_03.jpg?type=w466" alt={`할인${index + 1}`} />}
+        {index === 4 && <Image src="https://postfiles.pstatic.net/MjAyMzA4MjNfMjUx/MDAxNjkyNzgxNTA1NTU5.MGSdm4KSssLSVhhL2ytvs8Dzplsifn_Hv4hAg-zadsYg.OsQwZCr9UEBjs-gH3i8flO_wPfEzTZ2tcm5qjrGy2hUg.JPEG.ty4ove/KakaoTalk_20230823_174034120_05.jpg?type=w466" alt={`할인${index + 1}`} />}
+        {index === 3 && <Image src="https://postfiles.pstatic.net/MjAyMzA4MjNfNjUg/MDAxNjkyNzgxNTA1NTE0.BPB9De3_sOT28Qzoh1zJyA9OFs9GZQMtXL-I3S4rO-Ig.EjMuNyamSwD-ff42ZK0mY1Ngpgua6cz4EvgOXPNfzi8g.JPEG.ty4ove/KakaoTalk_20230823_174034120_04.jpg?type=w466" alt={`할인${index + 1}`} />}
+        {index === 5 && <Image src="https://postfiles.pstatic.net/MjAyMzA4MjNfNTkg/MDAxNjkyNzgxNTA1NTAy.-s1-hER0nh-Vuk6AtzrHGioZFXGrBSKucTo-UjyqNIIg.ffKwLOxufvHnHEx4eUmgkmYmMMnIUd5QjDYxTnDa5dwg.JPEG.ty4ove/KakaoTalk_20230823_174034120_03.jpg?type=w466" alt={`할인${index + 1}`} />}
+        {index === 6 && <Image src="https://postfiles.pstatic.net/MjAyMzA4MjNfMjUx/MDAxNjkyNzgxNTA1NTU5.MGSdm4KSssLSVhhL2ytvs8Dzplsifn_Hv4hAg-zadsYg.OsQwZCr9UEBjs-gH3i8flO_wPfEzTZ2tcm5qjrGy2hUg.JPEG.ty4ove/KakaoTalk_20230823_174034120_05.jpg?type=w466" alt={`할인${index + 1}`} />}
+        {index === 8 && <Image src="https://postfiles.pstatic.net/MjAyMzA4MjNfNjUg/MDAxNjkyNzgxNTA1NTE0.BPB9De3_sOT28Qzoh1zJyA9OFs9GZQMtXL-I3S4rO-Ig.EjMuNyamSwD-ff42ZK0mY1Ngpgua6cz4EvgOXPNfzi8g.JPEG.ty4ove/KakaoTalk_20230823_174034120_04.jpg?type=w466" alt={`할인${index + 1}`} />}
+        {index === 7 && <Image src="https://postfiles.pstatic.net/MjAyMzA4MjNfNTkg/MDAxNjkyNzgxNTA1NTAy.-s1-hER0nh-Vuk6AtzrHGioZFXGrBSKucTo-UjyqNIIg.ffKwLOxufvHnHEx4eUmgkmYmMMnIUd5QjDYxTnDa5dwg.JPEG.ty4ove/KakaoTalk_20230823_174034120_03.jpg?type=w466" alt={`할인${index + 1}`} />}
+        
+        
         {/* <div>{`광고${index + 1}`}</div> 각 div에 특징 추가 */}
-        <div>{}</div>
+        {/* <div>{}</div> */}
       </Div>
     ));
   };
