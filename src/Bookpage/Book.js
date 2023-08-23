@@ -106,7 +106,7 @@ function Book() {
             <div className='recent'>
                 <Container>
                     <div className="container1">
-                        <p id="nic_text">OOO님의 최근 방문 기록</p>
+                        <p id="nic_text"><span>OOO</span>님의 최근 방문 기록</p>
                         <div className="row">
                             <div className="col">
                                 <img src={searchCurt0storeDTO.storeImageUrl}
@@ -131,7 +131,7 @@ function Book() {
             <div className='many'>
                 <Container>
                     <div className="container1">
-                        <p id="nic_text">OOO님이 사시는 동네 예약 많은 순</p>
+                        <p id="nic_text"><span>OOO</span>님이 사시는 동네 예약 많은 순</p>
                         <div className="row">
                             <div className="col">
                                 <img src={searchCurt0storeDTO.storeImageUrl}
