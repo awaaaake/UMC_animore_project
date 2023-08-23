@@ -98,7 +98,8 @@ function Adminprofile(props) {
     /**입력 필드마다 name 속성에 해당하는 상태를 업데이트합니다. 예를 들어, <input name="nickname" ... />이라는 입력 필드가 있다면 nickname이라는 상태가 업데이트됩니다. */
 
     useEffect(() => {
-        const accessToken = 'Bearer ';
+        const token = useSelector(state => state.token);
+        const accessToken = "Bearer "+ {token};
         axios.defaults.headers.common['Authorization'] = accessToken;
 
         axios.get('/api/manage/store')
