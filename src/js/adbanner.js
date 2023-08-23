@@ -19,7 +19,6 @@ const BannerImg= styled.img`
 `;
 
 
-
 // AdBanner 컴포넌트 선언
 const AdBanner = () => {
   const [currentAdIndex, setCurrentAdIndex] = useState(0); // 현재 광고 인덱스 상태 변수
@@ -41,10 +40,10 @@ const AdBanner = () => {
   return (
     <BannerContainer>
       {/* ads변수를 이용해 다른 광고(이미지) 표시 */}
-      {/* <BannerImg src={`src/img/ad/${ads[currentAdIndex]}`} alt="Ad" /> */}
+      {/* <BannerImg src={`/public/img/ad/${ads[currentAdIndex]}`} alt="Ad" /> */}
+      <BannerImg src="https://postfiles.pstatic.net/MjAyMzA4MjNfMiAg/MDAxNjkyNzgwMDgxNTA3.3q4fr_xbFTPyKX-jXRRx3TMR9ITFTBIqtSvX-VhJ9QYg.TG1mj7ma5YoWsDbkSsIfYnPuFOYHTilyzZSKuRcvOzYg.PNG.ty4ove/%EC%A0%9C%EB%AA%A9%EC%9D%84-%EC%9E%85%EB%A0%A5%ED%95%B4%EC%A3%BC%EC%84%B8%EC%9A%94_-001_(6)_1.png?type=w966"/>
     </BannerContainer>
   );
 };
-
 
 export default AdBanner;

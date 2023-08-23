@@ -234,7 +234,7 @@ const SignupPopupComponent = ({ onClose }) => {
     // 예시: window.location.href = '/signup';
     // alert('회원 가입 창으로 이동합니다.');
     onClose(); // 팝업창 닫기
-    window.location.href = '/signup';
+    window.location.href = '/api/signup';
   };
 
   const handleCancleClick = () => {
@@ -330,7 +330,7 @@ function Header(props) {
     return (
       <header>
         <div className='logo'>
-          {props.location.pathname === '/' ? null : <img src={Animore_logo} onClick={() => props.navigate('/')} alt="로고"></img>}
+          {props.location.pathname === '/api/' ? null : <img src={Animore_logo} onClick={() => props.navigate('/api/')} alt="로고"></img>}
         </div>
         <div className="Navbar">
           <ul>
