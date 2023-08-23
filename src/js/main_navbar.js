@@ -365,8 +365,8 @@ function MainHeader(props) {
             ) : (
               <text onClick={handleLoginClick}>로그인</text>
             )}
-          </li>
-        </ul>
+            </li>
+           </ul>
 
           {/* sns 로그인 팝업창 */}
           {isPopupOpen && (

@@ -267,7 +267,7 @@ const SignUp = () => {
     // const token = useSelector(state => state.token);
     const token = ''
 
-    fetch('/signup', {
+    fetch('/api/signup', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',

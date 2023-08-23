@@ -25,7 +25,7 @@ function ShopReservationList(props) {
     const token = '';
     axios({
         method: 'GET',
-        url: `/manage/bookings/confirm/${reservationId}`,
+        url: `/api/manage/bookings/confirm/${reservationId}`,
         headers: {
             Authorization: `Bearer ${token}`, // Bearer 토큰을 "Authorization" 헤더에 추가
             ContentType: 'application/json' 
