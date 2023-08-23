@@ -3,7 +3,7 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import ReservationList from "./ReservaionList";
 import './reserveListTotal.css';
-
+import { useSelector } from 'react-redux';
 
 function ReserveListTotal() {
   const [data, setData] = useState({});
@@ -13,7 +13,7 @@ function ReserveListTotal() {
   useEffect(() => {
     if (!fetchedData) {
       // fetchedData 상태가 false일 때만 요청 보냄 (새로고침 할때)
-      const token = ''; // 토큰 추가
+      const token = useSelector(state => state.token);
 
       axios({
         method: 'GET',

@@ -6,6 +6,8 @@ import './ReservationList.css';
 import './watingList.css';
 import "@popperjs/core";
 import ShopReservationList from "./shopReservationList"; 
+import { useSelector } from 'react-redux';
+
 
 function FixedList() {
   const [showDetails, setShowDetails] = useState(false);
@@ -15,7 +17,7 @@ function FixedList() {
   useEffect(() => {
     if (!fetchedData) {
       // fetchedData 상태가 false일 때만 요청 보냄 (새로고침 할때)
-      const token = ''; // 토큰 추가
+      const token = useSelector(state => state.token);
 
       axios({
         method: 'GET',

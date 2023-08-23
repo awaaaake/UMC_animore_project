@@ -6,12 +6,13 @@ import Radio from './radio';
 import RadioGroup from './radioGroup';
 import './table.css';
 import axios from "axios";
+import { useSelector } from 'react-redux';
 // 상세보기
 
 function Table ({ reservationId }){
     const [data, setData] = useState({});
   useEffect(() => {
-    const token = ''; // 토큰 추가
+    const token = useSelector(state => state.token);
 
     axios({
       method: 'GET',
