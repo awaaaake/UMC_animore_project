@@ -83,7 +83,8 @@ const SaleGallery = () => {
         style={{ display: index >= startIndex && index < endIndex ? 'block' : 'none' }}
         onClick={() => handleDivClick(index)}
       >
-        <div>{`광고${index + 1}`}</div> {/* 각 div에 특징 추가 */}
+        {/* <div>{`광고${index + 1}`}</div> 각 div에 특징 추가 */}
+        <div>{}</div>
       </Div>
     ));
   };
