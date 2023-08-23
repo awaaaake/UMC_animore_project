@@ -26,6 +26,10 @@ import Admin_Header from './pages/admin_header';
 import FixedList from './components/fixecList';
 import WaitingList from './components/waitingList';
 
+import Book from './Bookpage/Book.js'
+import Company from './CompPage/Company.js'
+import Search from './SearchPage/Search0820'
+
 //import NaverLoginPage from './pages/login.js';
 
 
@@ -141,6 +145,10 @@ function App() {
         <Route path="/reservelist" element={<ReserveListTotal />} />
         {/* <Route path="/adminpage" element={<ManageSys />} /> */}
 
+        {/*미용실 추가*/}
+        <Route path="/book" element={ <Book /> } />
+        <Route path="/shop/:storeId" element={ <Company/> } />
+        <Route path="/search/:searchText" element={ <Search/> } />
       </Routes>
 
 
