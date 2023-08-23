@@ -58,7 +58,7 @@ function Review({ setModalOpen, shopInfoList, storeId, token }) {
             encodeFileToBase64(file).then(() => {
                 setImageUploaded(true); // 이미지 업로드가 완료되면 상태 업데이트
                 setImageFile1(file); // 이미지 파일 설정 (저장)
-                console.log(file)
+                // console.log(file)
             });
         } else {
             setImageSrc('');
@@ -86,7 +86,6 @@ function Review({ setModalOpen, shopInfoList, storeId, token }) {
             encodeFileToBase64_2(file).then(() => {
                 setImageUploaded2(true); // 이미지 업로드가 완료되면 상태 업데이트
                 setImageFile2(file); // 이미지 파일 설정 (저장)
-                console.log(file)
             });
         } else {
             setImageSrc2('');

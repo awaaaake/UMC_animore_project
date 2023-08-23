@@ -135,10 +135,16 @@
     justify-content: flex-start;
     overflow: hidden;
 }
-
+.review_text_preview{
+    width: 245px;
+    height: 200px;
+    margin-right: 15x;
+}
 .re1 img{
-    width: 150px;
+    justify-content: left;
+    width: 180px;
     margin-right: 20px;
+    margin-left: -6px;
 }
 
 .re1 p{

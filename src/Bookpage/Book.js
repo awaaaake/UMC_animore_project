@@ -6,7 +6,7 @@ import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 
 function Book() {
-    const token = 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJjb3PthqDtgbAiLCJpZCI6MSwiZXhwIjoxNjkyNzYwOTc3LCJ1c2VybmFtZSI6Imtha2FvXzI4OTgyMDI5NDQifQ.4nPXZqpCskQGhYwhytA4F1pS9U0DK9sTTOMTx7wTVBGDOmiF52RQQODkLWPcgJOyP2pGUEeTnF_04RVXukYb7g';
+    const token = '';
 
     const [searchText, setSearchText] = useState('');
     const navigate = useNavigate();
@@ -41,27 +41,27 @@ function Book() {
         }
     };
 
-    // const sendLocationToServer = () => {
-    //      if (latitude && longitude) {
-    //         const formData = new FormData();
-    //         formData.append('latitude', latitude);
-    //         formData.append('longitude', longitude);
+    const sendLocationToServer = () => {
+         if (latitude && longitude) {
+            const formData = new FormData();
+            formData.append('latitude', latitude);
+            formData.append('longitude', longitude);
 
-    //         axios.post(`/locations/1?latitude=${latitude}&longitude=${longitude}`
-    //         , formData,{
-    //             headers: {
-    //               Authorization: `Bearer ${token}`,
-    //               'Content-Type': 'multipart/form-data',
-    //             }
-    //           })
-    //             .then(response => {
-    //                 console.log('위치전송완료:', response.data);
-    //             })
-    //             .catch(error => {
-    //                 console.error('실패:', error);
-    //             });
-    //         }
-    // };
+            axios.post(`/locations/1?latitude=${latitude}&longitude=${longitude}`
+            , formData,{
+                headers: {
+                  Authorization: `Bearer ${token}`,
+                  'Content-Type': 'multipart/form-data',
+                }
+              })
+                .then(response => {
+                    console.log('위치전송완료:', response.data);
+                })
+                .catch(error => {
+                    console.error('실패:', error);
+                });
+            }
+    };
 
     useEffect(() => {
         axios.get('/search/recordstore', {
@@ -71,16 +71,16 @@ function Book() {
         })
             .then(response => {
                 setSearchCurt(response.data.result);
-                setSearchCurt0storeDTO(searchCurt[0].storeDTO)
-                setSearchCurt1storeDTO(searchCurt[1].storeDTO)
-                setSearchCurt2storeDTO(searchCurt[2].storeDTO)
+                setSearchCurt0storeDTO(response.data.result[0].storeDTO)
+                setSearchCurt1storeDTO(response.data.result[1].storeDTO)
+                setSearchCurt2storeDTO(response.data.result[2].storeDTO)
             })
             .catch(error => {
                 // API 호출 실패 시 에러 처리
                 console.error('API 호출 에러:', error);
             });
         getLocation(); 
-        //sendLocationToServer();
+        sendLocationToServer();
     }, []);
     //-----------------------------------------------------
 
@@ -92,7 +92,7 @@ function Book() {
     }
 
     return (
-        <div>
+        <div className='Book_mainBox'>
             <div className="searchBox">
                 <img src='img/search_icon1.png' />
                 <input id="searchBox" type="text" placeholder="포메라니안 가위컷 전문 샵"
@@ -102,7 +102,7 @@ function Book() {
             </div>
             <div className='recent'>
                 <Container>
-                    <div className="container">
+                    <div className="container1">
                         <p id="nic_text">OOO님의 최근 방문 기록</p>
                         <div className="row">
                             <div className="col">
@@ -127,7 +127,7 @@ function Book() {
             </div>
             <div className='many'>
                 <Container>
-                    <div className="container">
+                    <div className="container1">
                         <p id="nic_text">OOO님이 사시는 동네 예약 많은 순</p>
                         <div className="row">
                             <div className="col">

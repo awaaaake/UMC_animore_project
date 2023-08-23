@@ -32,12 +32,13 @@
 }
 
 /*리뷰 제목*/
-.name_title {
+.review_name_title {
+    text-align: center;
     margin-left: 125px;
     background-color: #FAE5F2;
     padding-top: 16px;
     color: #A0136A;
-    font-size: 23px;
+    font-size: 30px;
     width: 400px;
     height: 70px;
     border-radius: 100px;

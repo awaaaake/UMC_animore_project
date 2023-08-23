@@ -5,7 +5,7 @@ import { useParams, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 
 function Search() {
-  const token = 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJjb3PthqDtgbAiLCJpZCI6MSwiZXhwIjoxNjkyNzYwOTc3LCJ1c2VybmFtZSI6Imtha2FvXzI4OTgyMDI5NDQifQ.4nPXZqpCskQGhYwhytA4F1pS9U0DK9sTTOMTx7wTVBGDOmiF52RQQODkLWPcgJOyP2pGUEeTnF_04RVXukYb7g';
+  const token = '';
 
   //정렬 상태관리
   const [popularColor, setPopularColor] = useState(true);
@@ -61,94 +61,8 @@ function Search() {
         // API 호출 실패 시 에러 처리
         console.error('API 호출 에러:', error);
       });
-  }, []); //컴포넌트가 마운트될 때 한 번만 실행되도록 []
-
-  // useEffect(()=>{
-  //   axios.all([
-  //     axios.get('/search/name/best', {
-  //       params: { query: searchText },
-  //       headers: {
-  //         Authorization: `Bearer ${token}`,
-  //       },
-  //     }),
-  //     axios.get('/search/location/best', {
-  //       params: { query: searchText },
-  //       headers: {
-  //         Authorization: `Bearer ${token}`,
-  //       },
-  //     }),
-  //     axios.get('/search/hashtags/best', {
-  //       params: { query: searchText },
-  //       headers: {
-  //         Authorization: `Bearer ${token}`,
-  //       },
-  //     })
-  //   ]
-  //   )
-  //   .then(
-  //     axios.spread((nameR, locationR, hashtagsR)=>{
-  //     const nameData = nameR.data.result;
-  //     const locationData = locationR.data.result;
-  //     const hashtagsData = hashtagsR.data.result;
-
-  //     const combinedData = [...nameData, ...locationData, ...hashtagsData];
-  //     setShopInfoList(combinedData);
-  //     console.log(combinedData);
-  //     })
-  //   )
-  //   .catch(() => {});
-  // },[]);
-  //-----------------------------------------------------------
-  // async function getAllPopularData() {
-  //   const nameRequest = axios.get('/search/name/best', {
-  //     params: { query: searchText },
-  //     headers: {
-  //       Authorization: `Bearer ${token}`,
-  //     },
-  //   });
+  }, []); 
   
-  //   const locationRequest = axios.get('/search/location/best', {
-  //     params: { query: searchText },
-  //     headers: {
-  //       Authorization: `Bearer ${token}`,
-  //     },
-  //   });
-  
-  //   const hashtagsRequest = axios.get('/search/hashtags/best', {
-  //     params: { query: searchText },
-  //     headers: {
-  //       Authorization: `Bearer ${token}`,
-  //     },
-  //   });  
-
-  //   try {
-  //     //응답 성공
-  //     const [nameResponse, locationResponse, hashtagsResponse] 
-  //     = await axios.all([
-  //       nameRequest,
-  //       locationRequest,
-  //       hashtagsRequest,
-  //     ]);
-
-  //     const nameData = nameResponse.data.result;
-  //     const locationData = locationResponse.data.result;
-  //     const hashtagsData = hashtagsResponse.data.result;
-
-  //     const combinedData = [...nameData, ...locationData, ...hashtagsData];
-
-  //     setShopInfoList(combinedData);
-
-  //     console.log(combinedData);
-
-  //   } catch (error) {
-  //     //응답 실패
-  //     console.error(error);
-  //   }
-  // }
-  // useEffect(() => {
-  //   getAllPopularData();
-  // });
-
   {/*페이지네이션을 위한 state들 */ }
   const [limit] = useState(4);
   const [page, setPage] = useState(1);
@@ -163,7 +77,6 @@ function Search() {
       const offset = (page - 1) * limit;
       const currentShopInfo = ShopInfoList.slice(offset, offset + limit);
       setCurrentShopInfo(currentShopInfo);
-      console.log(ShopInfoList);
     }
     else {
     }
@@ -241,11 +154,6 @@ function Search() {
             setPage={setPage}
           />
         )}
-        {/* <Pagination
-          total={ShopInfoList.length}
-          limit={limit}
-          page={page}
-          setPage={setPage} /> */}
       </footer>
       <div id='line'></div>
     </div>

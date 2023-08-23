@@ -8,7 +8,7 @@ import ReadPage from '../ReviewReadpage/Readpage';
 import axios from 'axios';
 
 function Company() {
-    const token = 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJjb3PthqDtgbAiLCJpZCI6NCwiZXhwIjoxNjkyNzYxMDA0LCJ1c2VybmFtZSI6Imdvb2dsZV8xMDg1OTYwMzM2NDczMDk5ODQ3ODUifQ.uBYZMFGYe2wq6w3LzO1TPdmg6evnMtEZGQHmSszo8yaqUtGeraBjeA-YQepR5pQn1Mi_IqkMWPOFGdMTI47EFA';
+    const token = '';
 
     //예약창 열고 닫기
     const [modalOpen, setModalOpen] = useState(false);
@@ -83,7 +83,6 @@ function Company() {
         });
     }, []);
 
-    console.log(reviewState);
     return (
         <div>
             <div className="info">
@@ -139,8 +138,8 @@ function Company() {
                 <div className="review">
                     {reviewState.map((review, index) => (
                         <div key={index} className='re1' onClick={() => showRead(review)}>
-                            <img src={review.images[0] ? review.images[0].imageUrls : '/img/dog.png'}/>
-                            <div>
+                            <img src={review.images[0] ? review.images[0].imageUrls : '/img/rectangle76.png'}/>
+                            <div className='review_text_preview'>
                                 <p>미용 싫어하는 금쪽이의 변화</p>
                                 <p>{review.reviewContent}</p>
                             </div>
