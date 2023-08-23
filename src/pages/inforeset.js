@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import './inforeset.css';
 import axios from "axios";
+import { useSelector } from 'react-redux';
 
 function Inforeset(props) {
     let [showPetInfo, setShowPetInfo] = useState(false); // 반려동물 정보 수정 페이지 표시 여부 상태
@@ -57,7 +58,8 @@ function Inforeset(props) {
 
     useEffect(() => {
         //localStorage에서 access token을 가져옵니다.
-        const accessToken = 'Bearer ';
+        const token = useSelector(state => state.token);
+        const accessToken = "Bearer "+ {token};
         // access token을 인증 헤더에 설정합니다.
         axios.defaults.headers.common["Authorization"] = accessToken;
 
