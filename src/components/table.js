@@ -36,14 +36,20 @@ function Table ({ reservationId }){
                 <div className="table_box my-component ${className}">
                     <table className="table tablee" >
                             <thead>
-                                <tr>
+                                {/* <tr>
+                                    <th scope="col"  style={{ background: '#F5F5F5', width: 180 ,paddingTop:5}}>반려동물 이름</th>
+                                    <th scope="col"style={{ width: 180  ,paddingTop:5}}>{data.petName}</th>
+                                    <th  scope="col"  style={{ background: '#F5F5F5', width: 180  ,paddingTop:5}}>이름</th>
+                                    <th scope="col">{data.username}</th>
+                                </tr> */}
+                            </thead>
+                            <tbody>
+                            <tr>
                                     <th scope="col"  style={{ background: '#F5F5F5', width: 180 ,paddingTop:5}}>반려동물 이름</th>
                                     <th scope="col"style={{ width: 180  ,paddingTop:5}}>{data.petName}</th>
                                     <th  scope="col"  style={{ background: '#F5F5F5', width: 180  ,paddingTop:5}}>이름</th>
                                     <th scope="col">{data.username}</th>
                                 </tr>
-                            </thead>
-                            <tbody>
                                 <tr>
                                     <th  scope="col" style={{background:'#F5F5F5' ,paddingTop:5}}>반려동물 종류</th>
                                     <td>{data.petType}</td>

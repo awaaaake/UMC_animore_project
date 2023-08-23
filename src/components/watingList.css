@@ -22,10 +22,8 @@
     display: flex;
     font-size: 23px;
     font-weight: bold;
-    text-align: center;
-    margin-left: 0%;
+    margin-right: 0%;
     padding-left: 0%;
-    text-align: left;
 }
 .rowline{
     border-bottom: 1.5px solid #808080;
@@ -33,8 +31,11 @@
 }
 
 .title1{
-    padding-left: 29px;
+    padding-left: 4%;
+}
+.title4{
+    margin-left: 2%;
 }
 .title5{
-    padding-left: 18px;
+    padding-left: 5%;
 }

@@ -108,7 +108,7 @@ const Footer = () => {
         <Info>
           <InfoSpan>사업자등록번호 : 000-00-00000 </InfoSpan>
           <InfoSpan>Animore : OOO</InfoSpan>
-          <InfoSpan>EMAIL : ty4ove@nvaer.com</InfoSpan>
+          <InfoSpan>EMAIL : amimore100100@gmail.com</InfoSpan>
           <InfoSpan>개인정보보호책임자 : OOO</InfoSpan>
         </Info>
 
