@@ -29,7 +29,7 @@ function Preview(props) {
     const storeId = 1;
 
     const token = useSelector(state => state.token);
-    const accessToken = "Bearer " + { token };
+    const accessToken = `Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJjb3PthqDtgbAiLCJpZCI6MTIsImV4cCI6MTY5MzI0MjM2OSwidXNlcm5hbWUiOiJrYWthb18yOTcyNTIzOTYxIn0.8QVYIEr4SUpuo_KLBLdsDwaor42UkDxnXWDwN8ez-b9MfZtP14Ax4F4w25WajdMvE7wj5H6lS3yw6ZyiHcHY_Q`;
     axios.defaults.headers.common['Authorization'] = accessToken;
     
     useEffect(() => {

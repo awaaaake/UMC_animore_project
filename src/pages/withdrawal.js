@@ -7,8 +7,7 @@ import { useSelector } from 'react-redux';
 function Withdrawal(props) {
     let [password, setPassword] = useState('');
 
-    const token = useSelector(state => state.token);
-    const accessToken = "Bearer "+ {token};
+    const accessToken = `Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJjb3PthqDtgbAiLCJpZCI6MTIsImV4cCI6MTY5MzI0MjM2OSwidXNlcm5hbWUiOiJrYWthb18yOTcyNTIzOTYxIn0.8QVYIEr4SUpuo_KLBLdsDwaor42UkDxnXWDwN8ez-b9MfZtP14Ax4F4w25WajdMvE7wj5H6lS3yw6ZyiHcHY_Q`;
     // access token을 인증 헤더에 설정합니다.
     axios.defaults.headers.common["Authorization"] = accessToken;
 

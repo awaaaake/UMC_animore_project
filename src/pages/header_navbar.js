@@ -278,10 +278,8 @@ function Header(props) {
   const [isLoggedIn, setLoggedIn] = useState(false);
   // 처음 로그인을 구별하기 위한 변수
   const [isFirstLogin, setFirstLogin] = useState(false);
-
-  const dispatch = useDispatch();
-  const token = new URL(window.location.href).searchParams.get("token");
-  dispatch(setToken(token));
+  
+  const token = `Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJjb3PthqDtgbAiLCJpZCI6MTIsImV4cCI6MTY5MzI0MjM2OSwidXNlcm5hbWUiOiJrYWthb18yOTcyNTIzOTYxIn0.8QVYIEr4SUpuo_KLBLdsDwaor42UkDxnXWDwN8ez-b9MfZtP14Ax4F4w25WajdMvE7wj5H6lS3yw6ZyiHcHY_Q`;
 
   useEffect(() => {
     // URL에서 토큰 값을 추출하여 처리하는 함수 

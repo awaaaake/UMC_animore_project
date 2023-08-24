@@ -7,7 +7,8 @@ import axios from 'axios';
 import { useSelector } from 'react-redux';
 
 function Book() {
-    const token = useSelector(state => state.token);;
+    const token = `Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJjb3PthqDtgbAiLCJpZCI6MTIsImV4cCI6MTY5MzI0MjM2OSwidXNlcm5hbWUiOiJrYWthb18yOTcyNTIzOTYxIn0.8QVYIEr4SUpuo_KLBLdsDwaor42UkDxnXWDwN8ez-b9MfZtP14Ax4F4w25WajdMvE7wj5H6lS3yw6ZyiHcHY_Q`;
+
 
     const [searchText, setSearchText] = useState('');
     const navigate = useNavigate();
@@ -51,7 +52,7 @@ function Book() {
             axios.patch(`/api/locations/1?latitude=${latitude}&longitude=${longitude}`
             , formData,{
                 headers: {
-                  Authorization: `Bearer ${token}`,
+                  Authorization: `${token}`,
                   'Content-Type': 'multipart/form-data',
                 }
               })
@@ -69,7 +70,7 @@ function Book() {
     useEffect(() => {
         axios.get('/api/search/recordstore', {
             headers: {
-                Authorization: `Bearer ${token}`
+                Authorization: `${token}`
             }
         })
             .then(response => {
@@ -106,7 +107,7 @@ function Book() {
             <div className='recent'>
                 <Container>
                     <div className="container1">
-                        <p id="nic_text">OOO님의 최근 방문 기록</p>
+                        <p id="nic_text">최근 방문 기록</p>
                         <div className="row">
                             <div className="col">
                                 <img src={searchCurt0storeDTO.storeImageUrl}
@@ -131,7 +132,7 @@ function Book() {
             <div className='many'>
                 <Container>
                     <div className="container1">
-                        <p id="nic_text">OOO님이 사시는 동네 예약 많은 순</p>
+                        <p id="nic_text">동네 예약 많은 순</p>
                         <div className="row">
                             <div className="col">
                                 <img src={searchCurt0storeDTO.storeImageUrl}
