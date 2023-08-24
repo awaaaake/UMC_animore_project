@@ -4,7 +4,8 @@ import axios from 'axios';
 import styled from 'styled-components';
 import { useDispatch } from 'react-redux';
 import { setToken } from '../actions';
-import './header_navbar.css'
+import './header_navbar.css';
+import { useSelector } from 'react-redux';
 
 const Headerstyle = styled.header`
   // 스크롤 해도 header는 같이 따라오게 하기 위해 fixed로 설정
@@ -277,47 +278,37 @@ function Header(props) {
   const [isLoggedIn, setLoggedIn] = useState(false);
   // 처음 로그인을 구별하기 위한 변수
   const [isFirstLogin, setFirstLogin] = useState(false);
+
   const dispatch = useDispatch();
   const token = new URL(window.location.href).searchParams.get("token");
   dispatch(setToken(token));
 
   useEffect(() => {
-    // URL에서 토큰 값을 추출하여 처리하는 함수
+    // URL에서 토큰 값을 추출하여 처리하는 함수 
     const handleTokenFromURL = async () => {
 
       console.log(token);
+      console.log(isLoggedIn);
 
-      if (token) {
-        try {
-          // API 호출하여 유저 정보 가져오기
-          const response = await axios.get('https://animore.co.kr/mypage', {
-            headers: {
-              Authorization: `Bearer ${token}`,
-            },
-          });
+      if (token != null) {
+        // 유저 정보를 이용한 작업 수행
+        console.log(isLoggedIn);
 
-          // 유저 정보를 이용한 작업 수행
-          console.log(response.data);
-          
-          setLoggedIn(true);
-          setFirstLogin(true); // 추가
-
-        } catch (error) {
-          console.error('API 호출 에러:', error);
-        }
+        setLoggedIn(true);
+        setFirstLogin(true); // 추가
       }
     };
-
     // 컴포넌트 마운트 시 실행
     handleTokenFromURL();
   }, []);
 
 
-
   const handleLoginClick = () => {
-    setLoggedIn(true);
-    setPopupOpen(true);
-    document.body.style.backgroundColor = "rgba(0, 0, 0, 0.2)";
+    if(!token){
+      setPopupOpen(true);
+      document.body.style.backgroundColor = "rgba(0, 0, 0, 0.2)";
+    }
+    console.log(isLoggedIn);
   };
 
 
