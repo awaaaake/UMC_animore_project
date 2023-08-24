@@ -88,6 +88,7 @@ const SearchResult = () => {
     { id: 8, title: '울산 북구 매곡동' },
     { id: 9, title: '서울시 강남' },
     { id: 10, title: '서울시 동서로' },
+    
     // 추가적인 지역 정보들...
   ];
 

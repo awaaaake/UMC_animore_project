@@ -44,15 +44,20 @@ function Search() {
   const [ShopInfoList, setShopInfoList] = useState([]);
 
   //--------------------------API연결--------------------------------
-  const query1 = encodeURIComponent('해시태그:' + searchText);
+  //const query1 = encodeURIComponent('해시태그:' + searchText);
+  const query1 = encodeURIComponent('가게이름:' + searchText);
   const query2 = encodeURIComponent(searchText);
+
+  // const query1 = ('해시태그:' + searchText);
+  // const query2 = (searchText);
   //서버 요청 주소
-  const shopApiUrl = `/api/search/distance?query1=${query1}&query2=${query2}`;
+  //const shopApiUrl = `/api/search?query1=${query1}&query2=${query2}`;
+  const shopApiUrl = `/api/main/search/avg?query1=${query1}`;
   useEffect(() => {
     axios.get(shopApiUrl, {
-      headers: {
-        Authorization: `Bearer ${token}`
-      }
+      // headers: {
+      //   Authorization: `Bearer ${token}`
+      // }
     })
       .then(response => {
         // API 호출 성공 시 데이터를 상태에 저장

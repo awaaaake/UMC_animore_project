@@ -4,11 +4,9 @@ import { Container } from 'react-bootstrap';
 import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
-import { useSelector } from 'react-redux';
 
 function Book() {
-    const token = `Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJjb3PthqDtgbAiLCJpZCI6MTIsImV4cCI6MTY5MzI0MjM2OSwidXNlcm5hbWUiOiJrYWthb18yOTcyNTIzOTYxIn0.8QVYIEr4SUpuo_KLBLdsDwaor42UkDxnXWDwN8ez-b9MfZtP14Ax4F4w25WajdMvE7wj5H6lS3yw6ZyiHcHY_Q`;
-
+    const token = '';
 
     const [searchText, setSearchText] = useState('');
     const navigate = useNavigate();
@@ -52,7 +50,7 @@ function Book() {
             axios.patch(`/api/locations/1?latitude=${latitude}&longitude=${longitude}`
             , formData,{
                 headers: {
-                  Authorization: `${token}`,
+                  Authorization: `${accestoken}`,
                   'Content-Type': 'multipart/form-data',
                 }
               })
@@ -63,14 +61,14 @@ function Book() {
                     console.error('위치 전송 실패:', error);
                 });
             }else{
-                console.log('위치 제공 불러오기 실패')
+                console.log('에러')
             }
     };
 
     useEffect(() => {
         axios.get('/api/search/recordstore', {
             headers: {
-                Authorization: `${token}`
+                Authorization: `Bearer ${token}`
             }
         })
             .then(response => {
@@ -81,7 +79,7 @@ function Book() {
             })
             .catch(error => {
                 // API 호출 실패 시 에러 처리
-                console.error('API 호출 에러(최근 방문샵):', error);
+                console.error('API 호출 에러:', error);
             });
         getLocation(); 
         sendLocationToServer();
@@ -107,7 +105,7 @@ function Book() {
             <div className='recent'>
                 <Container>
                     <div className="container1">
-                        <p id="nic_text">최근 방문 기록</p>
+                        <p id="nic_text">OOO님의 최근 방문 기록</p>
                         <div className="row">
                             <div className="col">
                                 <img src={searchCurt0storeDTO.storeImageUrl}
@@ -132,7 +130,7 @@ function Book() {
             <div className='many'>
                 <Container>
                     <div className="container1">
-                        <p id="nic_text">동네 예약 많은 순</p>
+                        <p id="nic_text">OOO님이 사시는 동네 예약 많은 순</p>
                         <div className="row">
                             <div className="col">
                                 <img src={searchCurt0storeDTO.storeImageUrl}
