@@ -88,12 +88,6 @@ const SearchResult = () => {
     { id: 8, title: '울산 북구 매곡동' },
     { id: 9, title: '서울시 강남' },
     { id: 10, title: '서울시 동서로' },
-    { id: 11, title: '대구'},
-    { id: 12, title: '대전'},
-    { id: 13, title: '광주'},
-    { id: 14, title: '인천'},
-    { id: 15, title: '포메라니안, 가위컷 전문, 베넷 미용'},
-    { id: 16, title: '픽업가능, 고양이 미용가능},
     
     // 추가적인 지역 정보들...
   ];
