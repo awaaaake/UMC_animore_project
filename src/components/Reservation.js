@@ -4,7 +4,6 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './Reservation.css';
 import axios from "axios";
 import { useNavigate } from 'react-router-dom';
-import { useSelector } from 'react-redux';
 
 function Reservation({ props }) {
     const navigate = useNavigate();
@@ -22,8 +21,6 @@ function Reservation({ props }) {
         { label: '힐링스파', value: 'HEALING', type: 'bathStyle' },
         { label: '탄산스파', value: 'CARBONATED', type: 'bathStyle' },
     ];
-
-    const accessToken = `Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJjb3PthqDtgbAiLCJpZCI6MTIsImV4cCI6MTY5MzI0MjM2OSwidXNlcm5hbWUiOiJrYWthb18yOTcyNTIzOTYxIn0.8QVYIEr4SUpuo_KLBLdsDwaor42UkDxnXWDwN8ez-b9MfZtP14Ax4F4w25WajdMvE7wj5H6lS3yw6ZyiHcHY_Q`;
 
     const [selectedValues, setSelectedValues] = useState({
         dogSize: '',
@@ -47,12 +44,12 @@ function Reservation({ props }) {
 
     //다음 버튼 누르면 post요청 -> reservationId 받아옴
     const handleNextClick = () => {
-        
+        const token = '';
         axios({
             method: 'POST',
             url: '/api/booking/create',
             headers: {
-                Authorization: `${accessToken}`, // Bearer 토큰을 "Authorization" 헤더에 추가
+                Authorization: `Bearer ${token}`, // Bearer 토큰을 "Authorization" 헤더에 추가
                 ContentType: 'application/json'
             },
             data: {
@@ -83,12 +80,12 @@ function Reservation({ props }) {
     
     //저장내용 불러오기 누르면 get요청
     const handleShwoDetails = () => {
-
+        const token = '';
         axios({
             method: 'GET',
             url: '/api/userInfo',
             headers: {
-                Authorization: `${accessToken}` // Bearer 토큰을 "Authorization" 헤더에 추가
+                Authorization: `Bearer ${token}` // Bearer 토큰을 "Authorization" 헤더에 추가
             }
         })
             .then(response => {
