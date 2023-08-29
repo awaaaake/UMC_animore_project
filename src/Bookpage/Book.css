@@ -44,6 +44,7 @@ input:focus {outline: 1px solid #d849a1;}
     background-size: 400px;
     margin: 20px;
     margin-top: -15px;
+    background-color: #adadad;
     display: flex; /* Flex container로 설정 */
     align-items: center; /* 수직 가운데 정렬 */
     justify-content: center; /* 수평 가운데 정렬 */

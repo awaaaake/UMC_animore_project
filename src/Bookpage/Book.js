@@ -41,29 +41,29 @@ function Book() {
         }
     };
 
-    const sendLocationToServer = () => {
-         if (latitude && longitude) {
-            const formData = new FormData();
-            formData.append('latitude', latitude);
-            formData.append('longitude', longitude);
+    // const sendLocationToServer = () => {
+    //      if (latitude && longitude) {
+    //         const formData = new FormData();
+    //         formData.append('latitude', latitude);
+    //         formData.append('longitude', longitude);
 
-            axios.patch(`/api/locations/1?latitude=${latitude}&longitude=${longitude}`
-            , formData,{
-                headers: {
-                  Authorization: `${accestoken}`,
-                  'Content-Type': 'multipart/form-data',
-                }
-              })
-                .then(response => {
-                    console.log('위치전송완료:', response.data);
-                })
-                .catch(error => {
-                    console.error('위치 전송 실패:', error);
-                });
-            }else{
-                console.log('에러')
-            }
-    };
+    //         axios.patch(`/api/locations/1?latitude=${latitude}&longitude=${longitude}`
+    //         , formData,{
+    //             headers: {
+    //               Authorization: `${accestoken}`,
+    //               'Content-Type': 'multipart/form-data',
+    //             }
+    //           })
+    //             .then(response => {
+    //                 console.log('위치전송완료:', response.data);
+    //             })
+    //             .catch(error => {
+    //                 console.error('위치 전송 실패:', error);
+    //             });
+    //         }else{
+    //             console.log('에러')
+    //         }
+    // };
 
     useEffect(() => {
         axios.get('/api/search/recordstore', {
@@ -82,7 +82,7 @@ function Book() {
                 console.error('API 호출 에러:', error);
             });
         getLocation(); 
-        sendLocationToServer();
+        //sendLocationToServer();
     }, []);
     //-----------------------------------------------------
 
@@ -105,7 +105,7 @@ function Book() {
             <div className='recent'>
                 <Container>
                     <div className="container1">
-                        <p id="nic_text">OOO님의 최근 방문 기록</p>
+                        <p id="nic_text">최근 방문 기록</p>
                         <div className="row">
                             <div className="col">
                                 <img src={searchCurt0storeDTO.storeImageUrl}
@@ -130,10 +130,10 @@ function Book() {
             <div className='many'>
                 <Container>
                     <div className="container1">
-                        <p id="nic_text">OOO님이 사시는 동네 예약 많은 순</p>
+                        <p id="nic_text">동네 예약 많은 순</p>
                         <div className="row">
                             <div className="col">
-                                <img src={searchCurt0storeDTO.storeImageUrl}
+                                <img src="../img/mostgallery/mostgallery1.jpg"
                                 onClick={() => navigateToShop(searchCurt0storeDTO.storeId)}/>
                             </div>
                             <div className="col">
