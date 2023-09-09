@@ -275,20 +275,15 @@ const SignupPopupComponent = ({ onClose }) => {
 function Header(props) {
 
   const [isPopupOpen, setPopupOpen] = useState(false);
-  const [isLoggedIn, setLoggedIn] = useState(false);
+  const [isLoggedIn, setLoggedIn] = useState();
   // 처음 로그인을 구별하기 위한 변수
   const [isFirstLogin, setFirstLogin] = useState(false);
-  
-  const token = `Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJjb3PthqDtgbAiLCJpZCI6MTIsImV4cCI6MTY5MzI0MjM2OSwidXNlcm5hbWUiOiJrYWthb18yOTcyNTIzOTYxIn0.8QVYIEr4SUpuo_KLBLdsDwaor42UkDxnXWDwN8ez-b9MfZtP14Ax4F4w25WajdMvE7wj5H6lS3yw6ZyiHcHY_Q`;
 
   useEffect(() => {
     // URL에서 토큰 값을 추출하여 처리하는 함수 
     const handleTokenFromURL = async () => {
 
-      console.log(token);
-      console.log(isLoggedIn);
-
-      if (token != null) {
+      if (localStorage.getItem("key") != null) {
         // 유저 정보를 이용한 작업 수행
         console.log(isLoggedIn);
 
@@ -302,7 +297,7 @@ function Header(props) {
 
 
   const handleLoginClick = () => {
-    if(!token){
+    if(!localStorage.getItem("loginInfo")){
       setPopupOpen(true);
       document.body.style.backgroundColor = "rgba(0, 0, 0, 0.2)";
     }
