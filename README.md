@@ -1,5 +1,5 @@
 # Animore - 반려동물 미용예약 서비스
-<img src="https://github.com/awaaaake/UMC_animore_project/assets/103404308/4cbd04d6-1c6d-4655-ab6b-7244dca1524c" width="150"/>
+<img src="https://github.com/awaaaake/UMC_animore_project/assets/103404308/4cbd04d6-1c6d-4655-ab6b-7244dca1524c" width="300"/>
 
 Animore는 반려동물의 미용 예약을 편리하게 할 수 있도록 도와주는 서비스입니다.
 
